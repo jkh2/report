@@ -242,19 +242,27 @@
             <div class="legend">
                 <div class="legend-item">
                     <div class="legend-color" style="background: #2ecc71;"></div>
-                    <span>Ally</span>
+                    <span>Ally/Open Source</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-color" style="background: #e74c3c;"></div>
-                    <span>Rival</span>
+                    <span>Rival/Compete</span>
                 </div>
                 <div class="legend-item">
-                    <div class="legend-color" style="background: #f1c40f;"></div>
-                    <span>Echo Chamber</span>
+                    <div class="legend-color" style="background: #3498db;"></div>
+                    <span>Echo/Amplify</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #f39c12;"></div>
+                    <span>Parrot/Support</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #d35400;"></div>
+                    <span>Dissent/Critic</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-color" style="background: #7f8c8d;"></div>
-                    <span>Shadow Influence</span>
+                    <span>Shadow/License</span>
                 </div>
             </div>
             <canvas id="mindMap" width="800" height="600"></canvas>
@@ -346,25 +354,89 @@
         const canvas = document.getElementById('mindMap');
         const ctx = canvas.getContext('2d');
 
-        // Enhanced node and edge data with better positioning
+        // Enhanced node and edge data with current AI influencers
         const nodes = [
-            { id: 'Musk', label: 'Elon Musk\n(xAI)', x: 400, y: 150, color: '#3498db', size: 45 },
-            { id: 'OpenAI', label: 'OpenAI', x: 150, y: 300, color: '#e74c3c', size: 40 },
-            { id: 'DeepSeek', label: 'DeepSeek', x: 650, y: 300, color: '#2ecc71', size: 40 },
-            { id: 'MetaAI', label: 'Meta AI', x: 250, y: 480, color: '#9b59b6', size: 35 },
-            { id: 'Influencers', label: 'Influencers', x: 550, y: 480, color: '#f1c40f', size: 35 },
-            { id: 'Media', label: 'Traditional\nMedia', x: 400, y: 350, color: '#7f8c8d', size: 35 }
+            // Core Companies
+            { id: 'Musk', label: 'Elon Musk\n(xAI)', x: 400, y: 120, color: '#3498db', size: 50, type: 'company' },
+            { id: 'OpenAI', label: 'OpenAI', x: 120, y: 250, color: '#e74c3c', size: 45, type: 'company' },
+            { id: 'DeepSeek', label: 'DeepSeek', x: 680, y: 250, color: '#2ecc71', size: 45, type: 'company' },
+            { id: 'MetaAI', label: 'Meta AI', x: 180, y: 420, color: '#9b59b6', size: 40, type: 'company' },
+            { id: 'Anthropic', label: 'Anthropic', x: 280, y: 180, color: '#8e44ad', size: 38, type: 'company' },
+            { id: 'Media', label: 'Traditional\nMedia', x: 400, y: 350, color: '#7f8c8d', size: 35, type: 'media' },
+            
+            // AI Tech Influencers - Accelerationist Camp
+            { id: 'Karpathy', label: 'Andrej\nKarpathy', x: 520, y: 160, color: '#3498db', size: 32, type: 'influencer' },
+            { id: 'LeCun', label: 'Yann\nLeCun', x: 300, y: 120, color: '#9b59b6', size: 32, type: 'influencer' },
+            { id: 'Sutskever', label: 'Ilya\nSutskever', x: 180, y: 180, color: '#e67e22', size: 30, type: 'influencer' },
+            
+            // Safety/Cautious Camp
+            { id: 'Russell', label: 'Stuart\nRussell', x: 240, y: 320, color: '#c0392b', size: 28, type: 'influencer' },
+            { id: 'Bengio', label: 'Yoshua\nBengio', x: 320, y: 280, color: '#c0392b', size: 30, type: 'influencer' },
+            
+            // Business/Investment Influencers
+            { id: 'Friedman', label: 'Nat\nFriedman', x: 580, y: 220, color: '#27ae60', size: 28, type: 'influencer' },
+            { id: 'Chen', label: 'Jim Fan\n& AI Twitter', x: 500, y: 320, color: '#f39c12', size: 26, type: 'influencer' },
+            
+            // Controversial/Contrarian Voices
+            { id: 'Marcus', label: 'Gary\nMarcus', x: 140, y: 380, color: '#d35400', size: 26, type: 'influencer' },
+            { id: 'Mitchell', label: 'Melanie\nMitchell', x: 200, y: 450, color: '#d35400', size: 24, type: 'influencer' },
+            
+            // Popular AI Content Creators
+            { id: 'AIExplained', label: 'AI Explained\n& YouTubers', x: 600, y: 380, color: '#f1c40f', size: 28, type: 'content' },
+            { id: 'TwoMinute', label: 'Two Minute\nPapers', x: 520, y: 450, color: '#f1c40f', size: 26, type: 'content' }
         ];
 
         const edges = [
+            // Core rivalries
             { from: 'Musk', to: 'OpenAI', type: 'rival', label: 'Rival', color: '#e74c3c', width: 3 },
-            { from: 'Musk', to: 'DeepSeek', type: 'ally', label: 'Ally', color: '#2ecc71', width: 2 },
-            { from: 'Musk', to: 'MetaAI', type: 'ally', label: 'Ally', color: '#2ecc71', width: 2 },
-            { from: 'Musk', to: 'Influencers', type: 'echo', label: 'Echo', color: '#f1c40f', width: 2 },
             { from: 'OpenAI', to: 'DeepSeek', type: 'rival', label: 'Rival', color: '#e74c3c', width: 3 },
-            { from: 'OpenAI', to: 'Media', type: 'shadow', label: 'Shadow', color: '#7f8c8d', width: 2 },
-            { from: 'MetaAI', to: 'Influencers', type: 'echo', label: 'Echo', color: '#f1c40f', width: 2 },
-            { from: 'Influencers', to: 'Media', type: 'rival', label: 'Rival', color: '#e74c3c', width: 2 }
+            { from: 'OpenAI', to: 'Media', type: 'shadow', label: 'License', color: '#7f8c8d', width: 2 },
+            
+            // Open source alliances
+            { from: 'Musk', to: 'DeepSeek', type: 'ally', label: 'Open Ally', color: '#2ecc71', width: 2 },
+            { from: 'Musk', to: 'MetaAI', type: 'ally', label: 'Open Ally', color: '#2ecc71', width: 2 },
+            { from: 'DeepSeek', to: 'MetaAI', type: 'ally', label: 'Open Ally', color: '#2ecc71', width: 2 },
+            
+            // Corporate connections
+            { from: 'OpenAI', to: 'Anthropic', type: 'rival', label: 'Compete', color: '#e74c3c', width: 2 },
+            { from: 'Anthropic', to: 'Media', type: 'shadow', label: 'Partner', color: '#7f8c8d', width: 1 },
+            
+            // Influencer relationships - Accelerationist camp
+            { from: 'Musk', to: 'Karpathy', type: 'echo', label: 'Echo', color: '#3498db', width: 2 },
+            { from: 'Karpathy', to: 'DeepSeek', type: 'parrot', label: 'Supports', color: '#2ecc71', width: 1 },
+            { from: 'LeCun', to: 'MetaAI', type: 'echo', label: 'Meta CTO', color: '#9b59b6', width: 3 },
+            { from: 'LeCun', to: 'Musk', type: 'dissent', label: 'Disagrees', color: '#e67e22', width: 1 },
+            
+            // OpenAI network
+            { from: 'Sutskever', to: 'OpenAI', type: 'echo', label: 'Co-founder', color: '#e74c3c', width: 2 },
+            
+            // Safety advocates
+            { from: 'Russell', to: 'OpenAI', type: 'dissent', label: 'Critic', color: '#c0392b', width: 1 },
+            { from: 'Russell', to: 'Bengio', type: 'ally', label: 'Safety Ally', color: '#c0392b', width: 2 },
+            { from: 'Bengio', to: 'Anthropic', type: 'parrot', label: 'Supports', color: '#8e44ad', width: 1 },
+            { from: 'Russell', to: 'Media', type: 'parrot', label: 'Quotes', color: '#7f8c8d', width: 1 },
+            
+            // Business influencers
+            { from: 'Friedman', to: 'DeepSeek', type: 'parrot', label: 'Promotes', color: '#27ae60', width: 1 },
+            { from: 'Friedman', to: 'Musk', type: 'echo', label: 'Agrees', color: '#3498db', width: 1 },
+            { from: 'Chen', to: 'OpenAI', type: 'parrot', label: 'Hypes', color: '#f39c12', width: 1 },
+            { from: 'Chen', to: 'DeepSeek', type: 'parrot', label: 'Analyzes', color: '#f39c12', width: 1 },
+            
+            // Contrarian voices
+            { from: 'Marcus', to: 'OpenAI', type: 'dissent', label: 'Critic', color: '#d35400', width: 2 },
+            { from: 'Marcus', to: 'Musk', type: 'dissent', label: 'Skeptic', color: '#d35400', width: 1 },
+            { from: 'Mitchell', to: 'Marcus', type: 'ally', label: 'AI Skeptic', color: '#d35400', width: 1 },
+            { from: 'Mitchell', to: 'Russell', type: 'ally', label: 'Safety', color: '#c0392b', width: 1 },
+            
+            // Content creators
+            { from: 'AIExplained', to: 'OpenAI', type: 'parrot', label: 'Covers', color: '#f1c40f', width: 1 },
+            { from: 'AIExplained', to: 'DeepSeek', type: 'parrot', label: 'Reviews', color: '#f1c40f', width: 1 },
+            { from: 'TwoMinute', to: 'OpenAI', type: 'parrot', label: 'Explains', color: '#f1c40f', width: 1 },
+            { from: 'TwoMinute', to: 'DeepSeek', type: 'parrot', label: 'Demos', color: '#f1c40f', width: 1 },
+            
+            // Cross-pollination
+            { from: 'Karpathy', to: 'Chen', type: 'echo', label: 'AI Twitter', color: '#f39c12', width: 1 },
+            { from: 'AIExplained', to: 'Chen', type: 'echo', label: 'Amplifies', color: '#f1c40f', width: 1 }
         ];
 
         // Draw connections first (so they appear behind nodes)
@@ -484,27 +556,73 @@
         const nodeDetails = {
             'Musk': {
                 description: 'Central accelerationist figure advocating for open-source AI development through xAI. Drives pro-AGI narratives on X platform.',
-                connections: ['Rivals with OpenAI on safety vs speed', 'Allies with open-source advocates', 'Creates echo chambers among followers']
+                connections: ['Rivals with OpenAI on safety vs speed', 'Allies with open-source advocates', 'Echoed by Karpathy, Friedman']
             },
             'OpenAI': {
                 description: 'Leading closed-model developer pushing safety-first narratives. Has licensing deals with major media outlets.',
-                connections: ['Rivals with Musk and DeepSeek', 'Shadow influence over traditional media', 'Advocates for regulatory frameworks']
+                connections: ['Rivals with Musk and DeepSeek', 'Shadow influence over traditional media', 'Supported by Sutskever, covered by AI YouTubers']
             },
             'DeepSeek': {
                 description: 'Chinese AI developer offering models at 4% of OpenAI\'s pricing. Challenges Western closed-model dominance.',
-                connections: ['Allied with open-source movement', 'Major rival to OpenAI/Anthropic', 'Intensifies cost competition debates']
+                connections: ['Allied with open-source movement', 'Major rival to OpenAI/Anthropic', 'Supported by Friedman, analyzed by AI Twitter']
             },
             'MetaAI': {
                 description: 'Promotes accessible AI tools through open-source approach. Reduced news influence but strong in influencer networks.',
-                connections: ['Allied with open-source advocates', 'Echo chamber relationships with influencers', 'Competes with closed models']
+                connections: ['Allied with open-source advocates', 'LeCun as Chief AI Scientist', 'Competes with closed models']
             },
-            'Influencers': {
-                description: 'Social media figures leveraging X and TikTok to shape AI narratives. Create echo chambers among young audiences.',
-                connections: ['Echo Musk\'s accelerationist views', 'Rival traditional media influence', 'Amplify anti-establishment sentiment']
+            'Anthropic': {
+                description: 'Claude AI developer focused on constitutional AI and safety research. Competes with OpenAI in enterprise market.',
+                connections: ['Rivals OpenAI for enterprise customers', 'Supported by safety researchers like Bengio', 'Partners with some media outlets']
             },
             'Media': {
                 description: 'Traditional outlets framing AI as both solution and risk. Licensing deals with tech giants create potential capture.',
-                connections: ['Shadow relationships with OpenAI', 'Rivals with social media influencers', 'Amplifies safety concerns']
+                connections: ['Shadow relationships with OpenAI/Anthropic', 'Quotes safety researchers like Russell', 'Competes with AI content creators']
+            },
+            
+            // Influencers
+            'Karpathy': {
+                description: 'Former Tesla AI director, ex-OpenAI researcher. Highly respected AI educator with massive following. Generally optimistic about AI progress.',
+                connections: ['Echoes Musk\'s accelerationist views', 'Supports open-source development', 'Influences AI Twitter discourse']
+            },
+            'LeCun': {
+                description: 'Meta\'s Chief AI Scientist, Turing Award winner. Advocates for open AI research but disagrees with AGI timeline hype.',
+                connections: ['Directly represents Meta AI', 'Disagrees with Musk on AGI timelines', 'Influential in academic AI community']
+            },
+            'Sutskever': {
+                description: 'OpenAI co-founder and former Chief Scientist. Recently left to start Safe Superintelligence Inc. Focus on AI safety.',
+                connections: ['Co-founded OpenAI', 'Now focused on safe superintelligence', 'Bridges technical and safety communities']
+            },
+            'Russell': {
+                description: 'UC Berkeley professor, leading AI safety researcher. Author of "Human Compatible". Strong advocate for AI alignment research.',
+                connections: ['Critical of current AI development pace', 'Frequently quoted by traditional media', 'Allied with other safety researchers']
+            },
+            'Bengio': {
+                description: 'Turing Award winner, Mila founder. Increasingly vocal about AI risks and need for governance. Supports Anthropic\'s approach.',
+                connections: ['Allied with safety-first researchers', 'Supports Anthropic\'s constitutional AI', 'Advocates for AI governance']
+            },
+            'Friedman': {
+                description: 'Former GitHub CEO, AI investor. Strong advocate for open-source AI development and competitive markets.',
+                connections: ['Promotes open-source alternatives like DeepSeek', 'Echoes Musk\'s anti-monopoly views', 'Influential in startup/VC circles']
+            },
+            'Chen': {
+                description: 'AI Twitter influencer collective (Jim Fan, @AIatMeta, etc). Drives viral AI content and hype cycles.',
+                connections: ['Amplifies both OpenAI and DeepSeek developments', 'Creates AI Twitter trends', 'Bridges technical and mainstream audiences']
+            },
+            'Marcus': {
+                description: 'NYU professor, AI critic. Skeptical of current LLM capabilities and AGI timelines. Frequent OpenAI critic.',
+                connections: ['Major critic of OpenAI claims', 'Skeptical of Musk\'s AGI timeline', 'Allied with other AI skeptics']
+            },
+            'Mitchell': {
+                description: 'Santa Fe Institute professor. AI researcher focused on limitations of current AI. Writes about AI hype and misconceptions.',
+                connections: ['AI skeptic allied with Marcus', 'Advocates for realistic AI expectations', 'Connected to safety research community']
+            },
+            'AIExplained': {
+                description: 'Popular AI YouTube channels that break down latest developments. Generally neutral but amplify major announcements.',
+                connections: ['Covers all major AI releases', 'Amplifies both OpenAI and DeepSeek news', 'Influences public AI understanding']
+            },
+            'TwoMinute': {
+                description: 'AI research explainer channel. Focuses on technical papers and breakthroughs. Generally optimistic about AI progress.',
+                connections: ['Explains technical AI developments', 'Covers research from all major labs', 'Influences technical community perception']
             }
         };
 
