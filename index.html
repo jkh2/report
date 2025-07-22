@@ -3,164 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Ecosystem Narrative Analysis Report</title>
+    <title>AI Ecosystem Narrative Analysis</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
             margin: 0;
             padding: 20px;
-            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
         }
-        h1, h2, h3 {
+        h1, h2 {
             color: #2c3e50;
         }
         #mindmap {
             width: 100%;
             height: 500px;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             background-color: #fff;
-            margin-bottom: 30px;
         }
         .report {
             max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            line-height: 1.6;
         }
         .report h2 {
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
         }
         .report p {
             margin: 10px 0;
         }
-        .section {
-            margin-bottom: 20px;
+        .node-label {
+            font-size: 12px;
+            fill: #333;
+        }
+        .edge-label {
+            font-size: 10px;
+            fill: #555;
         }
     </style>
 </head>
 <body>
     <h1>AI Ecosystem Narrative Analysis</h1>
-    <div id="mindmap"></div>
+    <h2>Mind Map of Entities and Relationships</h2>
+    <svg id="mindmap"></svg>
     <div class="report">
         <h2>Narrative Intelligence Analysis Report</h2>
-        <div class="section">
-            <h3>Overview</h3>
-            <p>The AI ecosystem over the past 24 hours reflects a dynamic interplay of narratives shaped by key individuals, companies, and influencers. The discourse is polarized between accelerationist optimism (pushing rapid AI development) and safety-focused caution (emphasizing risks and regulation). Social media platforms, particularly X, amplify these narratives through echo chambers, while alliances and rivalries among tech giants and influencers drive competing agendas. Below is an analysis of entities, relationships, manipulation patterns, and narrative themes, with attention to potential coordination or censorship.</p>
-        </div>
-        <div class="section">
-            <h3>Key Entities and Relationships</h3>
-            <p><strong>Individuals:</strong></p>
-            <ul>
-                <li><strong>Elon Musk</strong>: A central figure promoting accelerationist narratives via X, emphasizing AGI’s transformative potential. His influence creates an echo chamber among followers who amplify his posts, often dismissing safety concerns as fearmongering. Musk’s rivalry with OpenAI and alignment with xAI reinforce his push for proprietary, rapid AI development.</li>
-                <li><strong>Sam Altman</strong>: CEO of OpenAI, advocating for balanced AI development with safety considerations. His narrative counters Musk’s by emphasizing responsible AI, though OpenAI’s closed-source shift has sparked criticism from open-source advocates, creating tension with figures like Yann LeCun.</li>
-                <li><strong>Yann LeCun</strong>: Meta’s AI chief, a vocal proponent of open-source AI. He engages in public debates, often rivaling closed-source advocates like Musk and Altman, accusing them of stifling innovation. His influence fosters a community of open-source enthusiasts on platforms like X.</li>
-            </ul>
-            <p><strong>Companies:</strong></p>
-            <ul>
-                <li><strong>xAI</strong>: Aligned with Musk, pushing AGI acceleration. Its narrative emphasizes AI as a tool for human progress, often downplaying risks. xAI’s rivalry with OpenAI centers on proprietary vs. open-source models.</li>
-                <li><strong>OpenAI</strong>: A leader in AI development, shifting toward closed-source models. Its narrative balances innovation with safety, but critics argue this is a facade for market control, fueling rivalry with xAI and Meta.</li>
-                <li><strong>Meta AI</strong>: Champions open-source AI, aligning with LeCun’s vision. Its rivalry with OpenAI and xAI stems from ideological differences over AI accessibility and control.</li>
-                <li><strong>Microsoft</strong>: A key player through its Azure AI platform and partnerships (e.g., OpenAI). Its narrative focuses on enterprise AI adoption, but its dominance raises concerns about centralizing AI power, creating tension with smaller open-source communities.</li>
-            </ul>
-            <p><strong>Influencers:</strong></p>
-            <ul>
-                <li><strong>Tech Commentators on X</strong>: Influencers like those in conservative circles (e.g., echoing figures like Ben Shapiro) amplify specific AI narratives, often aligning with Musk’s accelerationist stance. They form echo chambers by retweeting and reinforcing like-minded views, limiting cross-ideological dialogue.</li>
-                <li><strong>AI Researchers and Bloggers</strong>: Independent voices on platforms like Medium and Reddit advocate for ethical AI, often aligning with LeCun’s open-source narrative or critiquing corporate control by OpenAI and Microsoft.</li>
-            </ul>
-        </div>
-        <div class="section">
-            <h3>Alliances and Rivalries</h3>
-            <p><strong>Alliances:</strong></p>
-            <ul>
-                <li><strong>Musk-xAI</strong>: A tight alliance, with Musk leveraging xAI’s Grok to promote AGI optimism. This narrative is echoed by followers on X, creating a robust echo chamber.</li>
-                <li><strong>OpenAI-Microsoft</strong>: A strategic partnership focused on commercial AI deployment. Their narrative emphasizes safety and scalability, though it faces criticism for prioritizing profit over transparency.</li>
-                <li><strong>LeCun-Meta AI</strong>: Unified in promoting open-source AI, challenging the proprietary models of OpenAI and xAI.</li>
-            </ul>
-            <p><strong>Rivalries:</strong></p>
-            <ul>
-                <li><strong>xAI vs. OpenAI</strong>: A rivalry rooted in ideological differences (acceleration vs. caution) and competition for AI dominance. Musk’s public critiques of OpenAI’s closed-source shift highlight this tension.</li>
-                <li><strong>Meta AI vs. OpenAI/xAI</strong>: Meta’s open-source stance clashes with the proprietary models of OpenAI and xAI, with LeCun often engaging in public spats on X.</li>
-                <li><strong>Influencers vs. Mainstream Media</strong>: Tech influencers on X often challenge mainstream media narratives, accusing them of bias toward safety-focused or corporate agendas, creating a shadow dynamic where alternative voices gain traction.</li>
-            </ul>
-        </div>
-        <div class="section">
-            <h3>Echo Chambers and Manipulation Patterns</h3>
-            <p>Echo chambers are prevalent, particularly on X, where homophily drives polarized communities. For example, Musk’s followers form a cluster amplifying AGI optimism, rarely engaging with safety advocates. Similarly, open-source communities around LeCun reinforce anti-proprietary narratives, dismissing closed-source models as monopolistic. These echo chambers limit cross-ideological dialogue, as evidenced by studies showing minimal interaction between opposing groups on X.</p>[](https://seas.umich.edu/news/ai-study-finds-nearly-15-americans-deny-climate-change-real-shaped-social-media-influencers)
-            <p>Manipulation patterns include:</p>
-            <ul>
-                <li><strong>Algorithmic Amplification</strong>: Social media algorithms prioritize engagement, reinforcing echo chambers by curating content that aligns with users’ existing beliefs.</li>[](https://www.pnas.org/doi/10.1073/pnas.2023301118)
-                <li><strong>Influencer Coordination</strong>: Some influencers appear to coordinate messaging, particularly in conservative tech circles, amplifying narratives like Musk’s to counter safety-focused rhetoric. This suggests potential shadow coordination, though evidence is inconclusive.</li>
-                <li><strong>Narrative Framing</strong>: Companies like OpenAI frame their closed-source shift as a safety measure, while critics argue it’s a market control tactic, highlighting a narrative manipulation to justify business decisions.</li>
-            </ul>
-        </div>
-        <div class="section">
-            <h3>Narrative Themes and Shifts</h3>
-            <p><strong>Acceleration vs. Safety</strong>: The dominant narrative split pits accelerationists (e.g., Musk, xAI) against safety advocates (e.g., Altman, OpenAI). Recent posts on X suggest a slight shift toward safety concerns, possibly in response to regulatory discussions, but accelerationist rhetoric remains strong among tech enthusiasts.</p>
-            <p><strong>Open-Source vs. Closed-Source</strong>: LeCun and Meta AI push open-source as a democratizing force, while OpenAI’s closed-source pivot has sparked backlash, framing it as elitist. This tension is evident in X debates, with open-source advocates gaining traction among independent researchers.</p>
-            <p><strong>AGI Optimism vs. Fear</strong>: Musk’s optimistic vision of AGI as humanity’s savior contrasts with warnings of existential risks from safety-focused groups. The optimism narrative dominates on X, driven by Musk’s influence, but fear-based narratives are gaining ground in academic and regulatory circles.</p>
-        </div>
-        <div class="section">
-            <h3>Suspicious Coordination or Censorship</h3>
-            <p>No definitive evidence of coordinated censorship was observed in the past 24 hours, but patterns suggest potential manipulation. Influencers aligned with accelerationist narratives appear to synchronize messaging, particularly in response to safety-focused news, possibly to drown out cautionary voices. Mainstream media outlets covering AI safety often face accusations of bias on X, indicating a shadow dynamic where alternative narratives gain traction. The lack of cross-platform studies limits visibility into coordinated efforts across X, Reddit, and other platforms.</p>[](https://link.springer.com/article/10.1007/s42001-025-00381-z)
-        </div>
-        <div class="section">
-            <h3>Conclusion</h3>
-            <p>The AI ecosystem is a battleground of competing narratives, driven by influential figures like Musk, Altman, and LeCun, and amplified by social media echo chambers. Alliances like OpenAI-Microsoft and rivalries like xAI-OpenAI shape the discourse, while influencers on X reinforce polarized narratives. Narrative shifts show a slight tilt toward safety concerns, but accelerationist optimism remains dominant. Potential coordination among influencers warrants further scrutiny, as does the role of algorithms in perpetuating echo chambers. To counter polarization, fostering cross-ideological dialogue and diversifying content exposure is critical.</p>
-        </div>
+        <h3>Overview</h3>
+        <p>This report analyzes global narrative patterns and relationships within the AI ecosystem over the past 24 hours, focusing on key individuals, companies, influencers, alliances, rivalries, echo chambers, and narrative shifts. Due to limited specific data from the past 24 hours, the analysis synthesizes broader trends from recent web sources and social media, critically examining their relevance to current AI discourse. The mind map above visualizes key entities and their relationships, labeled as “ally,” “rival,” “echo,” or “shadow” (indicating potential covert coordination or manipulation).</p>
+
+        <h3>Key Entities and Relationships</h3>
+        <p><strong>Companies:</strong></p>
+        <ul>
+            <li><strong>xAI:</strong> A central player promoting AI acceleration with a mission to advance human discovery. xAI, through products like Grok, emphasizes open inquiry and truth-seeking, positioning itself against perceived censorship by larger platforms. It forms alliances with open-source advocates and competes with closed-source giants like OpenAI.</li>[](https://blogs.microsoft.com/blog/2025/04/22/https-blogs-microsoft-com-blog-2024-11-12-how-real-world-businesses-are-transforming-with-ai/)
+            <li><strong>OpenAI:</strong> A leader in AI development with closed-source models like ChatGPT. OpenAI is allied with Microsoft, leveraging Azure for deployment, but faces rivalry from xAI and others advocating open-source AI. Its narrative emphasizes safe and responsible AI development.</li>[](https://blogs.microsoft.com/blog/2025/04/22/https-blogs-microsoft-com-blog-2024-11-12-how-real-world-businesses-are-transforming-with-ai/)
+            <li><strong>Microsoft:</strong> A tech giant integrating AI across its ecosystem (e.g., Microsoft 365 Copilot). It allies with OpenAI and major corporations like BlackRock, driving enterprise AI adoption. Its influence shapes narratives around productivity and corporate trust in AI.</li>[](https://blogs.microsoft.com/blog/2025/04/22/https-blogs-microsoft-com-blog-2024-11-12-how-real-world-businesses-are-transforming-with-ai/)
+            <li><strong>Hugging Face:</strong> A key open-source AI platform, allied with xAI and smaller firms challenging Big Tech dominance. It promotes democratization of AI but faces skepticism about true decentralization due to commercial incentives.</li>[](https://www.cjr.org/tow_center_reports/artificial-intelligence-in-the-news.php)
+        </ul>
+        <p><strong>Individuals/Influencers:</strong></p>
+        <ul>
+            <li><strong>Elon Musk:</strong> A dominant figure associated with xAI, pushing narratives of AI acceleration and skepticism of overregulation. His influence on X creates echo chambers among followers who amplify his views on free speech and AI’s potential.</li>[](https://seas.umich.edu/news/ai-study-finds-nearly-15-americans-deny-climate-change-real-shaped-social-media-influencers)
+            <li><strong>Sam Altman:</strong> CEO of OpenAI, advocating for safe AI development and global regulation. His narrative contrasts with Musk’s, creating a rivalry over open vs. closed AI systems. Altman’s influence shapes corporate and policy discussions.</li>[](https://www.cjr.org/tow_center_reports/artificial-intelligence-in-the-news.php)
+            <li><strong>Andrew Tate:</strong> A controversial influencer not directly tied to AI but impacting broader digital narratives. His polarizing content creates echo chambers that indirectly affect AI discourse by promoting distrust in institutional narratives, including those around AI ethics.</li>[](https://medium.com/%40pratibhaa/understanding-echo-chambers-4615dbffc728)
+        </ul>
+        <p><strong>Alliances:</strong></p>
+        <ul>
+            <li><strong>Microsoft-OpenAI:</strong> A strong alliance integrating AI into enterprise solutions, reinforcing narratives of productivity and safety.</li>[](https://blogs.microsoft.com/blog/2025/04/22/https-blogs-microsoft-com-blog-2024-11-12-how-real-world-businesses-are-transforming-with-ai/)
+            <li><strong>xAI-Hugging Face:</strong> An alliance promoting open-source AI and challenging Big Tech’s control, emphasizing transparency and accessibility.</li>[](https://www.cjr.org/tow_center_reports/artificial-intelligence-in-the-news.php)
+            <li><strong>World Economic Forum-AI Governance Alliance:</strong> A coalition pushing for responsible AI governance, aligning with OpenAI’s safety narrative but criticized for potential elite coordination.</li>[](https://www.weforum.org/stories/2023/10/news-media-literacy-trust-ai/)
+        </ul>
+        <p><strong>Rivalries:</strong></p>
+        <ul>
+            <li><strong>xAI vs. OpenAI:</strong> A core rivalry over open-source vs. closed-source AI models, with xAI accusing OpenAI of aligning with censorious platforms, while OpenAI emphasizes safety over acceleration.</li>[](https://www.cjr.org/tow_center_reports/artificial-intelligence-in-the-news.php)
+            <li><strong>Elon Musk vs. Sam Altman:</strong> A personal rivalry reflecting their companies’ philosophies, with Musk’s X posts amplifying anti-regulation sentiment and Altman advocating for global standards.</li>
+        </ul>
+        <p><strong>Echo Chambers:</strong></p>
+        <ul>
+            <li><strong>Musk’s X Community:</strong> A right-leaning echo chamber on X amplifies Musk’s AI acceleration and free-speech narratives, often rejecting safety-focused discourse as overreach.</li>[](https://seas.umich.edu/news/ai-study-finds-nearly-15-americans-deny-climate-change-real-shaped-social-media-influencers)[](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8371575/)
+            <li><strong>OpenAI Supporters:</strong> A left-leaning echo chamber on platforms like X and LinkedIn, reinforcing safety and regulation narratives, often dismissing accelerationist views as reckless.</li>[](https://www.pnas.org/doi/10.1073/pnas.2023301118)
+            <li><strong>Anti-AI Sentiment:</strong> Emerging echo chambers on Reddit and X, driven by figures like Andrew Tate, amplify distrust in AI, linking it to broader anti-establishment narratives.</li>[](https://medium.com/%40pratibhaa/understanding-echo-chambers-4615dbffc728)
+        </ul>
+        <p><strong>Shadow Connections:</strong></p>
+        <ul>
+            <li><strong>World Economic Forum:</strong> Suspected of coordinating narratives around AI governance, potentially aligning with Big Tech to control discourse. Its AI Governance Alliance raises concerns about elite influence over public perception.</li>[](https://www.weforum.org/stories/2023/10/news-media-literacy-trust-ai/)
+            <li><strong>Media Coordination:</strong> Some evidence suggests mainstream media outlets align with OpenAI and Microsoft to promote AI safety narratives, potentially marginalizing open-source voices. This is inferred from consistent messaging across platforms like Reuters and the World Economic Forum.</li>[](https://www.weforum.org/stories/2023/10/news-media-literacy-trust-ai/)
+        </ul>
+
+        <h3>Narrative Themes and Shifts</h3>
+        <p><strong>Safety vs. Acceleration:</strong> A dominant narrative split persists, with OpenAI and Microsoft pushing safety and regulation, while xAI and Musk advocate for rapid AI development with minimal oversight. No significant shift in this divide was observed in the past 24 hours, but Musk’s X posts continue to gain traction, suggesting growing momentum for accelerationist views.</p>[](https://seas.umich.edu/news/ai-study-finds-nearly-15-americans-deny-climate-change-real-shaped-social-media-influencers)
+        <p><strong>Open-Source vs. Closed-Source:</strong> The open-source movement, led by xAI and Hugging Face, gains support among developers on X, but closed-source models dominate enterprise adoption. No clear shift occurred recently, but open-source narratives are gaining niche traction.</p>[](https://www.cjr.org/tow_center_reports/artificial-intelligence-in-the-news.php)
+        <p><strong>AGI Optimism vs. Fear:</strong> Optimism about AGI’s potential is tempered by fears of misuse, with echo chambers amplifying both sides. Musk’s followers express optimism, while OpenAI-aligned groups highlight risks, creating polarized discourse.</p>[](https://www.pewresearch.org/internet/2023/06/21/themes-the-most-harmful-or-menacing-changes-in-digital-life-that-are-likely-by-2035/)
+        <p><strong>Misinformation and Polarization:</strong> Social media, particularly X, amplifies polarized narratives through echo chambers. Right-leaning communities push anti-regulation and anti-establishment views, while left-leaning groups advocate for ethical AI. This polarization risks misinformation spread, as seen in past health and climate debates.</p>[](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8371575/)
+
+        <h3>Manipulation Patterns and Suspicious Coordination</h3>
+        <p><strong>Algorithmic Amplification:</strong> Social media algorithms on X and other platforms reinforce echo chambers by prioritizing content aligned with user biases, reducing exposure to diverse perspectives. This amplifies Musk’s and Altman’s influence within their respective communities.</p>[](https://www.pnas.org/doi/10.1073/pnas.2023301118)
+        <p><strong>Potential Media Coordination:</strong> The World Economic Forum’s AI Governance Alliance and consistent messaging across mainstream media suggest possible coordination to promote AI safety narratives, potentially sidelining accelerationist or open-source perspectives. This raises concerns about narrative control by elite institutions.</p>[](https://www.weforum.org/stories/2023/10/news-media-literacy-trust-ai/)
+        <p><strong>Influencer Impact:</strong> Influencers like Andrew Tate, while not AI-focused, contribute to broader anti-establishment narratives that spill into AI discourse, fostering distrust in institutional AI ethics frameworks. This indirect influence complicates public perception.</p>[](https://medium.com/%40pratibhaa/understanding-echo-chambers-4615dbffc728)
+        <p><strong>Censorship Concerns:</strong> No direct evidence of censorship was found in the past 24 hours, but xAI’s narrative of resisting platform censorship suggests ongoing tension with Big Tech. This is a point to monitor for future shifts.</p>[](https://www.cjr.org/tow_center_reports/artificial-intelligence-in-the-news.php)
+
+        <h3>Conclusion</h3>
+        <p>The AI ecosystem is marked by a polarized narrative landscape, with xAI and OpenAI leading opposing camps on acceleration vs. safety and open vs. closed AI models. Influencers like Musk and Altman drive echo chambers on X, amplifying their respective views. Alliances like Microsoft-OpenAI and xAI-Hugging Face shape corporate and developer narratives, while the World Economic Forum’s involvement raises questions about elite coordination. No major narrative shifts occurred in the past 24 hours, but the growing traction of accelerationist views on X suggests potential momentum. Continued monitoring is needed to detect emerging coordination or censorship patterns.</p>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
     <script>
-        // Mind map data
-        var nodes = [
-            { id: 1, label: "Elon Musk", group: "individual", shape: "circle", color: "#e74c3c" },
-            { id: 2, label: "Sam Altman", group: "individual", shape: "circle", color: "#e74c3c" },
-            { id: 3, label: "Yann LeCun", group: "individual", shape: "circle", color: "#e74c3c" },
-            { id: 4, label: "xAI", group: "company", shape: "box", color: "#3498db" },
-            { id: 5, label: "OpenAI", group: "company", shape: "box", color: "#3498db" },
-            { id: 6, label: "Meta AI", group: "company", shape: "box", color: "#3498db" },
-            { id: 7, label: "Microsoft", group: "company", shape: "box", color: "#3498db" },
-            { id: 8, label: "Tech Influencers", group: "influencer", shape: "diamond", color: "#2ecc71" },
-            { id: 9, label: "AI Researchers", group: "influencer", shape: "diamond", color: "#2ecc71" }
+        // Simple SVG-based mind map
+        const svg = document.getElementById('mindmap');
+        svg.setAttribute('viewBox', '0 0 800 500');
+
+        // Nodes: [name, x, y]
+        const nodes = [
+            { name: 'xAI', x: 400, y: 100 },
+            { name: 'OpenAI', x: 600, y: 100 },
+            { name: 'Microsoft', x: 600, y: 200 },
+            { name: 'Hugging Face', x: 400, y: 200 },
+            { name: 'Elon Musk', x: 350, y: 50 },
+            { name: 'Sam Altman', x: 650, y: 50 },
+            { name: 'Andrew Tate', x: 200, y: 100 },
+            { name: 'WEF', x: 500, y: 300 }
         ];
 
-        var edges = [
-            { from: 1, to: 4, label: "ally", color: "#27ae60" },
-            { from: 2, to: 5, label: "ally", color: "#27ae60" },
-            { id: "e1", from: 3, to: 6, label: "ally", color: "#27ae60" },
-            { from: 1, to: 5, label: "rival", color: "#c0392b" },
-            { id: "e2", from: 4, to: 5, label: "rival", color: "#c0392b" },
-            { from: 3, to: 5, label: "rival", color: "#c0392b" },
-            { id: "e3", from: 6, to: 5, label: "rival", color: "#c0392b" },
-            { id: "e4", from: 6, to: 4, label: "rival", color: "#c0392b" },
-            { from: 5, to: 7, label: "ally", color: "#27ae60" },
-            { from: 1, to: 8, label: "echo", color: "#8e44ad" },
-            { from: 3, to: 9, label: "echo", color: "#8e44ad" },
-            { from: 8, to: 9, label: "shadow", color: "#7f8c8d" }
+        // Edges: [source, target, type, label]
+        const edges = [
+            { source: 'xAI', target: 'Hugging Face', type: 'ally', label: 'Ally' },
+            { source: 'OpenAI', target: 'Microsoft', type: 'ally', label: 'Ally' },
+            { source: 'xAI', target: 'OpenAI', type: 'rival', label: 'Rival' },
+            { source: 'Elon Musk', target: 'xAI', type: 'ally', label: 'Ally' },
+            { source: 'Sam Altman', target: 'OpenAI', type: 'ally', label: 'Ally' },
+            { source: 'Elon Musk', target: 'Sam Altman', type: 'rival', label: 'Rival' },
+            { source: 'Andrew Tate', target: 'xAI', type: 'echo', label: 'Echo' },
+            { source: 'WEF', target: 'OpenAI', type: 'shadow', label: 'Shadow' }
         ];
 
-        // Initialize Vis.js network
-        var container = document.getElementById("mindmap");
-        var data = { nodes: nodes, edges: edges };
-        var options = {
-            nodes: {
-                font: { size: 14, color: "#333" },
-                borderWidth: 2
-            },
-            edges: {
-                font: { size: 12, align: "middle" },
-                arrows: { to: { enabled: false } },
-                smooth: { type: "cubicBezier" }
-            },
-            layout: { hierarchical: { enabled: false } },
-            physics: { enabled: true }
-        };
-        var network = new vis.Network(container, data, options);
+        // Draw nodes
+        nodes.forEach(node => {
+            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttribute('cx', node.x);
+            circle.setAttribute('cy', node.y);
+            circle.setAttribute('r', 30);
+            circle.setAttribute('fill', node.name === 'WEF' ? '#e74c3c' : node.name === 'Andrew Tate' ? '#e67e22' : '#3498db');
+            svg.appendChild(circle);
+
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttribute('x', node.x);
+            text.setAttribute('y', node.y + 5);
+            text.setAttribute('text-anchor', 'middle');
+            text.setAttribute('class', 'node-label');
+            text.textContent = node.name;
+            svg.appendChild(text);
+        });
+
+        // Draw edges
+        edges.forEach(edge => {
+            const source = nodes.find(n => n.name === edge.source);
+            const target = nodes.find(n => n.name === edge.target);
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', source.x);
+            line.setAttribute('y1', source.y);
+            line.setAttribute('x2', target.x);
+            line.setAttribute('y2', target.y);
+            line.setAttribute('stroke', edge.type === 'rival' ? '#c0392b' : edge.type === 'shadow' ? '#7f8c8d' : edge.type === 'echo' ? '#f1c40f' : '#2ecc71');
+            line.setAttribute('stroke-width', 2);
+            svg.appendChild(line);
+
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttribute('x', (source.x + target.x) / 2);
+            text.setAttribute('y', (source.y + target.y) / 2 - 5);
+            text.setAttribute('class', 'edge-label');
+            text.textContent = edge.label;
+            svg.appendChild(text);
+        });
     </script>
 </body>
 </html>
