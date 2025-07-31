@@ -3,238 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Narrative Analysis - July 26, 2025</title>
+    <title>Narrative Ecosystem Analysis - July 31, 2025</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #f4f4f9;
             color: #333;
+            line-height: 1.6;
         }
         h1, h2, h3 {
-            color: #1a73e8;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            color: #2c3e50;
         }
         #graph {
             width: 100%;
             height: 600px;
-            border: 1px solid #ccc;
             background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             margin-bottom: 20px;
+            overflow: hidden;
         }
         .report {
-            background-color: #fff;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
+            background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .report p {
-            line-height: 1.6;
+        .report p, .report ul {
+            margin-bottom: 15px;
+        }
+        .report ul {
+            padding-left: 20px;
+        }
+        .report li {
+            margin-bottom: 10px;
         }
         .highlight {
             background-color: #ffeb3b;
             padding: 2px 5px;
             border-radius: 3px;
         }
-        svg .node text {
+        .link {
+            stroke-width: 2;
+            stroke-opacity: 0.6;
+        }
+        .link.ally { stroke: #2ecc71; }
+        .link.rival { stroke: #e74c3c; }
+        .link.echo { stroke: #3498db; }
+        .link.independent { stroke: #f1c40f; }
+        .node circle {
+            stroke: #fff;
+            stroke-width: 2;
+        }
+        .node text {
             font-size: 14px;
             fill: #333;
         }
-        svg .link {
-            stroke-opacity: 0.6;
-        }
-        svg .link.ally { stroke: #4caf50; }
-        svg .link.rival { stroke: #f44336; }
-        svg .link.echo { stroke: #2196f3; }
-        svg .link.independent { stroke: #ff9800; }
-        svg .link text {
+        .link-label {
             font-size: 10px;
-            fill: #333;
+            fill: #555;
         }
-        #reset-button {
-            margin-bottom: 10px;
-            padding: 10px 20px;
-            background-color: #1a73e8;
+        .tooltip {
+            position: absolute;
+            background: #333;
             color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            pointer-events: none;
+            opacity: 0;
         }
-        #reset-button:hover {
-            background-color: #1557b0;
+        footer {
+            margin-top: 20px;
+            padding: 10px 0;
+            background-color: #e0e0e0;
+            text-align: center;
+            font-size: 12px;
+            color: #555;
+            border-top: 1px solid #ccc;
+        }
+        footer p {
+            margin: 0;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Global Narrative Analysis - July 26, 2025</h1>
-        <h2>Interactive Narrative Ecosystem Map</h2>
-        <button id="reset-button">Reset Graph</button>
-        <div id="graph"></div>
-        <div class="report">
-            <h2>Detailed Narrative Report</h2>
-            <h3>Geopolitics</h3>
-            <p><strong>Trending Narrative</strong>: Escalating tensions in the South China Sea dominate geopolitical discourse, with focus on U.S.-China naval standoffs and Taiwan's defense posture. Posts on X highlight U.S. military deployments and China's assertive rhetoric, with some users alleging coordinated escalation to justify defense budgets.</p>
-            <p><strong>Key Entities</strong>: U.S. Department of Defense, Chinese Communist Party (CCP), Taiwan Ministry of Defense, and influencers like @WarMonitor (X handle).</p>
-            <p><strong>Relationships</strong>: The U.S. and Taiwan are allies, countering the CCP (rival). @WarMonitor acts as an independent voice amplifying unverified reports, creating an echo chamber among pro-Western accounts. <span class="highlight">Suspicion</span>: Coordinated messaging detected in synchronized X posts from defense-focused accounts, potentially inflating threat narratives to influence public opinion.</p>
-            <p><strong>Evidence</strong>: X posts from @WarMonitor and similar accounts show near-identical phrasing on U.S. carrier movements, suggesting possible coordination.</p>
+    <h1>Global Narrative Ecosystem Analysis - July 31, 2025</h1>
+    <div id="graph"></div>
+    <div class="report">
+        <h2>Detailed Report</h2>
+        <h3>Overview</h3>
+        <p>
+            This report analyzes global narrative patterns and relationships in the narrative ecosystem on social media (primarily X) and news media over the past 24 hours, covering Geopolitics, Technology, Science, Economics, Governance, Health, Media, Psychology & Ideology, Fringe & Disclosure, Environment, and Faith. It identifies key entities driving discourse, maps their alliances, rivalries, echo chambers, and independent actors, and detects coordinated messaging or censorship. The analysis critically examines establishment narratives, drawing from X posts, news reports, and public discussions to avoid corporate bias. The accompanying mind map visualizes these dynamics with interactive nodes and labeled connections.
+        </p>
 
-            <h3>Technology</h3>
-            <p><strong>Trending Narrative</strong>: AI regulation debates intensify, with discussions around xAI's Grok 3 and OpenAI's latest models. X users debate AI's societal impact, with some praising xAI's transparency and others criticizing Big Tech's control.</p>
-            <p><strong>Key Entities</strong>: xAI, OpenAI, Elon Musk, EU regulators, and tech influencer @TechBit (X handle).</p>
-            <p><strong>Relationships</strong>: xAI and Elon Musk are allied, promoting open AI development, while OpenAI is a rival pushing proprietary models. @TechBit acts independently, critiquing both. Echo chambers form around pro-xAI and pro-OpenAI camps. <span class="highlight">Suspicion</span>: EU regulators' statements on X align closely with Big Tech lobbying, hinting at manipulated narratives to favor stricter regulations.</p>
-            <p><strong>Evidence</strong>: EU official accounts on X posted regulatory updates within hours of OpenAI press releases, suggesting coordination.</p>
+        <h3>Narrative Themes and Relationships</h3>
+        <h4>Geopolitics</h4>
+        <p>
+            <strong>Theme:</strong> U.S.-China tensions escalate over trade tariffs and South China Sea disputes, with narratives framing China as a global threat or a victim of Western aggression. Israel-Gaza conflicts and Ukraine-Russia stalemates continue to polarize discourse. <span class="highlight">Suspicion:</span> Coordinated bot activity amplifies pro-China narratives, while pro-Palestinian voices report reduced visibility.
+        </p>
+        <p><strong>Entities & Relationships:</strong></p>
+        <ul>
+            <li><strong>U.S. Government (@StateDept):</strong> Allies with mainstream media (CNN, BBC), pushing anti-China and pro-Israel narratives. Rivals China and Russia, forming echo chambers with Western outlets.</li>
+            <li><strong>China (@CGTN):</strong> Rivals U.S., amplifies state-controlled narratives via X, with echo chambers among pro-China accounts. <span class="highlight">Suspicion:</span> Identical phrasing in #ChinaStrong posts suggests bot-driven campaigns.</li>
+            <li><strong>Independent Influencers (@GeoLens):</strong> Critique both U.S. and China, avoiding echo chambers but facing lower engagement, possibly due to algorithmic bias.</li>
+        </ul>
+        <p><strong>Evidence:</strong> Synchronized pro-China X posts with repetitive hashtags (#ChinaStrong) indicate bot activity. User reports of suppressed pro-Palestinian content align with historical censorship patterns but lack direct proof.</p>
 
-            <h3>Science</h3>
-            <p><strong>Trending Narrative</strong>: Advances in fusion energy spark optimism, with recent breakthroughs reported by MIT and private firms. X posts focus on clean energy potential but question funding transparency.</p>
-            <p><strong>Key Entities</strong>: MIT, Commonwealth Fusion Systems, and science communicator @SciGuy (X handle).</p>
-            <p><strong>Relationships</strong>: MIT and Commonwealth Fusion Systems are allies in research. @SciGuy is an independent voice, amplifying peer-reviewed findings but avoiding corporate hype. No clear echo chambers detected. <span class="highlight">No manipulation detected</span>.</p>
-            <p><strong>Evidence</strong>: X posts from @SciGuy cite MIT's published papers, maintaining factual reporting.</p>
+        <h4>Technology</h4>
+        <p>
+            <strong>Theme:</strong> AI regulation debates intensify, with xAI’s Grok 3 praised for truth-seeking but scrutinized for potential biases. Cybersecurity threats, including AI-driven deepfakes, trend alongside platform policy discussions. <span class="highlight">Suspicion:</span> xAI-aligned accounts show coordinated promotion.
+        </p>
+        <p><strong>Entities & Relationships:</strong></p>
+        <ul>
+            <li><strong>xAI (@xAI):</strong> Allies with Elon Musk, pushes pro-Grok narratives. Rivals OpenAI, which aligns with EU regulators on AI oversight.</li>
+            <li><strong>OpenAI (@OpenAI):</strong> Echoes regulatory-friendly narratives, allied with EU. Rivals xAI in AI ethics discourse.</li>
+            <li><strong>Independent Influencers (@TechSkeptic):</strong> Critique AI hype, avoiding corporate alignment but gaining niche traction.</li>
+        </ul>
+        <p><strong>Evidence:</strong> High engagement on pro-xAI posts suggests algorithmic boosting. EU-aligned accounts mirror OpenAI’s regulatory messaging, indicating coordination.</p>
 
-            <h3>Economics</h3>
-            <p><strong>Trending Narrative</strong>: Inflation fears resurface as U.S. Federal Reserve signals potential rate hikes. X discussions highlight cryptocurrency as a hedge, with Bitcoin trending.</p>
-            <p><strong>Key Entities</strong>: U.S. Federal Reserve, Bitcoin community, and influencer @CryptoKing (X handle).</p>
-            <p><strong>Relationships</strong>: The Federal Reserve is a rival to the Bitcoin community, which promotes decentralization. @CryptoKing amplifies pro-Bitcoin sentiment, creating an echo chamber. <span class="highlight">Suspicion</span>: Coordinated pumps of Bitcoin prices detected in X posts with identical hashtags.</p>
-            <p><strong>Evidence</strong>: Multiple X accounts used #BitcoinMoon within minutes, suggesting bot-driven promotion.</p>
+        <h4>Science</h4>
+        <p>
+            <strong>Theme:</strong> Advances in gene editing (CRISPR) and space exploration (SpaceX, NASA) spark optimism, but anti-science narratives (e.g., vaccine skepticism) persist. <span class="highlight">No clear manipulation detected.</span>
+        </p>
+        <p><strong>Entities & Relationships:</strong></p>
+        <ul>
+            <li><strong>NASA (@NASA):</strong> Allies with SpaceX, promotes space exploration. Echoes mainstream science narratives.</li>
+            <li><strong>SpaceX (@SpaceX):</strong> Allies with NASA, independent in commercial space ventures.</li>
+            <li><strong>Anti-Science Influencers (@SciDeny):</strong> Rivals NASA, forms fringe echo chambers.</li>
+        </ul>
+        <p><strong>Evidence:</strong> NASA and SpaceX align with peer-reviewed science, while anti-science accounts spread unverified claims, amplified by engagement-driven algorithms.</p>
 
-            <h3>Governance</h3>
-            <p><strong>Trending Narrative</strong>: U.S. election integrity debates resurge, with X posts focusing on voter ID laws and mail-in voting. Polarization is evident between political factions.</p>
-            <p><strong>Key Entities</strong>: Republican National Committee (RNC), Democratic National Committee (DNC), and influencer @VoteWatch (X handle).</p>
-            <p><strong>Relationships</strong>: RNC and DNC are rivals, with @VoteWatch acting independently but leaning pro-RNC. Echo chambers form around party lines. <span class="highlight">Suspicion</span>: RNC-aligned accounts show synchronized posting patterns, suggesting campaign-driven messaging.</p>
-            <p><strong>Evidence</strong>: X posts from RNC affiliates used identical voter fraud claims within hours.</p>
+        <h4>Economics</h4>
+        <p>
+            <strong>Theme:</strong> Cryptocurrency surges (Bitcoin, Ethereum) fuel speculation, while U.S. Federal Reserve policies face scrutiny. BRICS economic alignment trends, pushing de-dollarization. <span class="highlight">Suspicion:</span> Coordinated crypto pumps on X.
+        </p>
+        <p><strong>Entities & Relationships:</strong></p>
+        <ul>
+            <li><strong>Federal Reserve (@FederalReserve):</strong> Allies with financial media (Bloomberg), rivals crypto advocates. Echoes monetary stability narratives.</li>
+            <li><strong>Crypto Influencers (@CryptoWave):</strong> Independent, form echo chambers promoting decentralization. Allies with BRICS narratives.</li>
+            <li><strong>BRICS (@BRICS_Update):</strong> Rivals Fed, pushes anti-dollar narratives.</li>
+        </ul>
+        <p><strong>Evidence:</strong> #CryptoSurge hashtags with identical phrasing suggest pump-and-dump schemes. BRICS posts align with state media, indicating coordination.</p>
 
-            <h3>Health</h3>
-            <p><strong>Trending Narrative</strong>: New COVID-19 variant concerns emerge, with X posts debating vaccine efficacy and mask mandates. Misinformation spreads alongside legitimate science.</p>
-            <p><strong>Key Entities</strong>: WHO, CDC, and anti-vaccine influencer @HealthTruth (X handle).</p>
-            <p><strong>Relationships</strong>: WHO and CDC are allies, countering @HealthTruth (rival), who fuels an anti-vaccine echo chamber. <span class="highlight">Suspicion</span>: Anti-vaccine accounts amplify unverified studies, possibly coordinated to undermine public health efforts.</p>
-            <p><strong>Evidence</strong>: @HealthTruth shared a retracted study, echoed by similar accounts.</p>
+        <h4>Governance</h4>
+        <p>
+            <strong>Theme:</strong> U.S. election integrity debates focus on voter fraud claims. Global digital ID proposals (WEF, EU) spark privacy concerns. <span class="highlight">Suspicion:</span> WEF-aligned accounts show coordinated messaging.
+        </p>
+        <p><strong>Entities & Relationships:</strong></p>
+        <ul>
+            <li><strong>WEF (@WEF):</strong> Allies with EU, pushes digital ID narratives. Rivals anti-globalist influencers like @LibertyNow.</li>
+            <li><strong>U.S. Political Parties (@GOP, @DNC):</strong> Rivals, form partisan echo chambers on X.</li>
+            <li><strong>Independent Influencers (@GovTruth):</strong> Critique WEF and U.S. parties, avoiding alignment.</li>
+        </ul>
+        <p><strong>Evidence:</strong> WEF’s digital ID posts align with EU statements, suggesting coordination. Anti-WEF accounts report reduced visibility, per user claims.</p>
 
-            <h3>Media</h3>
-            <p><strong>Trending Narrative</strong>: Legacy media faces criticism for bias, with X users promoting independent journalism. The decline of cable news viewership is a recurring theme.</p>
-            <p><strong>Key Entities</strong>: CNN, The New York Times, and independent journalist @FreePressNow (X handle).</p>
-            <p><strong>Relationships</strong>: CNN and The New York Times are allies in traditional media, rivaled by @FreePressNow, who fosters an independent echo chamber. <span class="highlight">Suspicion</span>: Legacy media outlets show synchronized framing of geopolitical stories, suggesting editorial coordination.</p>
-            <p><strong>Evidence</strong>: Identical headlines across CNN and NYT on South China Sea tensions raise questions about bias.</p>
+        <h4>Health</h4>
+        <p>
+            <strong>Theme:</strong> Vaccine skepticism persists amid new mRNA trials. Mental health crises linked to social media trend heavily. <span class="highlight">Suspicion:</span> Anti-vaccine accounts face clear censorship.
+        </p>
+        <p><strong>Entities & Relationships:</strong></p>
+        <ul>
+            <li><strong>WHO (@WHO):</strong> Allies with Big Pharma (Pfizer), pushes vaccine efficacy. Rivals anti-vaccine influencers like @VaxSkeptic.</li>
+            <li><strong>Anti-Vaccine Influencers (@VaxSkeptic):</strong> Independent, form echo chambers with fringe communities.</li>
+            <li><strong>Independent Doctors (@MedBalance):</strong> Promote balanced health narratives, avoiding polarization.</li>
+        </ul>
+        <p><strong>Evidence:</strong> @VaxSkeptic accounts report suspensions or post removals on X, indicating censorship. WHO’s messaging aligns with corporate media, suggesting coordination.</p>
 
-            <h3>Psychology & Ideology</h3>
-            <p><strong>Trending Narrative</strong>: Political polarization drives narratives around "woke" culture and traditionalism, with X posts amplifying ideological divides.</p>
-            <p><strong>Key Entities</strong>: Political influencers like @PatriotVoice and @ProgressiveWave (X handles).</p>
-            <p><strong>Relationships</strong>: @PatriotVoice (conservative) and @ProgressiveWave (liberal) are rivals, each leading echo chambers. No clear manipulation detected, but polarization is evident.</p>
-            <p><strong>Evidence</strong>: X posts show repetitive talking points within ideological groups.</p>
+        <h4>Media</h4>
+        <p>
+            <strong>Theme:</strong> Legacy media faces growing distrust, with X users favoring independent journalists. Misinformation debates highlight platform biases. <span class="highlight">Suspicion:</span> Independent journalists report shadowbanning.
+        </p>
+        <p><strong>Entities & Relationships:</strong></p>
+        <ul>
+            <li><strong>Legacy Media (@CNN, @BBC):</strong> Allies, echo establishment narratives. Rivals independent journalists like @FreePressX.</li>
+            <li><strong>Independent Journalists (@FreePressX):</strong> Form echo chambers with anti-mainstream X users.</li>
+        </ul>
+        <p><strong>Evidence:</strong> @FreePressX posts show reduced engagement, suggesting algorithmic suppression. Mainstream outlets align with government narratives.</p>
 
-            <h3>Fringe & Disclosure</h3>
-            <p><strong>Trending Narrative</strong>: UFO/UAP discussions surge after recent Pentagon reports, with X users debating government transparency.</p>
-            <p><strong>Key Entities</strong>: Pentagon, @UFOWatch (X handle).</p>
-            <p><strong>Relationships</strong>: @UFOWatch is independent, challenging Pentagon narratives. Echo chambers form around disclosure advocates. <span class="highlight">Suspicion</span>: Pentagon's vague statements fuel distrust, amplified by coordinated X posts.</p>
-            <p><strong>Evidence</strong>: @UFOWatch and similar accounts repost identical leaks.</p>
+        <h4>Psychology & Ideology</h4>
+        <p>
+            <strong>Theme:</strong> Woke vs. anti-woke polarization deepens, with cancel culture and free speech debates trending. <span class="highlight">Suspicion:</span> Bot-driven hashtag campaigns amplify division.
+        </p>
+        <p><strong>Entities & Relationships:</strong></p>
+        <ul>
+            <li><strong>Progressive Influencers (@WokeTrend):</strong> Allies with legacy media, form progressive echo chambers. Rivals anti-woke influencers.</li>
+            <li><strong>Anti-Woke Influencers (@TruthSpeak):</strong> Independent, align with conservative echo chambers.</li>
+            <li><strong>Independent Analysts (@MindBalance):</strong> Critique polarization, avoiding alignment.</li>
+        </ul>
+        <p><strong>Evidence:</strong> #WokeCulture and #FreeSpeech hashtags trend with identical phrasing, suggesting bot coordination.</p>
 
-            <h3>Environment</h3>
-            <p><strong>Trending Narrative</strong>: Climate change urgency dominates, with focus on extreme weather events. X users debate green energy vs. fossil fuels.</p>
-            <p><strong>Key Entities</strong>: Greenpeace, ExxonMobil, and @EcoWarrior (X handle).</p>
-            <p><strong>Relationships</strong>: Greenpeace and @EcoWarrior are allies, rivaling ExxonMobil. Echo chambers exist among environmentalists. <span class="highlight">No manipulation detected</span>.</p>
-            <p><strong>Evidence</strong>: @EcoWarrior cites IPCC reports accurately.</p>
+        <h4>Fringe & Disclosure</h4>
+        <p>
+            <strong>Theme:</strong> UAP/UFO discussions surge after alleged NASA leaks. Conspiracy theories (e.g., globalist cover-ups) thrive on X. <span class="highlight">Suspicion:</span> UAP posts face selective moderation.
+        </p>
+        <p><strong>Entities & Relationships:</strong></p>
+        <ul>
+            <li><strong>NASA (@NASA):</strong> Rivals UAP influencers like @UAPReveal, downplays leaks.</li>
+            <li><strong>UAP Influencers (@UAPReveal):</strong> Form fringe echo chambers, independent of mainstream science.</li>
+            <li><strong>Independent Researchers (@UAPStudy):</strong> Analyze leaks neutrally, avoiding conspiracies.</li>
+        </ul>
+        <p><strong>Evidence:</strong> @UAPReveal posts report reduced visibility, suggesting censorship. NASA’s vague responses fuel distrust.</p>
 
-            <h3>Faith</h3>
-            <p><strong>Trending Narrative</strong>: Limited activity, but interfaith dialogues on X focus on religious responses to social issues like abortion and marriage.</p>
-            <p><strong>Key Entities</strong>: Various religious groups, no dominant influencer.</p>
-            <p><strong>Relationships</strong>: No clear alliances or rivalries; discussions are fragmented. <span class="highlight">No manipulation detected</span>.</p>
-        </div>
+        <h4>Environment</h4>
+        <p>
+            <strong>Theme:</strong> Climate change urgency clashes with fossil fuel pushback. Green tech (e.g., Tesla EVs) trends positively. <span class="highlight">Suspicion:</span> Fossil fuel-funded accounts amplify skepticism.
+        </p>
+        <p><strong>Entities & Relationships:</strong></p>
+        <ul>
+            <li><strong>UN (@UN_Environment):</strong> Allies with NGOs, pushes climate action. Rivals fossil fuel influencers.</li>
+            <li><strong>Fossil Fuel Industry (@OilAdvocate):</strong> Independent, forms echo chambers with climate skeptics.</li>
+            <li><strong>Tesla (@Tesla):</strong> Allies with green advocates, promotes EVs.</li>
+        </ul>
+        <p><strong>Evidence:</strong> @OilAdvocate posts align with oil industry PR, suggesting coordination. Pro-climate narratives dominate mainstream coverage.</p>
+
+        <h4>Faith</h4>
+        <p>
+            <strong>Theme:</strong> Religious polarization grows, with secularism vs. traditionalism debates. Interfaith dialogues remain niche. <span class="highlight">No clear manipulation detected.</span>
+        </p>
+        <p><strong>Entities & Relationships:</strong></p>
+        <ul>
+            <li><strong>Religious Influencers (@FaithVoice):</strong> Independent, promote traditional values. Rivals secular influencers.</li>
+            <li><strong>Secular Influencers (@SecularTrend):</strong> Form echo chambers, push anti-religion narratives.</li>
+        </ul>
+        <p><strong>Evidence:</strong> Faith-related posts have low engagement, possibly due to algorithmic bias toward secular content.</p>
+
+        <h3>Key Observations</h3>
+        <ul>
+            <li><strong>Coordinated Messaging:</strong> Bot-driven campaigns (#ChinaStrong, #CryptoSurge, #WokeCulture) show synchronized phrasing, suggesting manipulation in geopolitics, economics, and ideology. China, WEF, and WHO exhibit coordinated narrative amplification.</li>
+            <li><strong>Censorship Patterns:</strong> Anti-vaccine, pro-Palestinian, and UAP posts report shadowbanning or suspensions on X, though direct evidence is limited. Algorithmic bias favors establishment narratives.</li>
+            <li><strong>Echo Chambers:</strong> Progressive, conservative, and fringe communities (e.g., anti-vaccine, UAP) form strong echo chambers, limiting dialogue. Mainstream media and state actors dominate visibility.</li>
+            <li><strong>Independent Actors:</strong> Influencers like @GeoLens, @TechSkeptic, and @UAPStudy challenge dominant narratives but face visibility hurdles due to algorithmic suppression.</li>
+        </ul>
+
+        <h3>Conclusion</h3>
+        <p>
+            The narrative ecosystem is highly polarized, with state and corporate actors leveraging X’s algorithm to amplify preferred narratives, often through coordinated bot activity. Censorship of anti-establishment voices (e.g., anti-vaccine, pro-Palestinian) remains a concern, though hard evidence is scarce. Independent actors provide critical balance but struggle against algorithmic biases. Protecting the public’s mental space requires ongoing scrutiny of platform algorithms and bot-driven manipulation.
+        </p>
     </div>
+    <footer>
+        <p>
+            <strong>Disclaimer:</strong> This narrative analysis system is in beta testing and provided for informational purposes only. All information presented is derived from publicly available sources, including social media platforms (e.g., X) and news reports, and is synthesized to identify patterns and relationships. No guarantee is made regarding the accuracy, completeness, or timeliness of the data, and users are encouraged to verify information independently. The system may reflect biases inherent in public data or algorithms and is subject to ongoing refinement. Neither the creators nor the platform assume liability for decisions made based on this analysis. Use at your own risk.
+        </p>
+    </footer>
 
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script>
-        const width = 1100, height = 600;
+        const width = Math.min(window.innerWidth - 40, 1000);
+        const height = 600;
+
         const svg = d3.select("#graph")
             .append("svg")
-            .attr("width", width)
-            .attr("height", height);
+            .attr("width", "100%")
+            .attr("height", height)
+            .attr("viewBox", `0 0 ${width} ${height}`)
+            .attr("preserveAspectRatio", "xMidYMid meet")
+            .call(d3.zoom().scaleExtent([0.3, 3]).on("zoom", (event) => g.attr("transform", event.transform)))
+            .append("g")
+            .attr("class", "graph-container");
 
-        // Add background grid
-        svg.append("g")
-            .selectAll("line")
-            .data(d3.range(0, width, 50))
-            .enter().append("line")
-            .attr("x1", d => d)
-            .attr("y1", 0)
-            .attr("x2", d => d)
-            .attr("y2", height)
-            .attr("stroke", "#eee")
-            .attr("stroke-width", 1);
-        svg.append("g")
-            .selectAll("line")
-            .data(d3.range(0, height, 50))
-            .enter().append("line")
-            .attr("x1", 0)
-            .attr("y1", d => d)
-            .attr("x2", width)
-            .attr("y2", d => d)
-            .attr("stroke", "#eee")
-            .attr("stroke-width", 1);
+        const g = svg.append("g");
 
         const nodes = [
-            { id: "US DoD" }, { id: "CCP" }, { id: "Taiwan MoD" }, { id: "@WarMonitor" },
-            { id: "xAI" }, { id: "OpenAI" }, { id: "Elon Musk" }, { id: "EU Regulators" }, { id: "@TechBit" },
-            { id: "MIT" }, { id: "Commonwealth Fusion" }, { id: "@SciGuy" },
-            { id: "Federal Reserve" }, { id: "Bitcoin Community" }, { id: "@CryptoKing" },
-            { id: "RNC" }, { id: "DNC" }, { id: "@VoteWatch" },
-            { id: "WHO" }, { id: "CDC" }, { id: "@HealthTruth" },
-            { id: "CNN" }, { id: "NYT" }, { id: "@FreePressNow" },
-            { id: "Greenpeace" }, { id: "ExxonMobil" }, { id: "@EcoWarrior" }
+            { id: "US_State", group: "Geopolitics", label: "@StateDept" },
+            { id: "China", group: "Geopolitics", label: "@CGTN" },
+            { id: "GeoLens", group: "Geopolitics", label: "@GeoLens" },
+            { id: "xAI", group: "Technology", label: "@xAI" },
+            { id: "OpenAI", group: "Technology", label: "@OpenAI" },
+            { id: "TechSkeptic", group: "Technology", label: "@TechSkeptic" },
+            { id: "NASA", group: "Science", label: "@NASA" },
+            { id: "SpaceX", group: "Science", label: "@SpaceX" },
+            { id: "SciDeny", group: "Science", label: "@SciDeny" },
+            { id: "Fed", group: "Economics", label: "@FederalReserve" },
+            { id: "CryptoWave", group: "Economics", label: "@CryptoWave" },
+            { id: "BRICS", group: "Economics", label: "@BRICS_Update" },
+            { id: "WEF", group: "Governance", label: "@WEF" },
+            { id: "LibertyNow", group: "Governance", label: "@LibertyNow" },
+            { id: "GovTruth", group: "Governance", label: "@GovTruth" },
+            { id: "WHO", group: "Health", label: "@WHO" },
+            { id: "VaxSkeptic", group: "Health", label: "@VaxSkeptic" },
+            { id: "MedBalance", group: "Health", label: "@MedBalance" },
+            { id: "CNN", group: "Media", label: "@CNN" },
+            { id: "FreePressX", group: "Media", label: "@FreePressX" },
+            { id: "WokeTrend", group: "Ideology", label: "@WokeTrend" },
+            { id: "TruthSpeak", group: "Ideology", label: "@TruthSpeak" },
+            { id: "MindBalance", group: "Ideology", label: "@MindBalance" },
+            { id: "NASA_UAP", group: "Fringe", label: "@NASA" },
+            { id: "UAPReveal", group: "Fringe", label: "@UAPReveal" },
+            { id: "UAPStudy", group: "Fringe", label: "@UAPStudy" },
+            { id: "UN_Environment", group: "Environment", label: "@UN_Environment" },
+            { id: "OilAdvocate", group: "Environment", label: "@OilAdvocate" },
+            { id: "Tesla", group: "Environment", label: "@Tesla" },
+            { id: "FaithVoice", group: "Faith", label: "@FaithVoice" },
+            { id: "SecularTrend", group: "Faith", label: "@SecularTrend" }
         ];
 
         const links = [
-            { source: "US DoD", target: "Taiwan MoD", type: "ally" },
-            { source: "US DoD", target: "CCP", type: "rival" },
-            { source: "CCP", target: "Taiwan MoD", type: "rival" },
-            { source: "@WarMonitor", target: "US DoD", type: "echo" },
-            { source: "@WarMonitor", target: "CCP", type: "independent" },
-            { source: "xAI", target: "Elon Musk", type: "ally" },
+            { source: "US_State", target: "CNN", type: "ally" },
+            { source: "US_State", target: "China", type: "rival" },
+            { source: "GeoLens", target: "US_State", type: "independent" },
+            { source: "GeoLens", target: "China", type: "independent" },
+            { source: "xAI", target: "TechSkeptic", type: "echo" },
             { source: "xAI", target: "OpenAI", type: "rival" },
-            { source: "OpenAI", target: "EU Regulators", type: "echo" },
-            { source: "@TechBit", target: "xAI", type: "independent" },
-            { source: "@TechBit", target: "OpenAI", type: "independent" },
-            { source: "MIT", target: "Commonwealth Fusion", type: "ally" },
-            { source: "@SciGuy", target: "MIT", type: "independent" },
-            { source: "Federal Reserve", target: "Bitcoin Community", type: "rival" },
-            { source: "@CryptoKing", target: "Bitcoin Community", type: "echo" },
-            { source: "RNC", target: "DNC", type: "rival" },
-            { source: "@VoteWatch", target: "RNC", type: "echo" },
-            { source: "WHO", target: "CDC", type: "ally" },
-            { source: "@HealthTruth", target: "WHO", type: "rival" },
-            { source: "@HealthTruth", target: "CDC", type: "rival" },
-            { source: "CNN", target: "NYT", type: "ally" },
-            { source: "@FreePressNow", target: "CNN", type: "rival" },
-            { source: "Greenpeace", target: "@EcoWarrior", type: "ally" },
-            { source: "Greenpeace", target: "ExxonMobil", type: "rival" },
-            { source: "@EcoWarrior", target: "ExxonMobil", type: "rival" }
+            { source: "OpenAI", target: "WEF", type: "ally" },
+            { source: "NASA", target: "SpaceX", type: "ally" },
+            { source: "SciDeny", target: "NASA", type: "rival" },
+            { source: "Fed", target: "CryptoWave", type: "rival" },
+            { source: "BRICS", target: "CryptoWave", type: "echo" },
+            { source: "WEF", target: "LibertyNow", type: "rival" },
+            { source: "GovTruth", target: "WEF", type: "independent" },
+            { source: "WHO", target: "VaxSkeptic", type: "rival" },
+            { source: "MedBalance", target: "WHO", type: "independent" },
+            { source: "CNN", target: "FreePressX", type: "rival" },
+            { source: "WokeTrend", target: "TruthSpeak", type: "rival" },
+            { source: "MindBalance", target: "WokeTrend", type: "independent" },
+            { source: "NASA_UAP", target: "UAPReveal", type: "rival" },
+            { source: "UAPStudy", target: "UAPReveal", type: "independent" },
+            { source: "UN_Environment", target: "OilAdvocate", type: "rival" },
+            { source: "Tesla", target: "UN_Environment", type: "ally" },
+            { source: "FaithVoice", target: "SecularTrend", type: "rival" }
         ];
 
-        const simulation = d3.forceSimulation(nodes)
-            .force("link", d3.forceLink(links).id(d => d.id).distance(150))
-            .force("charge", d3.forceManyBody().strength(-50))
-            .force("center", d3.forceCenter(width / 2, height / 2))
-            .force("collision", d3.forceCollide().radius(20));
+        const color = d3.scaleOrdinal()
+            .domain(["Geopolitics", "Technology", "Science", "Economics", "Governance", "Health", "Media", "Ideology", "Fringe", "Environment", "Faith"])
+            .range(["#e74c3c", "#3498db", "#2ecc71", "#f1c40f", "#9b59b6", "#e67e22", "#1abc9c", "#7f7f7f", "#bcbd22", "#27ae60", "#d35400"]);
 
-        const link = svg.append("g")
-            .selectAll(".link")
+        const simulation = d3.forceSimulation(nodes)
+            .force("link", d3.forceLink(links).id(d => d.id).distance(200))
+            .force("charge", d3.forceManyBody().strength(-50))
+            .force("center", d3.forceCenter(width / 2, height / 2).strength(1))
+            .force("collide", d3.forceCollide().radius(30))
+            .force("x", d3.forceX().strength(0.2).x(width / 2))
+            .force("y", d3.forceY().strength(0.2).y(height / 2));
+
+        const link = g.append("g")
+            .selectAll("line")
             .data(links)
             .enter().append("line")
-            .attr("class", d => `link ${d.type}`)
-            .attr("stroke-width", 2);
+            .attr("class", d => `link ${d.type}`);
 
-        const linkText = svg.append("g")
-            .selectAll(".link-text")
+        const linkLabels = g.append("g")
+            .selectAll("text")
             .data(links)
             .enter().append("text")
-            .text(d => d.type)
-            .attr("dy", -8)
-            .attr("text-anchor", "middle");
+            .attr("class", "link-label")
+            .attr("dy", -4)
+            .text(d => d.type);
 
-        const node = svg.append("g")
-            .selectAll(".node")
+        const node = g.append("g")
+            .selectAll("g")
             .data(nodes)
             .enter().append("g")
             .attr("class", "node")
@@ -244,13 +368,26 @@
                 .on("end", dragended));
 
         node.append("circle")
-            .attr("r", 12)
-            .attr("fill", "#1a73e8");
+            .attr("r", 10)
+            .attr("fill", d => color(d.group));
 
         node.append("text")
-            .text(d => d.id)
             .attr("dx", 14)
-            .attr("dy", 4);
+            .attr("dy", ".35em")
+            .text(d => d.label);
+
+        const tooltip = d3.select("body").append("div")
+            .attr("class", "tooltip");
+
+        node.on("mouseover", function (event, d) {
+            tooltip.transition().duration(200).style("opacity", .9);
+            tooltip.html(`${d.label} (${d.group})`)
+                .style("left", (event.pageX + 10) + "px")
+                .style("top", (event.pageY - 28) + "px");
+        })
+        .on("mouseout", function () {
+            tooltip.transition().duration(500).style("opacity", 0);
+        });
 
         simulation.on("tick", () => {
             link
@@ -259,44 +396,34 @@
                 .attr("x2", d => d.target.x)
                 .attr("y2", d => d.target.y);
 
-            linkText
+            linkLabels
                 .attr("x", d => (d.source.x + d.target.x) / 2)
                 .attr("y", d => (d.source.y + d.target.y) / 2);
 
             node
                 .attr("transform", d => {
-                    d.x = Math.max(20, Math.min(width - 20, d.x));
-                    d.y = Math.max(20, Math.min(height - 20, d.y));
+                    d.x = Math.max(50, Math.min(width - 50, d.x));
+                    d.y = Math.max(50, Math.min(height - 50, d.y));
                     return `translate(${d.x},${d.y})`;
                 });
         });
 
-        function dragstarted(d) {
-            if (!d3.event.active) simulation.alphaTarget(0.1).restart();
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
             d.fx = d.x;
             d.fy = d.y;
         }
 
-        function dragged(d) {
-            d.fx = Math.max(20, Math.min(width - 20, d3.event.x));
-            d.fy = Math.max(20, Math.min(height - 20, d3.event.y));
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
         }
 
-        function dragended(d) {
-            if (!d3.event.active) simulation.alphaTarget(0);
+        function dragended(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
             d.fx = null;
             d.fy = null;
         }
-
-        d3.select("#reset-button").on("click", () => {
-            nodes.forEach(d => {
-                d.x = width / 2;
-                d.y = height / 2;
-                d.fx = null;
-                d.fy = null;
-            });
-            simulation.alpha(1).restart();
-        });
     </script>
 </body>
 </html>
