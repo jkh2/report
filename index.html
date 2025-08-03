@@ -16,7 +16,7 @@
         h1, h2, h3 {
             color: #2c3e50;
         }
-        #graph {
+        #graph, #cost-graph {
             width: 100%;
             height: 600px;
             background-color: #fff;
@@ -25,7 +25,10 @@
             margin-bottom: 20px;
             overflow: hidden;
         }
-        .report {
+        #cost-graph {
+            height: 200px;
+        }
+        .report, .donation-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
@@ -33,7 +36,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .report p, .report ul {
+        .report p, .report ul, .donation-container p {
             margin-bottom: 15px;
         }
         .report ul {
@@ -66,6 +69,27 @@
         .link-label {
             font-size: 10px;
             fill: #555;
+        }
+        .bar {
+            fill-opacity: 0.8;
+            transition: height 0.5s ease;
+        }
+        .bar-label {
+            font-size: 12px;
+            fill: #333;
+        }
+        .donation-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2ecc71;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .donation-button:hover {
+            background-color: #27ae60;
         }
         .tooltip {
             position: absolute;
@@ -256,6 +280,12 @@
             The 2025 narrative ecosystem is complex, driven by geopolitical, technological, and environmental shifts. Coordinated messaging and censorship threaten discourse, but independent voices offer balance. Media literacy and transparency are key to protecting the public’s mental space, aligning with our partnership to improve daily.
         </p>
     </div>
+    <div class="donation-container">
+        <h2>Support Our Mission</h2>
+        <p>Help us keep this service free by donating to cover our costs. All funds go toward improving our narrative analysis tools.</p>
+        <div id="cost-graph"></div>
+        <a href="https://cash.app/$Americanadventurer" class="donation-button">Donate via Cash App</a>
+    </div>
     <footer>
         <p>
             <strong>Disclaimer:</strong> This narrative analysis system is in beta testing and provided for informational purposes only. All information presented is derived from publicly available sources, including social media platforms (e.g., X) and news reports, and is synthesized to identify patterns and relationships. No guarantee is made regarding the accuracy, completeness, or timeliness of the data, and users are encouraged to verify information independently. The system may reflect biases inherent in public data or algorithms and is subject to ongoing refinement. Neither the creators nor the platform assume liability for decisions made based on this analysis. Use at your own risk.
@@ -264,6 +294,7 @@
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script>
+        // Mind Map Visualization
         const width = Math.min(window.innerWidth - 40, 1000);
         const height = 600;
 
@@ -401,17 +432,18 @@
             .attr("dy", ".35em")
             .text(d => d.label);
 
-        const tooltip = d3.select("body").append("div")
-            .attr("class", "tooltip");
+        const tooltipMindMap = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .attr("id", "tooltip-mindmap");
 
         node.on("mouseover", function (event, d) {
-            tooltip.transition().duration(200).style("opacity", .9);
-            tooltip.html(`${d.label} (${d.group})`)
+            tooltipMindMap.transition().duration(200).style("opacity", .9);
+            tooltipMindMap.html(`${d.label} (${d.group})`)
                 .style("left", (event.pageX + 10) + "px")
                 .style("top", (event.pageY - 28) + "px");
         })
         .on("mouseout", function () {
-            tooltip.transition().duration(500).style("opacity", 0);
+            tooltipMindMap.transition().duration(500).style("opacity", 0);
         });
 
         simulation.on("tick", () => {
@@ -449,6 +481,113 @@
             d.fx = null;
             d.fy = null;
         }
+
+        // Cost Visualization
+        const costWidth = Math.min(window.innerWidth - 40, 1000);
+        const costHeight = 200;
+        const margin = { top: 20, right: 20, bottom: 30, left: 50 };
+
+        const costSvg = d3.select("#cost-graph")
+            .append("svg")
+            .attr("width", "100%")
+            .attr("height", costHeight)
+            .attr("viewBox", `0 0 ${costWidth} ${costHeight}`)
+            .attr("preserveAspectRatio", "xMidYMid meet")
+            .append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        const costData = [
+            { name: "Hosting", cost: 50, funded: 40 },
+            { name: "API Calls", cost: 20, funded: 10 },
+            { name: "Development", cost: 30, funded: 15 },
+            { name: "Maintenance", cost: 15, funded: 15 }
+        ];
+
+        const x = d3.scaleBand()
+            .domain(costData.map(d => d.name))
+            .range([0, costWidth - margin.left - margin.right])
+            .padding(0.1);
+
+        const y = d3.scaleLinear()
+            .domain([0, d3.max(costData, d => d.cost) * 1.2])
+            .range([costHeight - margin.top - margin.bottom, 0]);
+
+        costSvg.append("g")
+            .attr("transform", `translate(0,${costHeight - margin.top - margin.bottom})`)
+            .call(d3.axisBottom(x))
+            .selectAll("text")
+            .style("font-size", "12px");
+
+        costSvg.append("g")
+            .call(d3.axisLeft(y).ticks(5))
+            .selectAll("text")
+            .style("font-size", "12px");
+
+        const bars = costSvg.selectAll(".bar")
+            .data(costData)
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("x", d => x(d.name))
+            .attr("y", d => y(d.funded))
+            .attr("width", x.bandwidth() / 2)
+            .attr("height", d => costHeight - margin.top - margin.bottom - y(d.funded))
+            .attr("fill", d => d.funded >= d.cost ? "#2ecc71" : "#e74c3c");
+
+        const targetLines = costSvg.selectAll(".target-line")
+            .data(costData)
+            .enter().append("line")
+            .attr("x1", d => x(d.name))
+            .attr("x2", d => x(d.name) + x.bandwidth() / 2)
+            .attr("y1", d => y(d.cost))
+            .attr("y2", d => y(d.cost))
+            .attr("stroke", "#333")
+            .attr("stroke-width", 2)
+            .attr("stroke-dasharray", "5,5");
+
+        const barLabels = costSvg.selectAll(".bar-label")
+            .data(costData)
+            .enter().append("text")
+            .attr("class", "bar-label")
+            .attr("x", d => x(d.name) + x.bandwidth() / 4)
+            .attr("y", d => y(d.funded) - 5)
+            .attr("text-anchor", "middle")
+            .text(d => `$${d.funded}/$${d.cost}`);
+
+        const tooltipCost = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .attr("id", "tooltip-cost");
+
+        bars.on("mouseover", function (event, d) {
+            tooltipCost.transition().duration(200).style("opacity", .9);
+            tooltipCost.html(`${d.name}: $${d.funded} of $${d.cost} funded`)
+                .style("left", (event.pageX + 10) + "px")
+                .style("top", (event.pageY - 28) + "px");
+        })
+        .on("mouseout", function () {
+            tooltipCost.transition().duration(500).style("opacity", 0);
+        });
+
+        function updateCostGraph() {
+            const newData = costData.map(d => ({
+                ...d,
+                funded: Math.min(d.funded + Math.random() * 5, d.cost) // Simulate funding updates
+            }));
+
+            bars.data(newData)
+                .transition()
+                .duration(500)
+                .attr("y", d => y(d.funded))
+                .attr("height", d => costHeight - margin.top - margin.bottom - y(d.funded))
+                .attr("fill", d => d.funded >= d.cost ? "#2ecc71" : "#e74c3c");
+
+            barLabels.data(newData)
+                .transition()
+                .duration(500)
+                .attr("y", d => y(d.funded) - 5)
+                .text(d => `$${Math.round(d.funded)}/$${d.cost}`);
+        }
+
+        setInterval(updateCostGraph, 5000);
     </script>
 </body>
 </html>
