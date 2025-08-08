@@ -392,9 +392,9 @@
 
         // Force-directed layout parameters
         const k = 0.01; // Reduced spring constant for slower movement
-        const repulsion = 100; // Reduced repulsion for gentler node separation
+        const repulsion = 50; // Reduced repulsion for gentler node separation
         const damping = 0.55; // Increased damping for quicker settling
-        const centerForce = 0.002; // Reduced center force for more manual control
+        const centerForce = 0.001; // Reduced center force for more manual control
 
         // Debounce function
         function debounce(func, wait) {
