@@ -18,9 +18,10 @@
             font-weight: 600;
         }
         #mindmap {
-            width: 80%;
-            height: 600px;
+            width: 80vw;
+            height: 60vh;
             max-width: 1000px;
+            min-height: 400px;
             margin: 20px auto;
             border: 2px solid #1e3a8a;
             background-color: #fff;
@@ -55,6 +56,8 @@
         canvas {
             display: block;
             border-radius: 10px;
+            width: 100%;
+            height: 100%;
         }
         .donate, .disclaimer {
             margin: 25px auto;
@@ -126,6 +129,10 @@
         tr:nth-child(even) {
             background-color: #f9fafb;
         }
+        [tabindex="0"]:focus {
+            outline: 2px solid #1e40af;
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body>
@@ -134,93 +141,116 @@
         <p>Mapping the narratives, relationships, and influences shaping the AI landscape</p>
     </div>
 
-    <canvas id="mindmap"></canvas>
+    <canvas id="mindmap" tabindex="0" aria-label="Interactive mind map of AI ecosystem entities and relationships"></canvas>
 
     <div class="report">
         <h2>Detailed Report</h2>
 
         <div class="section">
-            <h3>Overview</h3>
-            <p>As of 06:53 AM PDT on Friday, August 8, 2025, the AI ecosystem is undergoing rapid evolution, with significant advancements in model capabilities, increased enterprise adoption, and shifting narratives around AI’s role in society. This report analyzes global narrative patterns and relationships over the past 24 hours, focusing on key individuals, companies, and agents influencing AI discourse online, identifying alliances, rivalries, echo chambers, and detecting media coordination or messaging shifts. The analysis draws from recent social media posts, news, and web trends to provide a comprehensive overview.</p>
+            <h3>Introduction and Context</h3>
+            <p>This analysis, conducted at 08:27 AM PDT on Friday, August 8, 2025, examines the narrative ecosystem surrounding the AI industry over the past 24 hours, focusing on social media platforms (X, Facebook, YouTube, Bluesky) and news media. The goal is to identify trending narratives, key entities driving discourse, map alliances, rivalries, echo chambers, and independent actors, and detect coordinated messaging, manipulation, or censorship. This report aims to defend the American public's mental space by providing a comprehensive, unbiased overview, ensuring clarity and accessibility for all stakeholders.</p>
         </div>
 
         <div class="section">
             <h3>Methodology</h3>
-            <p>The analysis involved examining X posts from August 7 to August 8, 2025, targeting AI trends, specific influencers (@elonmusk, @sama, @andrewng, @yannlecun), and general discourse. Web searches for current AI ecosystem narratives supplemented this, focusing on news, cross-platform studies, papers, and public leaks. The data was synthesized to identify patterns, relationships, and narrative themes, with a focus on avoiding corporate bias and ensuring accuracy.</p>
+            <p>The analysis leverages recent web searches and social media posts to capture real-time trends. Web searches identified news articles from sources like WSJ, TechCrunch, Reuters, and BBC, covering topics such as AI's impact on consulting, legal issues, and technological advancements. Social media analysis focused on X posts, given their high engagement and visibility, with additional consideration for platforms like Facebook, YouTube, and Bluesky, though specific data from the latter was limited in the timeframe. The analysis identifies key entities (companies, governments, influencers, independent actors) and maps their relationships based on narrative alignment and interaction patterns.</p>
         </div>
 
         <div class="section">
-            <h3>Key Findings</h3>
-
-            <div class="section">
-                <h4>Trends and Narratives</h4>
-                <p>The AI ecosystem is currently dominated by several key trends and narratives:</p>
-                <ul>
-                    <li><strong>Advancements in AI Models:</strong> The release of GPT-5 by OpenAI has been a central topic, with posts highlighting its improved capabilities in health queries, coding, and complex software engineering tasks. Sam Altman (@sama) emphasized GPT-5’s accessibility to everyone, including free-tier users, and its integration as a smart, intuitive model. Google DeepMind’s Genie3 and Veo3 were also mentioned, indicating ongoing innovation and competition.</li>
-                    <li><strong>Agentic and Autonomous AI:</strong> There’s a strong focus on agentic AI, where systems perform tasks independently, and autonomous systems that collaborate and learn. Posts discussed trends like autonomous long-term memory, multi-agent collaboration, and the integration of large language models (LLMs) with multimodal AI, reshaping industries.</li>
-                    <li><strong>Enterprise Adoption and Investment:</strong> Enterprise spending on AI has surged, with one post noting an increase from $2.3B in 2023 to $13.8B in 2025, though a third of leaders still struggle with deployment. AI infrastructure is a hot category for venture capital, with Nvidia’s market cap surpassing Amazon, reflecting demand for GPU-based solutions.</li>
-                    <li><strong>Open-Source vs. Closed Systems:</strong> Open-source AI models are closing the gap with closed systems, creating a rivalry. This was evident in discussions about new architectures like Mamba or liquid neural networks, challenging proprietary models like those from OpenAI.</li>
-                    <li><strong>AI in Various Industries:</strong> AI’s application in healthcare, finance, and social media was prominent. Elon Musk claimed AI is already better than most doctors, while discussions highlighted AI in DeFi (decentralized finance) and AI-generated content on TikTok, with creators making millions.</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h4>Key Individuals and Companies</h4>
-                <p>Several entities are shaping AI discourse:</p>
-                <ul>
-                    <li><strong>Individuals:</strong>
-                        <ul>
-                            <li><strong>Sam Altman (@sama):</strong> As CEO of OpenAI, he has been actively promoting GPT-5, with multiple posts detailing its capabilities and accessibility, emphasizing real-world utility for a billion+ people.</li>
-                            <li><strong>Elon Musk (@elonmusk):</strong> Known for his involvement in xAI and Tesla, he commented on AI’s superiority over human doctors, suggesting it will impact all jobs, including his own.</li>
-                            <li>Other influencers, like @HaroldSinnott, shared statistics from Salesmate and Microsoft on AI trends, amplifying enterprise adoption narratives.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Companies:</strong>
-                        <ul>
-                            <li><strong>OpenAI:</strong> Central to current discourse due to GPT-5, with alliances with Microsoft and Azure, providing cloud infrastructure.</li>
-                            <li><strong>Microsoft:</strong> A major player with investments in OpenAI and its own AI initiatives, including Azure’s GPU ramp for massive onboarding.</li>
-                            <li><strong>Google DeepMind:</strong> Mentioned for models like Genie3 and Veo3, indicating competition with OpenAI.</li>
-                            <li><strong>Nvidia:</strong> Highlighted for its role in AI infrastructure, with posts noting its $4T market cap, now bigger than Amazon.</li>
-                            <li><strong>Apple:</strong> Discussed for building on-device AI models, contributing to the AI super cycle narrative.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h4>Alliances and Rivalries</h4>
-                <p>Relationships within the ecosystem are shaping narratives:</p>
-                <ul>
-                    <li><strong>Alliances:</strong>
-                        <ul>
-                            <li>OpenAI and Microsoft have a strong partnership, with Microsoft’s investment and collaborative efforts on AI projects evident in posts about Azure’s role in supporting OpenAI’s models.</li>
-                            <li>OpenAI and Azure are closely linked, with Azure providing the cloud infrastructure for OpenAI’s offerings, reflected in discussions about GPU ramps for enterprise onboarding.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Rivalries:</strong>
-                        <ul>
-                            <li>There’s a growing rivalry between open-source AI initiatives and closed systems, with posts noting open-source models closing the performance gap with closed models like OpenAI’s. This tension is evident in discussions about new architectures challenging proprietary approaches.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h4>Echo Chambers and Media Coordination</h4>
-                <p>The discourse reveals potential echo chambers and messaging shifts:</p>
-                <ul>
-                    <li><strong>Echo Chambers:</strong> There appears to be a pro-AI accelerationist echo chamber, with many posts hyping GPT-5 and agentic AI’s potential. This is seen in the high engagement on posts about AI surpassing human capabilities and the market front-running GPT-5 as a seismic catalyst. Conversely, there’s less visibility for AI safety concerns, suggesting a bias toward accelerationist narratives.</li>
-                    <li><strong>Media Coordination:</strong> The consistent positive messaging around GPT-5, with multiple posts from Sam Altman and others amplifying its capabilities, could suggest a coordinated marketing effort by OpenAI and its partners. While no direct evidence of censorship was found, the lack of critical voices in the analyzed posts raises questions about potential echo chamber effects.</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h4>Suspicious Coordination or Censorship</h4>
-                <p>While there’s no definitive evidence of suspicious coordination or censorship, the uniformity in positive messaging around GPT-5 and the absence of dissenting views in the analyzed posts warrant further investigation. The high engagement on pro-AI posts might indicate algorithmic amplification, but this requires deeper analysis beyond the 24-hour window.</p>
+            <h3>Trending Narratives in the AI Industry</h3>
+            <p>The discourse reveals four primary narrative themes, each with significant traction:</p>
+            <ul>
+                <li><strong>AI Adoption and Investment:</strong> News articles and X posts highlight a surge in AI adoption, with enterprise spending increasing from $2.3 billion in 2023 to $13.8 billion in 2025, as noted by @ankitamohnani28. VCs are investing heavily in AI infrastructure, with @Shay_side mentioning Nvidia hitting a $4 trillion market cap, now larger than Amazon, and founders pivoting to autonomous agent-led workflows.</li>
+                <li><strong>AI Technological Advancements:</strong> Significant developments include OpenAI's release of GPT-5 and open-source models, as well as Apple's focus on on-device AI models. News from TechCrunch mentions Meta acquiring AI audio startup WaveForms, and BBC reports on OpenAI boosting ChatGPT to 'PhD-level' capabilities with GPT-5.</li>
+                <li><strong>AI Risks and Ethics:</strong> Concerns about AI risks are prominent, with X posts like @SirAnas01 listing dangers such as data collection, bias, job replacement, and deepfakes. @A_Modern_Man1 warns of overreliance killing creativity and ethical questions around data privacy.</li>
+                <li><strong>Geopolitical Aspects:</strong> Competition between US and Chinese AI developments is evident, with Reuters reporting Tesla streamlining AI chip design and China opening stores for life-like robots (BBC). This narrative underscores global rivalry, with the US focusing on regulation and China on innovation in robotics.</li>
+            </ul>
         </div>
 
         <div class="section">
-            <h4>Key Metrics</h4>
+            <h3>Key Entities Driving Discourse</h3>
+            <p>The following entities are central to the AI narrative ecosystem:</p>
+            <ul>
+                <li><strong>Companies:</strong>
+                    <ul>
+                        <li><strong>OpenAI:</strong> Leading with GPT-5 releases and open-source models, driving pro-AI narratives.</li>
+                        <li><strong>Google:</strong> Testing AI upgrades for Google Finance and developing Deepfake Hunter, competing with OpenAI.</li>
+                        <li><strong>Meta:</strong> Involved in AI defamation lawsuits and acquisitions like WaveForms, facing legal challenges.</li>
+                        <li><strong>Apple:</strong> Developing on-device AI models, aligning with technological advancement narratives.</li>
+                        <li><strong>Nvidia:</strong> Key in AI hardware, with a market cap surpassing Amazon, supporting AI infrastructure.</li>
+                        <li><strong>Tesla:</strong> Streamlining AI chip design, focusing on autonomous systems, and using Nvidia chips.</li>
+                        <li><strong>TCS:</strong> Facing layoffs due to AI, highlighting industry shakeups in outsourcing.</li>
+                        <li><strong>McKinsey:</strong> Experiencing an "existential" shift due to AI, impacting consulting.</li>
+                    </ul>
+                </li>
+                <li><strong>Governments:</strong>
+                    <ul>
+                        <li><strong>US Government:</strong> Likely to regulate AI companies, given mentions of biosecurity risks and job impacts.</li>
+                        <li><strong>Chinese Government:</strong> Supporting AI development, particularly in robotics, competing with US efforts.</li>
+                    </ul>
+                </li>
+                <li><strong>Influencers:</strong>
+                    <ul>
+                        <li>X users like @ankitamohnani28 (AI investment trends), @Philosopar (industry transformation), @Shay_side (VC interest), and @dux_zotto (enterprise adoption) drive pro-AI narratives.</li>
+                        <li>Anti-AI influencers include @SirAnas01 (AI dangers), @A_Modern_Man1 (ethical risks), and @TweekFawkes (cybersecurity risks), focusing on caution.</li>
+                    </ul>
+                </li>
+                <li><strong>Independent Actors:</strong>
+                    <ul>
+                        <li><strong>Open-source AI Community:</strong> Developing alternatives like Mamba, competing with closed-source models.</li>
+                        <li><strong>Academic Researchers:</strong> Institutions like Harvard (quantum computing chips) and MIT (eco-driving AI) contribute to discourse.</li>
+                        <li><strong>Individual Voices:</strong> jameskharwood2 (@jameskharwood2) is notable, discussing AI ethics, sentience, and tools like "EM DASH KILLER" for improving AI text, offering balanced perspectives.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Alliances, Rivalries, and Echo Chambers</h3>
+            <p>Relationships within the ecosystem are shaping narratives:</p>
+            <ul>
+                <li><strong>Alliances:</strong>
+                    <ul>
+                        <li>Tesla uses Nvidia for AI chips (supplier relationship).</li>
+                        <li>Pro-AI influencers align with companies like OpenAI and Google, promoting adoption narratives.</li>
+                        <li>OpenAI and Microsoft have known partnerships, though not explicitly mentioned here.</li>
+                    </ul>
+                </li>
+                <li><strong>Rivalries:</strong>
+                    <ul>
+                        <li>OpenAI vs. Google in AI model development and market share.</li>
+                        <li>Google vs. Meta in tech and AI innovation.</li>
+                        <li>US AI companies vs. Chinese AI companies in global competition, particularly in robotics and innovation.</li>
+                    </ul>
+                </li>
+                <li><strong>Echo Chambers:</strong>
+                    <ul>
+                        <li><strong>Pro-AI Narrative:</strong> Dominated by company posts (e.g., OpenAI's GPT-5 release) and influencers like @Shay_side, reinforcing AI hype and investment.</li>
+                        <li><strong>Anti-AI Narrative:</strong> Focused on risks, with influencers like @SirAnas01 and @calebini discussing job displacement and ethics, often amplified on X.</li>
+                    </ul>
+                </li>
+                <li><strong>Independent Actors:</strong>
+                    <ul>
+                        <li>Open-source AI communities provide alternatives, competing with closed-source models.</li>
+                        <li>Academic researchers (Harvard, MIT) focus on AI's societal impacts.</li>
+                        <li>jameskharwood2 (@jameskharwood2) offers nuanced views, discussing AI sentience, ethics, and practical tools, independent of major narratives.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Coordinated Messaging, Manipulation, or Censorship</h3>
+            <p>Analysis of potential manipulation or censorship reveals:</p>
+            <ul>
+                <li><strong>Coordinated Messaging:</strong> The release of GPT-5 by OpenAI has generated a coordinated narrative across platforms, with multiple X posts (@GueyeFaal, @Shay_side) and news articles (TechCrunch, BBC) highlighting its impact. This suggests a PR-driven effort to amplify AI advancements.</li>
+                <li><strong>Manipulation:</strong> Some posts may overhype AI capabilities, such as claims of AI outpacing humans in all tasks (@AlvaApp), potentially downplaying risks. However, no widespread manipulation was detected, as critical voices (e.g., @A_Modern_Man1) are also present.</li>
+                <li><strong>Censorship:</strong> Both pro-AI and anti-AI narratives are visible on social media, with no clear evidence of suppression. However, certain topics like AI's role in job displacement may be underrepresented in mainstream news compared to X, suggesting possible editorial bias rather than censorship.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Key Metrics</h3>
             <table>
                 <tr>
                     <th>Metric</th>
@@ -235,22 +265,14 @@
                     <td>$13.8B</td>
                 </tr>
                 <tr>
-                    <td>Autonomous AI Usage</td>
-                    <td>29% currently use, 44% plan to (Salesmate data)</td>
-                </tr>
-                <tr>
                     <td>Nvidia Market Cap (Recent)</td>
                     <td>$4T, surpassing Amazon</td>
-                </tr>
-                <tr>
-                    <td>Open-Source vs. Closed Gap</td>
-                    <td>Open-source models reducing performance difference from 8% to 1.7% (web data)</td>
                 </tr>
             </table>
         </div>
 
         <div class="section">
-            <h4>Company Roles and Relationships</h4>
+            <h3>Company Roles and Relationships</h3>
             <table>
                 <tr>
                     <th>Company</th>
@@ -260,34 +282,49 @@
                 <tr>
                     <td>OpenAI</td>
                     <td>Model Innovation (GPT-5)</td>
-                    <td>Alliance with Microsoft, Azure</td>
+                    <td>Alliance with Microsoft, Rivalry with Google</td>
                 </tr>
                 <tr>
-                    <td>Microsoft</td>
-                    <td>Infrastructure (Azure)</td>
-                    <td>Alliance with OpenAI</td>
+                    <td>Google</td>
+                    <td>AI Upgrades, Deepfake Hunter</td>
+                    <td>Rivalry with OpenAI, Meta</td>
                 </tr>
                 <tr>
-                    <td>Google DeepMind</td>
-                    <td>Competitor Models (Genie3, Veo3)</td>
-                    <td>Independent, potential rivalry</td>
-                </tr>
-                <tr>
-                    <td>Nvidia</td>
-                    <td>AI Infrastructure Provider</td>
-                    <td>Independent, supports ecosystem</td>
+                    <td>Meta</td>
+                    <td>AI Audio, Legal Challenges</td>
+                    <td>Rivalry with Google</td>
                 </tr>
                 <tr>
                     <td>Apple</td>
                     <td>On-Device AI Models</td>
-                    <td>Independent, potential competitor</td>
+                    <td>Independent</td>
+                </tr>
+                <tr>
+                    <td>Nvidia</td>
+                    <td>AI Infrastructure Provider</td>
+                    <td>Alliance with Tesla</td>
+                </tr>
+                <tr>
+                    <td>Tesla</td>
+                    <td>AI Chip Design</td>
+                    <td>Alliance with Nvidia</td>
+                </tr>
+                <tr>
+                    <td>TCS</td>
+                    <td>Outsourcing, AI Impact</td>
+                    <td>Independent</td>
+                </tr>
+                <tr>
+                    <td>McKinsey</td>
+                    <td>Consulting, AI Shift</td>
+                    <td>Independent</td>
                 </tr>
             </table>
         </div>
 
         <div class="section">
-            <h4>Conclusion</h4>
-            <p>The AI ecosystem as of August 8, 2025, is characterized by rapid advancements, with GPT-5 and agentic AI leading narratives. Key players like OpenAI, Microsoft, and Google DeepMind shape discourse, with alliances like OpenAI-Microsoft driving innovation. Rivalries between open-source and closed systems, along with a pro-AI accelerationist echo chamber, highlight the competitive and ideological landscape. While no clear censorship was detected, the uniformity in messaging suggests potential coordinated efforts, warranting further scrutiny. This analysis provides a snapshot of a dynamic and evolving field, with implications for policy, ethics, and societal impact.</p>
+            <h3>Conclusion</h3>
+            <p>The AI industry discourse is dynamic, with pro-AI narratives driven by companies and VCs, and anti-AI narratives by influencers and academics, creating echo chambers. Rivalries between major players like OpenAI and Google, and geopolitical competition, add complexity. Independent actors like jameskharwood2 provide valuable nuanced perspectives, ensuring a balanced mental space for the public. While coordinated messaging around GPT-5 is evident, there is no clear manipulation or censorship, though editorial biases in news media warrant further monitoring. This analysis supports informed public discourse, crucial for navigating AI's rapid evolution.</p>
         </div>
     </div>
 
@@ -300,192 +337,311 @@
     <div class="disclaimer">
         <p><strong>Disclaimer:</strong> This narrative analysis system is in beta testing and provided for informational purposes only. All information presented is derived from publicly available sources, including social media platforms (e.g., X) and news reports, and is synthesized to identify patterns and relationships. No guarantee is made regarding the accuracy, completeness, or timeliness of the data, and users are encouraged to verify information independently. The system may reflect biases inherent in public data or algorithms and is subject to ongoing refinement. Neither the creators nor the platform assume liability for decisions made based on this analysis. Use at your own risk.</p>
     </div>
-</div>
 
-<script>
-    const canvas = document.getElementById('mindmap');
-    const ctx = canvas.getContext('2d');
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+    <script>
+        // Initialize canvas and context
+        const canvas = document.getElementById('mindmap');
+        const ctx = canvas.getContext('2d');
 
-    const nodes = [
-        { id: 'center', label: 'AI Ecosystem', x: canvas.width / 2, y: canvas.height / 2, color: '#1e3a8a' },
-        { id: 'openai', label: 'OpenAI (@OpenAI)', x: canvas.width / 3, y: canvas.height / 3, color: '#8e44ad' },
-        { id: 'microsoft', label: 'Microsoft (@Microsoft)', x: canvas.width * 2 / 3, y: canvas.height / 3, color: '#3498db' },
-        { id: 'google_deepmind', label: 'Google DeepMind', x: canvas.width / 2, y: canvas.height / 4, color: '#e74c3c' },
-        { id: 'nvidia', label: 'Nvidia (@Nvidia)', x: canvas.width / 4, y: canvas.height / 4, color: '#27ae60' },
-        { id: 'apple', label: 'Apple (@Apple)', x: canvas.width * 3 / 4, y: canvas.height / 4, color: '#7f8c8d' },
-        { id: 'sam_altman', label: 'Sam Altman (@sama)', x: canvas.width / 5, y: canvas.height / 2, color: '#9b59b6' },
-        { id: 'elon_musk', label: 'Elon Musk (@elonmusk)', x: canvas.width * 4 / 5, y: canvas.height / 2, color: '#e67e22' },
-        { id: 'open_source', label: 'Open-Source AI', x: canvas.width / 2, y: canvas.height * 3 / 4, color: '#f1c40f' },
-        { id: 'azure', label: 'Azure (@Azure)', x: canvas.width / 3, y: canvas.height * 2 / 3, color: '#2980b9' },
-        { id: 'harold_sinnott', label: 'Harold Sinnott (@HaroldSinnott)', x: canvas.width * 2 / 3, y: canvas.height * 2 / 3, color: '#16a085' }
-    ];
+        // Responsive canvas sizing
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
 
-    const edges = [
-        { from: 'center', to: 'openai', label: 'Central', color: '#333' },
-        { from: 'center', to: 'microsoft', label: 'Central', color: '#333' },
-        { from: 'center', to: 'google_deepmind', label: 'Central', color: '#333' },
-        { from: 'center', to: 'nvidia', label: 'Central', color: '#333' },
-        { from: 'center', to: 'apple', label: 'Central', color: '#333' },
-        { from: 'center', to: 'sam_altman', label: 'Central', color: '#333' },
-        { from: 'center', to: 'elon_musk', label: 'Central', color: '#333' },
-        { from: 'center', to: 'open_source', label: 'Central', color: '#333' },
-        { from: 'center', to: 'azure', label: 'Central', color: '#333' },
-        { from: 'center', to: 'harold_sinnott', label: 'Central', color: '#333' },
-        { from: 'openai', to: 'microsoft', label: 'Ally', color: '#27ae60' },
-        { from: 'openai', to: 'azure', label: 'Ally', color: '#27ae60' },
-        { from: 'openai', to: 'sam_altman', label: 'Ally', color: '#27ae60' },
-        { from: 'openai', to: 'open_source', label: 'Rival', color: '#e74c3c' },
-        { from: 'microsoft', to: 'azure', label: 'Ally', color: '#27ae60' },
-        { from: 'google_deepmind', to: 'openai', label: 'Rival', color: '#e74c3c' },
-        { from: 'nvidia', to: 'openai', label: 'Independent', color: '#7f8c8d' },
-        { from: 'apple', to: 'openai', label: 'Independent', color: '#7f8c8d' },
-        { from: 'elon_musk', to: 'openai', label: 'Rival', color: '#e74c3c' },
-        { from: 'harold_sinnott', to: 'openai', label: 'Echo', color: '#2980b9' }
-    ];
+        // Define nodes and edges
+        const nodes = [
+            { id: 'center', label: 'AI Ecosystem', x: canvas.width / 2, y: canvas.height / 2, color: '#1e3a8a', vx: 0, vy: 0, fixed: true },
+            { id: 'openai', label: 'OpenAI', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#8e44ad', vx: 0, vy: 0 },
+            { id: 'google', label: 'Google', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#e74c3c', vx: 0, vy: 0 },
+            { id: 'meta', label: 'Meta', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#3498db', vx: 0, vy: 0 },
+            { id: 'apple', label: 'Apple', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#7f8c8d', vx: 0, vy: 0 },
+            { id: 'nvidia', label: 'Nvidia', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#27ae60', vx: 0, vy: 0 },
+            { id: 'tesla', label: 'Tesla', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#e67e22', vx: 0, vy: 0 },
+            { id: 'us_gov', label: 'US Government', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#2980b9', vx: 0, vy: 0 },
+            { id: 'china_gov', label: 'Chinese Government', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#f1c40f', vx: 0, vy: 0 },
+            { id: 'open_source', label: 'Open-Source AI', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#16a085', vx: 0, vy: 0 },
+            { id: 'jameskharwood2', label: 'jameskharwood2 (@jameskharwood2)', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#9b59b6', vx: 0, vy: 0 }
+        ];
 
-    let selectedNode = null;
-    let draggedNode = null;
+        const edges = [
+            { from: 'center', to: 'openai', label: 'Central', color: '#333' },
+            { from: 'center', to: 'google', label: 'Central', color: '#333' },
+            { from: 'center', to: 'meta', label: 'Central', color: '#333' },
+            { from: 'center', to: 'apple', label: 'Central', color: '#333' },
+            { from: 'center', to: 'nvidia', label: 'Central', color: '#333' },
+            { from: 'center', to: 'tesla', label: 'Central', color: '#333' },
+            { from: 'center', to: 'us_gov', label: 'Central', color: '#333' },
+            { from: 'center', to: 'china_gov', label: 'Central', color: '#333' },
+            { from: 'center', to: 'open_source', label: 'Central', color: '#333' },
+            { from: 'center', to: 'jameskharwood2', label: 'Central', color: '#333' },
+            { from: 'openai', to: 'google', label: 'Rival', color: '#e74c3c' },
+            { from: 'openai', to: 'open_source', label: 'Rival', color: '#e74c3c' },
+            { from: 'google', to: 'meta', label: 'Rival', color: '#e74c3c' },
+            { from: 'nvidia', to: 'tesla', label: 'Ally', color: '#27ae60' },
+            { from: 'us_gov', to: 'china_gov', label: 'Rival', color: '#e74c3c' },
+            { from: 'openai', to: 'jameskharwood2', label: 'Echo', color: '#2980b9' },
+            { from: 'apple', to: 'openai', label: 'Independent', color: '#7f8c8d' }
+        ];
 
-    function drawMindMap() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let selectedNode = null;
+        let draggedNode = null;
+        let currentNodeIndex = -1;
 
-        edges.forEach(edge => {
-            const fromNode = nodes.find(n => n.id === edge.from);
-            const toNode = nodes.find(n => n.id === edge.to);
+        // Force-directed layout parameters
+        const k = 0.01; // Reduced spring constant for slower movement
+        const repulsion = 100; // Reduced repulsion for gentler node separation
+        const damping = 0.55; // Increased damping for quicker settling
+        const centerForce = 0.002; // Reduced center force for more manual control
 
-            // Draw shadow for edge
-            ctx.beginPath();
-            ctx.moveTo(fromNode.x, fromNode.y);
-            ctx.lineTo(toNode.x, toNode.y);
-            ctx.strokeStyle = 'rgba(0, 0, 0, 0.3)';
-            ctx.lineWidth = 6;
-            ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
-            ctx.shadowBlur = 8;
-            ctx.shadowOffsetX = 2;
-            ctx.shadowOffsetY = 2;
-            ctx.stroke();
+        // Debounce function
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
 
-            // Draw main edge
-            ctx.beginPath();
-            ctx.moveTo(fromNode.x, fromNode.y);
-            ctx.lineTo(toNode.x, toNode.y);
-            ctx.strokeStyle = edge.color;
-            ctx.lineWidth = 4;
-            ctx.shadowColor = 'rgba(0, 0, 0, 0)';
-            ctx.shadowBlur = 0;
-            ctx.stroke();
+        // Force-directed simulation
+        function updatePositions() {
+            nodes.forEach(node => {
+                if (node.fixed || node === draggedNode) return;
 
-            // Draw label with background
-            const midX = (fromNode.x + toNode.x) / 2;
-            const midY = (fromNode.y + toNode.y) / 2;
-            ctx.font = '12px Segoe UI';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            const textMetrics = ctx.measureText(edge.label);
-            const padding = 6;
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-            ctx.fillRect(midX - textMetrics.width / 2 - padding, midY - 8 - padding, textMetrics.width + padding * 2, 16 + padding * 2);
-            ctx.fillStyle = edge.color;
-            ctx.fillText(edge.label, midX, midY);
-        });
+                let fx = 0, fy = 0;
 
-        nodes.forEach(node => {
-            const gradient = ctx.createRadialGradient(node.x - 10, node.y - 10, 5, node.x, node.y, 30);
-            gradient.addColorStop(0, '#ffffff');
-            gradient.addColorStop(1, node.color);
-            ctx.beginPath();
-            ctx.arc(node.x, node.y, 30, 0, 2 * Math.PI);
-            ctx.fillStyle = gradient;
-            ctx.fill();
-            ctx.strokeStyle = node === selectedNode ? '#000' : '#333';
-            ctx.lineWidth = node === selectedNode ? 4 : 1;
-            ctx.stroke();
-            ctx.fillStyle = '#fff';
-            ctx.font = '12px Segoe UI';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
-            ctx.shadowBlur = 2;
-            ctx.shadowOffsetX = 1;
-            ctx.shadowOffsetY = 1;
-            ctx.fillText(node.label, node.x, node.y);
-            ctx.shadowColor = 'rgba(0, 0, 0, 0)';
-            ctx.shadowBlur = 0;
-            ctx.shadowOffsetX = 0;
-            ctx.shadowOffsetY = 0;
-        });
-    }
+                // Repulsion between nodes
+                nodes.forEach(other => {
+                    if (other !== node) {
+                        const dx = node.x - other.x;
+                        const dy = node.y - other.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy) || 0.1;
+                        const force = repulsion / (distance * distance);
+                        fx += force * dx / distance;
+                        fy += force * dy / distance;
+                    }
+                });
 
-    drawMindMap();
+                // Spring forces for edges
+                edges.forEach(edge => {
+                    const fromNode = nodes.find(n => n.id === edge.from);
+                    const toNode = nodes.find(n => n.id === edge.to);
+                    if (fromNode === node || toNode === node) {
+                        const target = fromNode === node ? toNode : fromNode;
+                        const dx = node.x - target.x;
+                        const dy = node.y - target.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy) || 0.1;
+                        const force = k * (distance - 150); // Increased ideal edge length
+                        fx -= force * dx / distance;
+                        fy -= force * dy / distance;
+                    }
+                });
 
-    canvas.addEventListener('mousedown', (e) => {
-        const rect = canvas.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        nodes.forEach(node => {
-            const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2);
-            if (dist < 30) {
-                draggedNode = node;
-                selectedNode = node;
-            }
-        });
-        drawMindMap();
-    });
+                // Center force
+                const dx = canvas.width / 2 - node.x;
+                const dy = canvas.height / 2 - node.y;
+                fx += centerForce * dx;
+                fy += centerForce * dy;
 
-    canvas.addEventListener('mousemove', (e) => {
-        const rect = canvas.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+                // Update velocity and position
+                node.vx = (node.vx + fx) * damping;
+                node.vy = (node.vy + fy) * damping;
+                node.x += node.vx;
+                node.y += node.vy;
 
-        if (draggedNode) {
-            draggedNode.x = Math.max(30, Math.min(canvas.width - 30, x));
-            draggedNode.y = Math.max(30, Math.min(canvas.height - 30, y));
+                // Constrain to canvas
+                node.x = Math.max(30, Math.min(canvas.width - 30, node.x));
+                node.y = Math.max(30, Math.min(canvas.height - 30, node.y));
+            });
+        }
+
+        // Draw mind map
+        function drawMindMap() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw edges
+            edges.forEach(edge => {
+                const fromNode = nodes.find(n => n.id === edge.from);
+                const toNode = nodes.find(n => n.id === edge.to);
+
+                // Shadow for edge
+                ctx.beginPath();
+                ctx.moveTo(fromNode.x, fromNode.y);
+                ctx.lineTo(toNode.x, toNode.y);
+                ctx.strokeStyle = 'rgba(0, 0, 0, 0.3)';
+                ctx.lineWidth = 6;
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+                ctx.shadowBlur = 8;
+                ctx.shadowOffsetX = 2;
+                ctx.shadowOffsetY = 2;
+                ctx.stroke();
+
+                // Main edge
+                ctx.beginPath();
+                ctx.moveTo(fromNode.x, fromNode.y);
+                ctx.lineTo(toNode.x, toNode.y);
+                ctx.strokeStyle = edge.color;
+                ctx.lineWidth = 4;
+                ctx.shadowColor = 'rgba(0, 0, 0, 0)';
+                ctx.shadowBlur = 0;
+                ctx.stroke();
+
+                // Edge label
+                const midX = (fromNode.x + toNode.x) / 2;
+                const midY = (fromNode.y + toNode.y) / 2;
+                ctx.font = '12px Segoe UI';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                const textMetrics = ctx.measureText(edge.label);
+                const padding = 6;
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                ctx.fillRect(midX - textMetrics.width / 2 - padding, midY - 8 - padding, textMetrics.width + padding * 2, 16 + padding * 2);
+                ctx.fillStyle = edge.color;
+                ctx.fillText(edge.label, midX, midY);
+            });
+
+            // Draw nodes
+            nodes.forEach((node, index) => {
+                const gradient = ctx.createRadialGradient(node.x - 10, node.y - 10, 5, node.x, node.y, 30);
+                gradient.addColorStop(0, '#ffffff');
+                gradient.addColorStop(1, node.color);
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, 30, 0, 2 * Math.PI);
+                ctx.fillStyle = gradient;
+                ctx.fill();
+                ctx.strokeStyle = node === selectedNode ? '#000' : '#333';
+                ctx.lineWidth = node === selectedNode ? 4 : 1;
+                ctx.stroke();
+                ctx.fillStyle = '#fff';
+                ctx.font = '12px Segoe UI';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+                ctx.shadowBlur = 2;
+                ctx.shadowOffsetX = 1;
+                ctx.shadowOffsetY = 1;
+                ctx.fillText(node.label, node.x, node.y);
+                ctx.shadowColor = 'rgba(0, 0, 0, 0)';
+                ctx.shadowBlur = 0;
+                ctx.shadowOffsetX = 0;
+                ctx.shadowOffsetY = 0;
+            });
+        }
+
+        // Animation loop for force-directed layout
+        function animate() {
+            updatePositions();
             drawMindMap();
+            requestAnimationFrame(animate);
         }
+        animate();
 
-        let tooltipNode = null;
-        nodes.forEach(node => {
-            const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2);
-            if (dist < 30) {
-                tooltipNode = node;
-            }
+        // Mouse event handlers
+        canvas.addEventListener('mousedown', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            nodes.forEach(node => {
+                const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2);
+                if (dist < 30) {
+                    draggedNode = node;
+                    selectedNode = node;
+                    currentNodeIndex = nodes.indexOf(node);
+                    canvas.setAttribute('aria-label', `Selected node: ${node.label}`);
+                }
+            });
+            drawMindMap();
         });
 
-        if (tooltipNode) {
-            let tooltip = document.querySelector('.tooltip');
-            if (!tooltip) {
-                tooltip = document.createElement('div');
-                tooltip.className = 'tooltip';
-                document.body.appendChild(tooltip);
+        const debouncedMouseMove = debounce((e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            if (draggedNode) {
+                draggedNode.x = Math.max(30, Math.min(canvas.width - 30, x));
+                draggedNode.y = Math.max(30, Math.min(canvas.height - 30, y));
+                draggedNode.vx = 0; // Reset velocity to stabilize dragged node
+                draggedNode.vy = 0;
+                drawMindMap();
             }
-            tooltip.style.left = `${e.clientX + 10}px`;
-            tooltip.style.top = `${e.clientY + 10}px`;
-            tooltip.textContent = tooltipNode.label;
-        } else {
-            const tooltip = document.querySelector('.tooltip');
-            if (tooltip) tooltip.remove();
-        }
-    });
 
-    canvas.addEventListener('mouseup', () => {
-        draggedNode = null;
-    });
+            let tooltipNode = null;
+            nodes.forEach(node => {
+                const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2);
+                if (dist < 30) {
+                    tooltipNode = node;
+                }
+            });
 
-    canvas.addEventListener('click', (e) => {
-        const rect = canvas.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        selectedNode = null;
-        nodes.forEach(node => {
-            const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2);
-            if (dist < 30) {
-                selectedNode = node;
+            if (tooltipNode) {
+                let tooltip = document.querySelector('.tooltip');
+                if (!tooltip) {
+                    tooltip = document.createElement('div');
+                    tooltip.className = 'tooltip';
+                    document.body.appendChild(tooltip);
+                }
+                tooltip.style.left = `${e.clientX + 10}px`;
+                tooltip.style.top = `${e.clientY + 10}px`;
+                tooltip.textContent = tooltipNode.label;
+            } else {
+                const tooltip = document.querySelector('.tooltip');
+                if (tooltip) tooltip.remove();
+            }
+        }, 10);
+
+        canvas.addEventListener('mousemove', debouncedMouseMove);
+
+        canvas.addEventListener('mouseup', () => {
+            draggedNode = null;
+        });
+
+        canvas.addEventListener('click', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            selectedNode = null;
+            nodes.forEach((node, index) => {
+                const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2);
+                if (dist < 30) {
+                    selectedNode = node;
+                    currentNodeIndex = index;
+                    canvas.setAttribute('aria-label', `Selected node: ${node.label}`);
+                }
+            });
+            drawMindMap();
+        });
+
+        // Keyboard navigation
+        canvas.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft' || e.key === 'Tab') {
+                e.preventDefault();
+                currentNodeIndex = (currentNodeIndex + (e.key === 'ArrowRight' || !e.shiftKey ? 1 : -1) + nodes.length) % nodes.length;
+                selectedNode = nodes[currentNodeIndex];
+                canvas.setAttribute('aria-label', `Selected node: ${selectedNode.label}`);
+                drawMindMap();
+            } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (selectedNode && !selectedNode.fixed) {
+                    selectedNode.y += e.key === 'ArrowUp' ? -10 : 10;
+                    selectedNode.y = Math.max(30, Math.min(canvas.height - 30, selectedNode.y));
+                    selectedNode.vx = 0; // Reset velocity
+                    selectedNode.vy = 0;
+                    drawMindMap();
+                }
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                selectedNode = selectedNode ? null : nodes[currentNodeIndex];
+                canvas.setAttribute('aria-label', selectedNode ? `Selected node: ${selectedNode.label}` : 'No node selected');
+                drawMindMap();
             }
         });
-        drawMindMap();
-    });
-</script>
+    </script>
 </body>
 </html>
