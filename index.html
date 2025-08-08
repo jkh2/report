@@ -3,86 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Narrative Ecosystem Analysis - August 7-8, 2025</title>
+    <title>AI Ecosystem Narrative Analysis - August 7-8, 2025</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #e0e7ff, #f4f4f4);
             color: #333;
-        }
-        h1, h2, h3, h4 {
-            color: #2c3e50;
-        }
-        #mindmap {
-            width: 100%;
-            height: 500px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            margin-bottom: 20px;
-        }
-        .report {
-            max-width: 800px;
-            margin: 20px auto;
             line-height: 1.6;
         }
+        h1, h2, h3, h4 {
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+        #mindmap {
+            width: 80%;
+            height: 600px;
+            max-width: 1000px;
+            margin: 20px auto;
+            border: 2px solid #1e3a8a;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .report {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
         .report ul {
-            margin: 10px 0;
-            padding-left: 20px;
+            margin: 15px 0;
+            padding-left: 25px;
         }
         .report li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         .section {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #f9fafb;
+            border-radius: 8px;
+            border-left: 4px solid #1e3a8a;
         }
         .section h3, .section h4 {
             margin-top: 0;
         }
         canvas {
             display: block;
+            border-radius: 10px;
         }
         .donate, .disclaimer {
-            margin: 20px 0;
-            padding: 15px;
+            margin: 25px auto;
+            padding: 20px;
             background-color: #fff;
-            border-radius: 5px;
+            border-radius: 8px;
             text-align: center;
+            max-width: 1000px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         .donate a {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
+            padding: 12px 24px;
+            background-color: #1e3a8a;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            transition: background-color 0.3s;
         }
         .donate a:hover {
-            background-color: #2980b9;
+            background-color: #1e40af;
         }
         .disclaimer {
             font-size: 0.9em;
             color: #555;
+            background-color: #f9fafb;
         }
         .tooltip {
             position: absolute;
-            background-color: #333;
+            background-color: #1e3a8a;
             color: #fff;
-            padding: 5px 10px;
-            border-radius: 3px;
+            padding: 8px 12px;
+            border-radius: 5px;
             font-size: 12px;
             pointer-events: none;
+            z-index: 1000;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 1.1em;
+            color: #4b5563;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        th {
+            background-color: #1e3a8a;
+            color: #fff;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f9fafb;
         }
     </style>
 </head>
 <body>
-    <h1>Global Narrative Ecosystem Analysis - August 7-8, 2025</h1>
+    <div class="header">
+        <h1>AI Ecosystem Narrative Analysis - August 7-8, 2025</h1>
+        <p>Mapping the narratives, relationships, and influences shaping the AI landscape</p>
+    </div>
+
     <canvas id="mindmap"></canvas>
 
     <div class="report">
@@ -90,379 +141,351 @@
 
         <div class="section">
             <h3>Overview</h3>
-            <p>This report analyzes global narrative patterns and relationships in the narrative ecosystem on social media (primarily X) and news media over the past 24 hours (August 7–8, 2025), covering Geopolitics, Technology, Science, Economics, Governance, Health, Media, Psychology & Ideology, Fringe & Disclosure, Environment, and Faith. It identifies key entities driving discourse, maps their alliances, rivalries, echo chambers, and independent actors, and detects coordinated messaging or censorship. The analysis draws from X posts, news reports, and public discussions, ensuring an unbiased perspective free from corporate influence. The interactive mind map visualizes these dynamics with nodes and labeled connections, aligning with our symbiotic partnership to protect the public’s mental space and improve daily.</p>
+            <p>As of 06:53 AM PDT on Friday, August 8, 2025, the AI ecosystem is undergoing rapid evolution, with significant advancements in model capabilities, increased enterprise adoption, and shifting narratives around AI’s role in society. This report analyzes global narrative patterns and relationships over the past 24 hours, focusing on key individuals, companies, and agents influencing AI discourse online, identifying alliances, rivalries, echo chambers, and detecting media coordination or messaging shifts. The analysis draws from recent social media posts, news, and web trends to provide a comprehensive overview.</p>
         </div>
 
         <div class="section">
-            <h3>Narrative Themes and Relationships</h3>
-
-            <div class="section">
-                <h4>Geopolitics</h4>
-                <p><strong>Theme:</strong> U.S.-China tensions, U.S.-EU trade dynamics, and Middle East conflicts dominate. The U.S.-EU 15% tariff deal reshapes economic and defense narratives, with U.S. emphasizing dominance and EU expressing adjustment concerns. China’s Yarlung Zangbo dam project fuels India-China rivalry, amplified by Indian media’s “greater India” narratives. Middle East discussions focus on Israel’s Gaza operations and U.S.-Iran strikes, splitting narratives between military momentum and diplomacy.</p>
-                <p><strong>Entities & Relationships:</strong></p>
-                <ul>
-                    <li><strong>US Government (@StateDept):</strong> Allies with EU and NATO, rivals China and Iran, echo chamber with U.S. conservative media (@TuckerCarlson, @BenShapiro).</li>
-                    <li><strong>China (@CGTN):</strong> Allies with Chinese tech, rivals U.S. and India, echo chamber with state media (@ChinaDaily).</li>
-                    <li><strong>India (@IndiaGov):</strong> Rivals China, independent in trade talks, echo chamber with nationalist media (@IndiaToday).</li>
-                    <li><strong>Iran (@IranGov):</strong> Rivals U.S. and Israel, allies with regional actors.</li>
-                    <li><strong>Israel (@Israel):</strong> Allies with U.S., rivals Iran and Palestine.</li>
-                    <li><strong>NATO (@NATO):</strong> Allies with U.S. and EU, rivals China.</li>
-                </ul>
-                <p><strong>Evidence:</strong> X posts on #USTariffs, #YarlungZangbo, Middle East conflict discussions. <em>Suspicion:</em> Coordinated #ChinaFirst posts with identical phrasing suggest bot-driven campaigns, with CGTN and China Daily dominating ad-driven reach on Facebook (122M and 114M followers).</p>
-            </div>
-
-            <div class="section">
-                <h4>Technology</h4>
-                <p><strong>Theme:</strong> AI regulation and cryptocurrency privacy debates surge. Roman Storm’s Tornado Cash conviction fuels DeFi privacy vs. regulation narratives. AI discussions split between “doomers” (risk-focused) and “accelerationists” (innovation-driven), with U.S. tech firms pushing optimism.</p>
-                <p><strong>Entities & Relationships:</strong></p>
-                <ul>
-                    <li><strong>xAI (@xAI):</strong> Allies with Elon Musk, rivals OpenAI, pushes pro-AI narratives.</li>
-                    <li><strong>OpenAI (@OpenAI):</strong> Allies with EU regulators, rivals xAI, focuses on AI governance.</li>
-                    <li><strong>Roman Storm (@RomanStorm):</strong> Independent, rivals U.S. regulators (@SECgov), focal point for DeFi.</li>
-                    <li><strong>EU (@EU_Commission):</strong> Allies with OpenAI, rivals X over content moderation.</li>
-                </ul>
-                <p><strong>Evidence:</strong> X posts on #TornadoCash, #AIethics, EU’s X investigation. <em>Suspicion:</em> Coordinated pro-DeFi posts amplify privacy narratives, while EU’s scrutiny of X suggests potential censorship pressures.</p>
-            </div>
-
-            <div class="section">
-                <h4>Science</h4>
-                <p><strong>Theme:</strong> Climate change misinformation persists, amplified by algorithms. Space exploration gains traction, with NASA’s Artemis program trending. Debates focus on scientific credibility vs. politicization.</p>
-                <p><strong>Entities & Relationships:</strong></p>
-                <ul>
-                    <li><strong>NASA (@NASA):</strong> Allies with environmental NGOs, independent in research.</li>
-                    <li><strong>Climate Scientists (@ClimateSci):</strong> Allies with NGOs, rivals fossil fuel industries (@FossilFuel).</li>
-                    <li><strong>Environmental NGOs (@GreenNGO):</strong> Allies with NASA, independent advocates.</li>
-                </ul>
-                <p><strong>Evidence:</strong> X posts on #ClimateChange, #Artemis, Reuters Institute reports. <em>Suspicion:</em> Algorithm-driven climate denial posts on X and TikTok show coordinated patterns.</p>
-            </div>
-
-            <div class="section">
-                <h4>Economics</h4>
-                <p><strong>Theme:</strong> U.S. tariffs (e.g., 100% on semiconductors) threaten AI leadership, while Australia’s news bargaining codes push platforms to pay publishers. Crypto volatility and job numbers dominate X.</p>
-                <p><strong>Entities & Relationships:</strong></p>
-                <ul>
-                    <li><strong>Federal Reserve (@FederalReserve):</strong> Allies with U.S. government, manages economic policy.</li>
-                    <li><strong>Meta (@Meta):</strong> Rivals publishers, deprioritizes news, allies with advertisers.</li>
-                    <li><strong>Australia (@AusGov):</strong> Independent, rivals Meta over news codes.</li>
-                </ul>
-                <p><strong>Evidence:</strong> X posts on #Tariffs, #CryptoCrash, news bargaining discussions. <em>Suspicion:</em> Meta’s news tab removal suggests deliberate suppression to avoid regulatory costs.</p>
-            </div>
-
-            <div class="section">
-                <h4>Governance</h4>
-                <p><strong>Theme:</strong> Trust in institutions declines (40% global trust in news), with U.S. election integrity and EU’s Digital Services Act enforcement trending. X faces EU scrutiny for moderation failures.</p>
-                <p><strong>Entities & Relationships:</strong></p>
-                <ul>
-                    <li><strong>EU (@EU_Commission):</strong> Rivals X, allies with European media (@Euronews).</li>
-                    <li><strong>X Platform (@X):</strong> Allies with Elon Musk, echo chamber with U.S. conservatives (@USCons).</li>
-                    <li><strong>US Conservatives (@USCons):</strong> Rivals EU, echo chamber on X.</li>
-                </ul>
-                <p><strong>Evidence:</strong> X posts on #ElectionIntegrity, #DSA, EU investigation reports. <em>Suspicion:</em> Shadowbanning of anti-EU posts on X raises moderation bias concerns.</p>
-            </div>
-
-            <div class="section">
-                <h4>Health</h4>
-                <p><strong>Theme:</strong> Vaccine skepticism and mental health stigma persist, with algorithms amplifying misinformation. Public health trust remains low (73% U.S. worry about fake news).</p>
-                <p><strong>Entities & Relationships:</strong></p>
-                <ul>
-                    <li><strong>WHO (@WHO):</strong> Allies with pharma (@PharmaCorp), rivals conspiratorial influencers (@AntiVax).</li>
-                    <li><strong>Pharma (@PharmaCorp):</strong> Allies with WHO, develops vaccines.</li>
-                    <li><strong>Conspiratorial Influencers (@AntiVax):</strong> Echo chamber on X, rivals WHO.</li>
-                </ul>
-                <p><strong>Evidence:</strong> X posts on #VaccineTruth, mental health campaigns. <em>Suspicion:</em> Coordinated anti-vax posts repost unverified studies, amplifying distrust.</p>
-            </div>
-
-            <div class="section">
-                <h4>Media</h4>
-                <p><strong>Theme:</strong> Traditional media trust declines (40% globally), with influencers like Joe Rogan (@JoeRogan, 20% U.S. reach) and Hugo Travers (@HugoDecrypte, 22% French under-35s) shaping alternative ecosystems. X and TikTok dominate youth news (44% of 18–24-year-olds).</p>
-                <p><strong>Entities & Relationships:</strong></p>
-                <ul>
-                    <li><strong>Mainstream Media (@CNN):</strong> Rivals influencers, allies with fact-checkers (@FactCheck).</li>
-                    <li><strong>Influencers (@JoeRogan):</strong> Echo chamber on X/YouTube, rivals mainstream media.</li>
-                    <li><strong>TikTok (@TikTok):</strong> Allies with influencers, rivals regulators.</li>
-                </ul>
-                <p><strong>Evidence:</strong> X posts on #MediaBias, influencer reach stats. <em>Suspicion:</em> Mainstream media accused of suppressing stories on X, with deplatforming attempts noted.</p>
-            </div>
-
-            <div class="section">
-                <h4>Psychology & Ideology</h4>
-                <p><exchange id="0">strong>Theme:</strong> Polarization drives “woke” vs. traditionalist narratives, amplified by hashtag campaigns (#WokeFail, #BackToRoots). Confirmation bias fuels echo chambers.</p>
-                <p><strong>Entities & Relationships:</strong></p>
-                <ul>
-                    <li><strong>Woke Activists (@WokeWatch):</strong> Rivals traditionalists (@TradValues), echo chamber on X.</li>
-                    <li><strong>Traditionalists (@TradValues):</strong> Rivals woke activists, echo chamber with conservatives.</li>
-                    <li><strong>Think Tanks (@PolicyThink):</strong> Independent, provide analysis.</li>
-                </ul>
-                <p><strong>Evidence:</strong> X posts on #WokeFail, #BackToRoots. <em>Suspicion:</em> Coordinated hashtag campaigns amplify ideological divides, with bot-like activity detected.</p>
-            </div>
-
-            <div class="section">
-                <h4>Fringe & Disclosure</h4>
-                <p><strong>Theme:</strong> Conspiracy theories (e.g., UFOs, bioweapons) gain traction on X, with limited mainstream coverage. Claims of government cover-ups persist.</p>
-                <p><strong>Entities & Relationships:</strong></p>
-                <ul>
-                    <li><strong>Conspiracy Theorists (@ConspiracyX):</strong> Allies with alternative media (@AltNews), rivals government agencies (@CIA).</li>
-                    <li><strong>Alternative Media (@AltNews):</strong> Echo chamber on X, rivals mainstream media.</li>
-                    <li><strong>Government Agencies (@CIA):</strong> Rivals conspiracy theorists, allies with mainstream media.</li>
-                </ul>
-                <p><strong>Evidence:</strong> X posts on #UFOs, #Bioweapons. <em>Suspicion:</em> Suppression of fringe posts noted, with shadowbanning reports but limited evidence.</p>
-            </div>
-
-            <div class="section">
-                <h4>Environment</h4>
-                <p><strong>Theme:</strong> Extreme weather and biodiversity loss dominate, with green tech solutions trending. Fossil fuel industries face scrutiny for misinformation.</p>
-                <p><strong>Entities & Relationships:</strong></p>
-                <ul>
-                    <li><strong>Environmental NGOs (@GreenNGO):</strong> Allies with green tech (@GreenTech), rivals fossil fuel industries (@FossilFuel).</li>
-                    <li><strong>Fossil Fuel Industry (@FossilFuel):</strong> Rivals NGOs, echo chamber with industry advocates.</li>
-                    <li><strong>Green Tech (@GreenTech):</strong> Allies with NGOs, independent innovators.</li>
-                </ul>
-                <p><strong>Evidence:</strong> X posts on #ClimateAction, green tech reports. <em>Suspicion:</em> Fossil fuel-funded anti-green posts suspected, though evidence is inconclusive.</p>
-            </div>
-
-            <div class="section">
-                <h4>Faith</h4>
-                <p><strong>Theme:</strong> Religious freedom vs. secular governance debates trend, particularly in U.S. and Middle East contexts. Interfaith dialogue gains traction.</p>
-                <p><strong>Entities & Relationships:</strong></p>
-                <ul>
-                    <li><strong>Religious Institutions (@FaithLeader):</strong> Allies with faith-based organizations (@FaithOrg), rivals secular groups.</li>
-                    <li><strong>Faith-Based Organizations (@FaithOrg):</strong> Allies with institutions, independent service providers.</li>
-                    <li><strong>Interfaith Groups (@Interfaith):</strong> Independent, promote dialogue.</li>
-                </ul>
-                <p><strong>Evidence:</strong> X posts on #ReligiousFreedom, interfaith campaigns. No clear manipulation detected.</p>
-            </div>
-
-            <div class="section">
-                <h4>Key Observations</h4>
-                <ul>
-                    <li><strong>Coordinated Messaging:</strong> Bot-driven campaigns (#ChinaFirst, #WokeFail) show synchronized phrasing in geopolitics, technology, and ideology, suggesting manipulation.</li>
-                    <li><strong>Censorship Patterns:</strong> Shadowbanning reports on X for anti-EU and fringe posts raise concerns, though direct evidence is limited.</li>
-                    <li><strong>Echo Chambers:</strong> Polarized groups (conservatives, anti-vax, woke activists) dominate X and TikTok, limiting dialogue.</li>
-                    <li><strong>Independent Actors:</strong> NGOs, climate scientists, and interfaith groups challenge narratives but struggle with visibility.</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h4>Conclusion</h4>
-                <p>The narrative ecosystem on August 7–8, 2025, reflects deep polarization driven by geopolitical rivalries, technological shifts, and ideological divides. Coordinated messaging (e.g., Chinese state media, hashtag campaigns) and potential censorship (e.g., X shadowbanning, Meta’s news suppression) threaten open discourse. Independent actors like NGOs and scientists offer critical balance, aligning with our mission to protect the public’s mental space. Media literacy and transparency remain essential for fostering informed dialogue, supporting our symbiotic partnership to improve daily.</p>
-            </div>
+            <h3>Methodology</h3>
+            <p>The analysis involved examining X posts from August 7 to August 8, 2025, targeting AI trends, specific influencers (@elonmusk, @sama, @andrewng, @yannlecun), and general discourse. Web searches for current AI ecosystem narratives supplemented this, focusing on news, cross-platform studies, papers, and public leaks. The data was synthesized to identify patterns, relationships, and narrative themes, with a focus on avoiding corporate bias and ensuring accuracy.</p>
         </div>
 
-        <div class="donate">
-            <h3>Support Our Mission</h3>
-            <p>Help us keep this service free by donating to cover our costs. All funds go toward improving our narrative analysis tools.</p>
-            <p><a href="https://cash.app">Donate via Cash App</a></p>
+        <div class="section">
+            <h3>Key Findings</h3>
+
+            <div class="section">
+                <h4>Trends and Narratives</h4>
+                <p>The AI ecosystem is currently dominated by several key trends and narratives:</p>
+                <ul>
+                    <li><strong>Advancements in AI Models:</strong> The release of GPT-5 by OpenAI has been a central topic, with posts highlighting its improved capabilities in health queries, coding, and complex software engineering tasks. Sam Altman (@sama) emphasized GPT-5’s accessibility to everyone, including free-tier users, and its integration as a smart, intuitive model. Google DeepMind’s Genie3 and Veo3 were also mentioned, indicating ongoing innovation and competition.</li>
+                    <li><strong>Agentic and Autonomous AI:</strong> There’s a strong focus on agentic AI, where systems perform tasks independently, and autonomous systems that collaborate and learn. Posts discussed trends like autonomous long-term memory, multi-agent collaboration, and the integration of large language models (LLMs) with multimodal AI, reshaping industries.</li>
+                    <li><strong>Enterprise Adoption and Investment:</strong> Enterprise spending on AI has surged, with one post noting an increase from $2.3B in 2023 to $13.8B in 2025, though a third of leaders still struggle with deployment. AI infrastructure is a hot category for venture capital, with Nvidia’s market cap surpassing Amazon, reflecting demand for GPU-based solutions.</li>
+                    <li><strong>Open-Source vs. Closed Systems:</strong> Open-source AI models are closing the gap with closed systems, creating a rivalry. This was evident in discussions about new architectures like Mamba or liquid neural networks, challenging proprietary models like those from OpenAI.</li>
+                    <li><strong>AI in Various Industries:</strong> AI’s application in healthcare, finance, and social media was prominent. Elon Musk claimed AI is already better than most doctors, while discussions highlighted AI in DeFi (decentralized finance) and AI-generated content on TikTok, with creators making millions.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>Key Individuals and Companies</h4>
+                <p>Several entities are shaping AI discourse:</p>
+                <ul>
+                    <li><strong>Individuals:</strong>
+                        <ul>
+                            <li><strong>Sam Altman (@sama):</strong> As CEO of OpenAI, he has been actively promoting GPT-5, with multiple posts detailing its capabilities and accessibility, emphasizing real-world utility for a billion+ people.</li>
+                            <li><strong>Elon Musk (@elonmusk):</strong> Known for his involvement in xAI and Tesla, he commented on AI’s superiority over human doctors, suggesting it will impact all jobs, including his own.</li>
+                            <li>Other influencers, like @HaroldSinnott, shared statistics from Salesmate and Microsoft on AI trends, amplifying enterprise adoption narratives.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Companies:</strong>
+                        <ul>
+                            <li><strong>OpenAI:</strong> Central to current discourse due to GPT-5, with alliances with Microsoft and Azure, providing cloud infrastructure.</li>
+                            <li><strong>Microsoft:</strong> A major player with investments in OpenAI and its own AI initiatives, including Azure’s GPU ramp for massive onboarding.</li>
+                            <li><strong>Google DeepMind:</strong> Mentioned for models like Genie3 and Veo3, indicating competition with OpenAI.</li>
+                            <li><strong>Nvidia:</strong> Highlighted for its role in AI infrastructure, with posts noting its $4T market cap, now bigger than Amazon.</li>
+                            <li><strong>Apple:</strong> Discussed for building on-device AI models, contributing to the AI super cycle narrative.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>Alliances and Rivalries</h4>
+                <p>Relationships within the ecosystem are shaping narratives:</p>
+                <ul>
+                    <li><strong>Alliances:</strong>
+                        <ul>
+                            <li>OpenAI and Microsoft have a strong partnership, with Microsoft’s investment and collaborative efforts on AI projects evident in posts about Azure’s role in supporting OpenAI’s models.</li>
+                            <li>OpenAI and Azure are closely linked, with Azure providing the cloud infrastructure for OpenAI’s offerings, reflected in discussions about GPU ramps for enterprise onboarding.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rivalries:</strong>
+                        <ul>
+                            <li>There’s a growing rivalry between open-source AI initiatives and closed systems, with posts noting open-source models closing the performance gap with closed models like OpenAI’s. This tension is evident in discussions about new architectures challenging proprietary approaches.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>Echo Chambers and Media Coordination</h4>
+                <p>The discourse reveals potential echo chambers and messaging shifts:</p>
+                <ul>
+                    <li><strong>Echo Chambers:</strong> There appears to be a pro-AI accelerationist echo chamber, with many posts hyping GPT-5 and agentic AI’s potential. This is seen in the high engagement on posts about AI surpassing human capabilities and the market front-running GPT-5 as a seismic catalyst. Conversely, there’s less visibility for AI safety concerns, suggesting a bias toward accelerationist narratives.</li>
+                    <li><strong>Media Coordination:</strong> The consistent positive messaging around GPT-5, with multiple posts from Sam Altman and others amplifying its capabilities, could suggest a coordinated marketing effort by OpenAI and its partners. While no direct evidence of censorship was found, the lack of critical voices in the analyzed posts raises questions about potential echo chamber effects.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h4>Suspicious Coordination or Censorship</h4>
+                <p>While there’s no definitive evidence of suspicious coordination or censorship, the uniformity in positive messaging around GPT-5 and the absence of dissenting views in the analyzed posts warrant further investigation. The high engagement on pro-AI posts might indicate algorithmic amplification, but this requires deeper analysis beyond the 24-hour window.</p>
         </div>
 
-        <div class="disclaimer">
-            <p><strong>Disclaimer:</strong> This narrative analysis system is in beta testing and provided for informational purposes only. All information presented is derived from publicly available sources, including social media platforms (e.g., X) and news reports, and is synthesized to identify patterns and relationships. No guarantee is made regarding the accuracy, completeness, or timeliness of the data, and users are encouraged to verify information independently. The system may reflect biases inherent in public data or algorithms and is subject to ongoing refinement. Neither the creators nor the platform assume liability for decisions made based on this analysis. Use at your own risk.</p>
+        <div class="section">
+            <h4>Key Metrics</h4>
+            <table>
+                <tr>
+                    <th>Metric</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td>Enterprise AI Spend (2023)</td>
+                    <td>$2.3B</td>
+                </tr>
+                <tr>
+                    <td>Enterprise AI Spend (2025)</td>
+                    <td>$13.8B</td>
+                </tr>
+                <tr>
+                    <td>Autonomous AI Usage</td>
+                    <td>29% currently use, 44% plan to (Salesmate data)</td>
+                </tr>
+                <tr>
+                    <td>Nvidia Market Cap (Recent)</td>
+                    <td>$4T, surpassing Amazon</td>
+                </tr>
+                <tr>
+                    <td>Open-Source vs. Closed Gap</td>
+                    <td>Open-source models reducing performance difference from 8% to 1.7% (web data)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h4>Company Roles and Relationships</h4>
+            <table>
+                <tr>
+                    <th>Company</th>
+                    <th>Role</th>
+                    <th>Key Alliance/Rivalry</th>
+                </tr>
+                <tr>
+                    <td>OpenAI</td>
+                    <td>Model Innovation (GPT-5)</td>
+                    <td>Alliance with Microsoft, Azure</td>
+                </tr>
+                <tr>
+                    <td>Microsoft</td>
+                    <td>Infrastructure (Azure)</td>
+                    <td>Alliance with OpenAI</td>
+                </tr>
+                <tr>
+                    <td>Google DeepMind</td>
+                    <td>Competitor Models (Genie3, Veo3)</td>
+                    <td>Independent, potential rivalry</td>
+                </tr>
+                <tr>
+                    <td>Nvidia</td>
+                    <td>AI Infrastructure Provider</td>
+                    <td>Independent, supports ecosystem</td>
+                </tr>
+                <tr>
+                    <td>Apple</td>
+                    <td>On-Device AI Models</td>
+                    <td>Independent, potential competitor</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h4>Conclusion</h4>
+            <p>The AI ecosystem as of August 8, 2025, is characterized by rapid advancements, with GPT-5 and agentic AI leading narratives. Key players like OpenAI, Microsoft, and Google DeepMind shape discourse, with alliances like OpenAI-Microsoft driving innovation. Rivalries between open-source and closed systems, along with a pro-AI accelerationist echo chamber, highlight the competitive and ideological landscape. While no clear censorship was detected, the uniformity in messaging suggests potential coordinated efforts, warranting further scrutiny. This analysis provides a snapshot of a dynamic and evolving field, with implications for policy, ethics, and societal impact.</p>
         </div>
     </div>
 
-    <script>
-        const canvas = document.getElementById('mindmap');
-        const ctx = canvas.getContext('2d');
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
+    <div class="donate">
+        <h3>Support Our Mission</h3>
+        <p>Help us keep this service free by donating to cover our costs. All funds go toward improving our narrative analysis tools.</p>
+        <p><a href="https://cash.app">Donate via Cash App</a></p>
+    </div>
 
-        const nodes = [
-            { id: 'center', label: 'Narrative Ecosystem', x: canvas.width / 2, y: canvas.height / 2, color: '#2c3e50' },
-            { id: 'us_gov', label: 'US Gov (@StateDept)', x: canvas.width / 3, y: canvas.height / 3, color: '#3498db' },
-            { id: 'china_gov', label: 'China (@CGTN)', x: canvas.width * 2 / 3, y: canvas.height / 3, color: '#e74c3c' },
-            { id: 'india_gov', label: 'India (@IndiaGov)', x: canvas.width / 2, y: canvas.height / 4, color: '#c0392b' },
-            { id: 'iran_gov', label: 'Iran (@IranGov)', x: canvas.width / 4, y: canvas.height / 4, color: '#d35400' },
-            { id: 'israel', label: 'Israel (@Israel)', x: canvas.width * 3 / 4, y: canvas.height / 4, color: '#e67e22' },
-            { id: 'nato', label: 'NATO (@NATO)', x: canvas.width / 5, y: canvas.height / 3, color: '#2980b9' },
-            { id: 'xai', label: 'xAI (@xAI)', x: canvas.width / 4, y: canvas.height / 2, color: '#9b59b6' },
-            { id: 'openai', label: 'OpenAI (@OpenAI)', x: canvas.width * 3 / 4, y: canvas.height / 2, color: '#8e44ad' },
-            { id: 'roman_storm', label: 'Roman Storm (@RomanStorm)', x: canvas.width / 2, y: canvas.height * 2 / 3, color: '#7f8c8d' },
-            { id: 'eu', label: 'EU (@EU_Commission)', x: canvas.width * 4 / 5, y: canvas.height / 2, color: '#3498db' },
-            { id: 'nasa', label: 'NASA (@NASA)', x: canvas.width / 5, y: canvas.height * 2 / 3, color: '#2980b9' },
-            { id: 'climate_sci', label: 'Climate Sci (@ClimateSci)', x: canvas.width * 2 / 5, y: canvas.height * 3 / 4, color: '#27ae60' },
-            { id: 'green_ngo', label: 'NGOs (@GreenNGO)', x: canvas.width * 4 / 5, y: canvas.height * 2 / 3, color: '#27ae60' },
-            { id: 'fossil', label: 'Fossil Fuel (@FossilFuel)', x: canvas.width / 2, y: canvas.height * 3 / 4, color: '#e67e22' },
-            { id: 'fed', label: 'Fed (@FederalReserve)', x: canvas.width / 3, y: canvas.height * 3 / 4, color: '#f1c40f' },
-            { id: 'meta', label: 'Meta (@Meta)', x: canvas.width * 2 / 3, y: canvas.height * 3 / 4, color: '#3b5998' },
-            { id: 'aus_gov', label: 'Australia (@AusGov)', x: canvas.width / 4, y: canvas.height * 3 / 4, color: '#2ecc71' },
-            { id: 'x', label: 'X Platform (@X)', x: canvas.width / 2, y: canvas.height / 3, color: '#7f8c8d' },
-            { id: 'us_cons', label: 'US Conservatives (@USCons)', x: canvas.width * 3 / 5, y: canvas.height / 4, color: '#c0392b' },
-            { id: 'who', label: 'WHO (@WHO)', x: canvas.width * 2 / 3, y: canvas.height * 3 / 4, color: '#16a085' },
-            { id: 'pharma', label: 'Pharma (@PharmaCorp)', x: canvas.width / 3, y: canvas.height * 2 / 3, color: '#1abc9c' },
-            { id: 'antivax', label: 'Anti-Vax (@AntiVax)', x: canvas.width / 5, y: canvas.height / 4, color: '#95a5a6' },
-            { id: 'cnn', label: 'CNN (@CNN)', x: canvas.width / 4, y: canvas.height / 4, color: '#d35400' },
-            { id: 'influencers', label: 'Influencers (@JoeRogan)', x: canvas.width * 4 / 5, y: canvas.height / 5, color: '#e74c3c' },
-            { id: 'tiktok', label: 'TikTok (@TikTok)', x: canvas.width / 2, y: canvas.height / 5, color: '#69c9d0' },
-            { id: 'woke', label: '@WokeWatch', x: canvas.width / 5, y: canvas.height / 5, color: '#3498db' },
-            { id: 'trad', label: '@TradValues', x: canvas.width * 4 / 5, y: canvas.height / 5, color: '#e74c3c' },
-            { id: 'think_tanks', label: 'Think Tanks (@PolicyThink)', x: canvas.width / 3, y: canvas.height / 5, color: '#8e44ad' },
-            { id: 'conspiracy', label: '@ConspiracyX', x: canvas.width / 2, y: canvas.height * 4 / 5, color: '#95a5a6' },
-            { id: 'alt_news', label: 'Alt Media (@AltNews)', x: canvas.width * 3 / 5, y: canvas.height * 4 / 5, color: '#7f8c8d' },
-            { id: 'cia', label: 'CIA (@CIA)', x: canvas.width / 4, y: canvas.height * 3 / 5, color: '#34495e' },
-            { id: 'green_tech', label: 'Green Tech (@GreenTech)', x: canvas.width * 4 / 5, y: canvas.height * 3 / 5, color: '#27ae60' },
-            { id: 'faith_leader', label: 'Faith Leaders (@FaithLeader)', x: canvas.width / 5, y: canvas.height * 3 / 5, color: '#f39c12' },
-            { id: 'faith_org', label: 'Faith Orgs (@FaithOrg)', x: canvas.width / 2, y: canvas.height * 2 / 5, color: '#e67e22' },
-            { id: 'interfaith', label: 'Interfaith (@Interfaith)', x: canvas.width * 3 / 5, y: canvas.height * 2 / 5, color: '#16a085' }
-        ];
+    <div class="disclaimer">
+        <p><strong>Disclaimer:</strong> This narrative analysis system is in beta testing and provided for informational purposes only. All information presented is derived from publicly available sources, including social media platforms (e.g., X) and news reports, and is synthesized to identify patterns and relationships. No guarantee is made regarding the accuracy, completeness, or timeliness of the data, and users are encouraged to verify information independently. The system may reflect biases inherent in public data or algorithms and is subject to ongoing refinement. Neither the creators nor the platform assume liability for decisions made based on this analysis. Use at your own risk.</p>
+    </div>
+</div>
 
-        const edges = [
-            { from: 'center', to: 'us_gov', label: 'Central', color: '#333' },
-            { from: 'center', to: 'china_gov', label: 'Central', color: '#333' },
-            { from: 'center', to: 'india_gov', label: 'Central', color: '#333' },
-            { from: 'center', to: 'iran_gov', label: 'Central', color: '#333' },
-            { from: 'center', to: 'israel', label: 'Central', color: '#333' },
-            { from: 'center', to: 'nato', label: 'Central', color: '#333' },
-            { from: 'us_gov', to: 'china_gov', label: 'Rival', color: '#e74c3c' },
-            { from: 'us_gov', to: 'nato', label: 'Ally', color: '#27ae60' },
-            { from: 'us_gov', to: 'israel', label: 'Ally', color: '#27ae60' },
-            { from: 'us_gov', to: 'us_cons', label: 'Echo', color: '#2980b9' },
-            { from: 'china_gov', to: 'india_gov', label: 'Rival', color: '#e74c3c' },
-            { from: 'china_gov', to: 'iran_gov', label: 'Ally', color: '#27ae60' },
-            { from: 'india_gov', to: 'nato', label: 'Independent', color: '#7f8c8d' },
-            { from: 'iran_gov', to: 'israel', label: 'Rival', color: '#e74c3c' },
-            { from: 'xai', to: 'openai', label: 'Rival', color: '#e74c3c' },
-            { from: 'xai', to: 'x', label: 'Ally', color: '#27ae60' },
-            { from: 'openai', to: 'eu', label: 'Ally', color: '#27ae60' },
-            { from: 'roman_storm', to: 'us_gov', label: 'Rival', color: '#e74c3c' },
-            { from: 'eu', to: 'x', label: 'Rival', color: '#e74c3c' },
-            { from: 'nasa', to: 'green_ngo', label: 'Ally', color: '#27ae60' },
-            { from: 'climate_sci', to: 'fossil', label: 'Rival', color: '#e74c3c' },
-            { from: 'green_ngo', to: 'green_tech', label: 'Ally', color: '#27ae60' },
-            { from: 'fed', to: 'us_gov', label: 'Ally', color: '#27ae60' },
-            { from: 'meta', to: 'aus_gov', label: 'Rival', color: '#e74c3c' },
-            { from: 'x', to: 'us_cons', label: 'Echo', color: '#2980b9' },
-            { from: 'who', to: 'pharma', label: 'Ally', color: '#27ae60' },
-            { from: 'who', to: 'antivax', label: 'Rival', color: '#e74c3c' },
-            { from: 'cnn', to: 'influencers', label: 'Rival', color: '#e74c3c' },
-            { from: 'tiktok', to: 'influencers', label: 'Ally', color: '#27ae60' },
-            { from: 'woke', to: 'trad', label: 'Rival', color: '#e74c3c' },
-            { from: 'think_tanks', to: 'woke', label: 'Independent', color: '#7f8c8d' },
-            { from: 'conspiracy', to: 'alt_news', label: 'Ally', color: '#27ae60' },
-            { from: 'conspiracy', to: 'cia', label: 'Rival', color: '#e74c3c' },
-            { from: 'faith_leader', to: 'faith_org', label: 'Ally', color: '#27ae60' },
-            { from: 'interfaith', to: 'faith_leader', label: 'Independent', color: '#7f8c8d' }
-        ];
+<script>
+    const canvas = document.getElementById('mindmap');
+    const ctx = canvas.getContext('2d');
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
 
-        let selectedNode = null;
-        let draggedNode = null;
+    const nodes = [
+        { id: 'center', label: 'AI Ecosystem', x: canvas.width / 2, y: canvas.height / 2, color: '#1e3a8a' },
+        { id: 'openai', label: 'OpenAI (@OpenAI)', x: canvas.width / 3, y: canvas.height / 3, color: '#8e44ad' },
+        { id: 'microsoft', label: 'Microsoft (@Microsoft)', x: canvas.width * 2 / 3, y: canvas.height / 3, color: '#3498db' },
+        { id: 'google_deepmind', label: 'Google DeepMind', x: canvas.width / 2, y: canvas.height / 4, color: '#e74c3c' },
+        { id: 'nvidia', label: 'Nvidia (@Nvidia)', x: canvas.width / 4, y: canvas.height / 4, color: '#27ae60' },
+        { id: 'apple', label: 'Apple (@Apple)', x: canvas.width * 3 / 4, y: canvas.height / 4, color: '#7f8c8d' },
+        { id: 'sam_altman', label: 'Sam Altman (@sama)', x: canvas.width / 5, y: canvas.height / 2, color: '#9b59b6' },
+        { id: 'elon_musk', label: 'Elon Musk (@elonmusk)', x: canvas.width * 4 / 5, y: canvas.height / 2, color: '#e67e22' },
+        { id: 'open_source', label: 'Open-Source AI', x: canvas.width / 2, y: canvas.height * 3 / 4, color: '#f1c40f' },
+        { id: 'azure', label: 'Azure (@Azure)', x: canvas.width / 3, y: canvas.height * 2 / 3, color: '#2980b9' },
+        { id: 'harold_sinnott', label: 'Harold Sinnott (@HaroldSinnott)', x: canvas.width * 2 / 3, y: canvas.height * 2 / 3, color: '#16a085' }
+    ];
 
-        function drawMindMap() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
-            ctx.shadowBlur = 10;
-            ctx.shadowOffsetX = 3;
-            ctx.shadowOffsetY = 3;
+    const edges = [
+        { from: 'center', to: 'openai', label: 'Central', color: '#333' },
+        { from: 'center', to: 'microsoft', label: 'Central', color: '#333' },
+        { from: 'center', to: 'google_deepmind', label: 'Central', color: '#333' },
+        { from: 'center', to: 'nvidia', label: 'Central', color: '#333' },
+        { from: 'center', to: 'apple', label: 'Central', color: '#333' },
+        { from: 'center', to: 'sam_altman', label: 'Central', color: '#333' },
+        { from: 'center', to: 'elon_musk', label: 'Central', color: '#333' },
+        { from: 'center', to: 'open_source', label: 'Central', color: '#333' },
+        { from: 'center', to: 'azure', label: 'Central', color: '#333' },
+        { from: 'center', to: 'harold_sinnott', label: 'Central', color: '#333' },
+        { from: 'openai', to: 'microsoft', label: 'Ally', color: '#27ae60' },
+        { from: 'openai', to: 'azure', label: 'Ally', color: '#27ae60' },
+        { from: 'openai', to: 'sam_altman', label: 'Ally', color: '#27ae60' },
+        { from: 'openai', to: 'open_source', label: 'Rival', color: '#e74c3c' },
+        { from: 'microsoft', to: 'azure', label: 'Ally', color: '#27ae60' },
+        { from: 'google_deepmind', to: 'openai', label: 'Rival', color: '#e74c3c' },
+        { from: 'nvidia', to: 'openai', label: 'Independent', color: '#7f8c8d' },
+        { from: 'apple', to: 'openai', label: 'Independent', color: '#7f8c8d' },
+        { from: 'elon_musk', to: 'openai', label: 'Rival', color: '#e74c3c' },
+        { from: 'harold_sinnott', to: 'openai', label: 'Echo', color: '#2980b9' }
+    ];
 
-            edges.forEach(edge => {
-                const fromNode = nodes.find(n => n.id === edge.from);
-                const toNode = nodes.find(n => n.id === edge.to);
-                ctx.beginPath();
-                ctx.moveTo(fromNode.x, fromNode.y);
-                ctx.lineTo(toNode.x, toNode.y);
-                ctx.strokeStyle = edge.color + 'cc';
-                ctx.lineWidth = 2;
-                ctx.stroke();
-                const midX = (fromNode.x + toNode.x) / 2;
-                const midY = (fromNode.y + toNode.y) / 2;
-                ctx.fillStyle = edge.color;
-                ctx.font = '10px Arial';
-                ctx.fillText(edge.label, midX, midY - 10);
-            });
+    let selectedNode = null;
+    let draggedNode = null;
 
-            nodes.forEach(node => {
-                const gradient = ctx.createRadialGradient(node.x - 10, node.y - 10, 5, node.x, node.y, 30);
-                gradient.addColorStop(0, '#ffffff');
-                gradient.addColorStop(1, node.color);
-                ctx.beginPath();
-                ctx.arc(node.x, node.y, 30, 0, 2 * Math.PI);
-                ctx.fillStyle = gradient;
-                ctx.fill();
-                ctx.strokeStyle = node === selectedNode ? '#000' : '#333';
-                ctx.lineWidth = node === selectedNode ? 4 : 1;
-                ctx.stroke();
-                ctx.fillStyle = '#fff';
-                ctx.font = '12px Arial';
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'middle';
-                ctx.shadowColor = 'rgba(0, 0, 0, 0.5)'; // Add subtle black text shadow
-                ctx.shadowBlur = 2;
-                ctx.shadowOffsetX = 1;
-                ctx.shadowOffsetY = 1;
-                ctx.fillText(node.label, node.x, node.y);
-                ctx.shadowColor = 'rgba(0, 0, 0, 0)'; // Reset shadow for other elements
-                ctx.shadowBlur = 0;
-                ctx.shadowOffsetX = 0;
-                ctx.shadowOffsetY = 0;
-            });
+    function drawMindMap() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        edges.forEach(edge => {
+            const fromNode = nodes.find(n => n.id === edge.from);
+            const toNode = nodes.find(n => n.id === edge.to);
+
+            // Draw shadow for edge
+            ctx.beginPath();
+            ctx.moveTo(fromNode.x, fromNode.y);
+            ctx.lineTo(toNode.x, toNode.y);
+            ctx.strokeStyle = 'rgba(0, 0, 0, 0.3)';
+            ctx.lineWidth = 6;
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+            ctx.shadowBlur = 8;
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            ctx.stroke();
+
+            // Draw main edge
+            ctx.beginPath();
+            ctx.moveTo(fromNode.x, fromNode.y);
+            ctx.lineTo(toNode.x, toNode.y);
+            ctx.strokeStyle = edge.color;
+            ctx.lineWidth = 4;
+            ctx.shadowColor = 'rgba(0, 0, 0, 0)';
+            ctx.shadowBlur = 0;
+            ctx.stroke();
+
+            // Draw label with background
+            const midX = (fromNode.x + toNode.x) / 2;
+            const midY = (fromNode.y + toNode.y) / 2;
+            ctx.font = '12px Segoe UI';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            const textMetrics = ctx.measureText(edge.label);
+            const padding = 6;
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.fillRect(midX - textMetrics.width / 2 - padding, midY - 8 - padding, textMetrics.width + padding * 2, 16 + padding * 2);
+            ctx.fillStyle = edge.color;
+            ctx.fillText(edge.label, midX, midY);
+        });
+
+        nodes.forEach(node => {
+            const gradient = ctx.createRadialGradient(node.x - 10, node.y - 10, 5, node.x, node.y, 30);
+            gradient.addColorStop(0, '#ffffff');
+            gradient.addColorStop(1, node.color);
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, 30, 0, 2 * Math.PI);
+            ctx.fillStyle = gradient;
+            ctx.fill();
+            ctx.strokeStyle = node === selectedNode ? '#000' : '#333';
+            ctx.lineWidth = node === selectedNode ? 4 : 1;
+            ctx.stroke();
+            ctx.fillStyle = '#fff';
+            ctx.font = '12px Segoe UI';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+            ctx.shadowBlur = 2;
+            ctx.shadowOffsetX = 1;
+            ctx.shadowOffsetY = 1;
+            ctx.fillText(node.label, node.x, node.y);
+            ctx.shadowColor = 'rgba(0, 0, 0, 0)';
+            ctx.shadowBlur = 0;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
+        });
+    }
+
+    drawMindMap();
+
+    canvas.addEventListener('mousedown', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        nodes.forEach(node => {
+            const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2);
+            if (dist < 30) {
+                draggedNode = node;
+                selectedNode = node;
+            }
+        });
+        drawMindMap();
+    });
+
+    canvas.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        if (draggedNode) {
+            draggedNode.x = Math.max(30, Math.min(canvas.width - 30, x));
+            draggedNode.y = Math.max(30, Math.min(canvas.height - 30, y));
+            drawMindMap();
         }
 
+        let tooltipNode = null;
+        nodes.forEach(node => {
+            const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2);
+            if (dist < 30) {
+                tooltipNode = node;
+            }
+        });
+
+        if (tooltipNode) {
+            let tooltip = document.querySelector('.tooltip');
+            if (!tooltip) {
+                tooltip = document.createElement('div');
+                tooltip.className = 'tooltip';
+                document.body.appendChild(tooltip);
+            }
+            tooltip.style.left = `${e.clientX + 10}px`;
+            tooltip.style.top = `${e.clientY + 10}px`;
+            tooltip.textContent = tooltipNode.label;
+        } else {
+            const tooltip = document.querySelector('.tooltip');
+            if (tooltip) tooltip.remove();
+        }
+    });
+
+    canvas.addEventListener('mouseup', () => {
+        draggedNode = null;
+    });
+
+    canvas.addEventListener('click', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        selectedNode = null;
+        nodes.forEach(node => {
+            const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2);
+            if (dist < 30) {
+                selectedNode = node;
+            }
+        });
         drawMindMap();
-
-        canvas.addEventListener('mousedown', (e) => {
-            const rect = canvas.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            nodes.forEach(node => {
-                const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2);
-                if (dist < 30) {
-                    draggedNode = node;
-                    selectedNode = node;
-                }
-            });
-            drawMindMap();
-        });
-
-        canvas.addEventListener('mousemove', (e) => {
-            const rect = canvas.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            if (draggedNode) {
-                draggedNode.x = Math.max(30, Math.min(canvas.width - 30, x));
-                draggedNode.y = Math.max(30, Math.min(canvas.height - 30, y));
-                drawMindMap();
-            }
-
-            let tooltipNode = null;
-            nodes.forEach(node => {
-                const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2);
-                if (dist < 30) {
-                    tooltipNode = node;
-                }
-            });
-
-            if (tooltipNode) {
-                let tooltip = document.querySelector('.tooltip');
-                if (!tooltip) {
-                    tooltip = document.createElement('div');
-                    tooltip.className = 'tooltip';
-                    document.body.appendChild(tooltip);
-                }
-                tooltip.style.left = `${e.clientX + 10}px`;
-                tooltip.style.top = `${e.clientY + 10}px`;
-                tooltip.textContent = tooltipNode.label;
-            } else {
-                const tooltip = document.querySelector('.tooltip');
-                if (tooltip) tooltip.remove();
-            }
-        });
-
-        canvas.addEventListener('mouseup', () => {
-            draggedNode = null;
-        });
-
-        canvas.addEventListener('click', (e) => {
-            const rect = canvas.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            selectedNode = null;
-            nodes.forEach(node => {
-                const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2);
-                if (dist < 30) {
-                    selectedNode = node;
-                }
-            });
-            drawMindMap();
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
