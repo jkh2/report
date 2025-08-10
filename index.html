@@ -305,9 +305,9 @@
         let currentNodeIndex = -1;
 
         // Force-directed layout parameters
-        const k = 0.005; // Reduced spring constant for looser attraction
-        const repulsion = 100; // Increased repulsion for more spread
-        const damping = 0.55; // Increased damping for quicker settling
+        const k = 0.002; // Reduced spring constant for looser attraction
+        const repulsion = 200; // Increased repulsion for more spread
+        const damping = 0.35; // Increased damping for quicker settling
         const centerForce = 0.0005; // Reduced center force
 
         // Debounce function
@@ -334,7 +334,7 @@
                     if (other !== node) {
                         const dx = node.x - other.x;
                         const dy = node.y - other.y;
-                        const distance = Math.sqrt(dx * dx + dy * dy) || 0.1;
+                        const distance = Math.sqrt(dx * dx + dy * dy) || 0.3;
                         const force = repulsion / (distance * distance);
                         fx += force * dx / distance;
                         fy += force * dy / distance;
