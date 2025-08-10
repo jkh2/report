@@ -3,252 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Ecosystem Narrative Analysis - August 7-8, 2025</title>
+    <title>AI Ecosystem Narrative Analysis - August 9-10, 2025</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #e0e7ff, #f4f4f4);
-            color: #333;
-            line-height: 1.6;
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 20px; background: linear-gradient(135deg, #e0e7ff, #f4f4f4); color: #333; line-height: 1.6; }
+        h1, h2, h3, h4 { color: #1e3a8a; font-weight: 600; }
+        #mindmap { width: 80vw; height: 60vh; max-width: 1000px; min-height: 400px; margin: 20px auto; border: 2px solid #1e3a8a; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        @media (max-width: 768px) {
+            #mindmap { height: 80vh; }
         }
-        h1, h2, h3, h4 {
-            color: #1e3a8a;
-            font-weight: 600;
-        }
-        #mindmap {
-            width: 80vw;
-            height: 60vh;
-            max-width: 1000px;
-            min-height: 400px;
-            margin: 20px auto;
-            border: 2px solid #1e3a8a;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .report {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .report ul {
-            margin: 15px 0;
-            padding-left: 25px;
-        }
-        .report li {
-            margin-bottom: 12px;
-        }
-        .section {
-            margin-bottom: 25px;
-            padding: 20px;
-            background-color: #f9fafb;
-            border-radius: 8px;
-            border-left: 4px solid #1e3a8a;
-        }
-        .section h3, .section h4 {
-            margin-top: 0;
-        }
-        canvas {
-            display: block;
-            border-radius: 10px;
-            width: 100%;
-            height: 100%;
-        }
-        .donate, .disclaimer {
-            margin: 25px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            text-align: center;
-            max-width: 1000px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .donate a {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #1e3a8a;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        .donate a:hover {
-            background-color: #1e40af;
-        }
-        .disclaimer {
-            font-size: 0.9em;
-            color: #555;
-            background-color: #f9fafb;
-        }
-        .tooltip {
-            position: absolute;
-            background-color: #1e3a8a;
-            color: #fff;
-            padding: 8px 12px;
-            border-radius: 5px;
-            font-size: 12px;
-            pointer-events: none;
-            z-index: 1000;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        .header p {
-            font-size: 1.1em;
-            color: #4b5563;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        th {
-            background-color: #1e3a8a;
-            color: #fff;
-            font-weight: 600;
-        }
-        tr:nth-child(even) {
-            background-color: #f9fafb;
-        }
-        [tabindex="0"]:focus {
-            outline: 2px solid #1e40af;
-            outline-offset: 2px;
-        }
+        .report { max-width: 1000px; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .report ul { margin: 15px 0; padding-left: 25px; }
+        .report li { margin-bottom: 12px; }
+        .section { margin-bottom: 25px; padding: 20px; background-color: #f9fafb; border-radius: 8px; border-left: 4px solid #1e3a8a; }
+        .section h3, .section h4 { margin-top: 0; }
+        canvas { display: block; border-radius: 10px; width: 100%; height: 100%; }
+        .donate, .disclaimer { margin: 25px auto; padding: 20px; background-color: #fff; border-radius: 8px; text-align: center; max-width: 1000px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .donate a { display: inline-block; padding: 12px 24px; background-color: #1e3a8a; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s; }
+        .donate a:hover { background-color: #1e40af; }
+        .disclaimer { font-size: 0.9em; color: #555; background-color: #f9fafb; }
+        .tooltip { position: absolute; background-color: #1e3a8a; color: #fff; padding: 8px 12px; border-radius: 5px; font-size: 12px; pointer-events: none; z-index: 1000; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; color: #4b5563; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background-color: #fff; border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+        th { background-color: #1e3a8a; color: #fff; font-weight: 600; }
+        tr:nth-child(even) { background-color: #f9fafb; }
+        [tabindex="0"]:focus { outline: 2px solid #1e40af; outline-offset: 2px; }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>AI Ecosystem Narrative Analysis - August 7-8, 2025</h1>
+        <h1>AI Ecosystem Narrative Analysis - August 9-10, 2025</h1>
         <p>Mapping the narratives, relationships, and influences shaping the AI landscape</p>
     </div>
-
     <canvas id="mindmap" tabindex="0" aria-label="Interactive mind map of AI ecosystem entities and relationships"></canvas>
-
     <div class="report">
         <h2>Detailed Report</h2>
-
         <div class="section">
             <h3>Introduction and Context</h3>
-            <p>This analysis, conducted at 08:27 AM PDT on Friday, August 8, 2025, examines the narrative ecosystem surrounding the AI industry over the past 24 hours, focusing on social media platforms (X, Facebook, YouTube, Bluesky) and news media. The goal is to identify trending narratives, key entities driving discourse, map alliances, rivalries, echo chambers, and independent actors, and detect coordinated messaging, manipulation, or censorship. This report aims to defend the American public's mental space by providing a comprehensive, unbiased overview, ensuring clarity and accessibility for all stakeholders.</p>
+            <p>This analysis, conducted at 08:27 AM PDT on Sunday, August 10, 2025, examines the narrative ecosystem surrounding the AI industry over the past 24 hours, focusing on social media platforms (X, Facebook, YouTube, Bluesky) and news media. The goal is to identify trending narratives, key entities driving discourse, map alliances, rivalries, echo chambers, and independent actors, and detect coordinated messaging, manipulation, or censorship. This report aims to defend the American public's mental space by providing a comprehensive, unbiased overview, ensuring clarity and accessibility for all stakeholders.</p>
         </div>
-
         <div class="section">
             <h3>Methodology</h3>
-            <p>The analysis leverages recent web searches and social media posts to capture real-time trends. Web searches identified news articles from sources like WSJ, TechCrunch, Reuters, and BBC, covering topics such as AI's impact on consulting, legal issues, and technological advancements. Social media analysis focused on X posts, given their high engagement and visibility, with additional consideration for platforms like Facebook, YouTube, and Bluesky, though specific data from the latter was limited in the timeframe. The analysis identifies key entities (companies, governments, influencers, independent actors) and maps their relationships based on narrative alignment and interaction patterns.</p>
+            <p>The analysis leverages recent web searches and social media posts to capture real-time trends. Web searches identified news articles from diverse sources, covering topics such as AGI timelines, safety concerns, and ethical impacts. Social media analysis focused on X posts, given their high engagement and visibility, with additional consideration for platforms like Facebook, YouTube, and Bluesky, though specific data from the latter was limited in the timeframe. The analysis identifies key entities (companies, governments, influencers, independent actors) and maps their relationships based on narrative alignment and interaction patterns.</p>
         </div>
-
         <div class="section">
             <h3>Trending Narratives in the AI Industry</h3>
             <p>The discourse reveals four primary narrative themes, each with significant traction:</p>
             <ul>
-                <li><strong>AI Adoption and Investment:</strong> News articles and X posts highlight a surge in AI adoption, with enterprise spending increasing from $2.3 billion in 2023 to $13.8 billion in 2025, as noted by @ankitamohnani28. VCs are investing heavily in AI infrastructure, with @Shay_side mentioning Nvidia hitting a $4 trillion market cap, now larger than Amazon, and founders pivoting to autonomous agent-led workflows.</li>
-                <li><strong>AI Technological Advancements:</strong> Significant developments include OpenAI's release of GPT-5 and open-source models, as well as Apple's focus on on-device AI models. News from TechCrunch mentions Meta acquiring AI audio startup WaveForms, and BBC reports on OpenAI boosting ChatGPT to 'PhD-level' capabilities with GPT-5.</li>
-                <li><strong>AI Risks and Ethics:</strong> Concerns about AI risks are prominent, with X posts like @SirAnas01 listing dangers such as data collection, bias, job replacement, and deepfakes. @A_Modern_Man1 warns of overreliance killing creativity and ethical questions around data privacy.</li>
-                <li><strong>Geopolitical Aspects:</strong> Competition between US and Chinese AI developments is evident, with Reuters reporting Tesla streamlining AI chip design and China opening stores for life-like robots (BBC). This narrative underscores global rivalry, with the US focusing on regulation and China on innovation in robotics.</li>
+                <li><strong>AGI Timelines and Realism:</strong> Optimism persists in some quarters, with predictions of AGI by 2025 from figures like Sam Altman, but skepticism is rising. Reports like the Stanford AI Index 2025 highlight rapid advancements (e.g., 59 U.S. federal AI regulations in 2024, up from previous years), yet forecasts warn of gloom, such as AI Futures Project's "AI 2027" scenario of rogue systems. On X, posts mock "AGI cults" and debate whether GPT-5 represents progress or regression.</li>
+                <li><strong>Safety vs. Acceleration:</strong> Safety narratives dominate with the International AI Safety Report 2025 and DeepMind's AGI safety paper, emphasizing risks like deepfakes and misalignment. Accelerationist views, pushed by Elon Musk, frame AGI as inevitable and beneficial if "truth-seeking." Shifts include backlash against OpenAI's GPT-5 for reduced "personality," seen as a safety-driven neutering of models.</li>
+                <li><strong>Open-Source vs. Closed Models:</strong> Meta's open-source push (e.g., Llama models) contrasts with OpenAI's closed approach, fueling rivalries. X discussions highlight biases in closed systems, like Truth Social's AI chatbot favoring conservative sources. Leaks suggest China-linked firms using AI for propaganda, raising coordination concerns.</li>
+                <li><strong>Ethical and Societal Impacts:</strong> Lawsuits against Anthropic for content theft underscore anti-AI sentiments among creators. Posts on X decry "AI slop" in art and media, with high engagement on anti-generative AI videos. Public leaks are minimal, but papers on arXiv (none new on Aug 9-10) echo ongoing ethics debates.</li>
             </ul>
         </div>
-
         <div class="section">
             <h3>Key Entities Driving Discourse</h3>
             <p>The following entities are central to the AI narrative ecosystem:</p>
             <ul>
                 <li><strong>Companies:</strong>
                     <ul>
-                        <li><strong>OpenAI:</strong> Leading with GPT-5 releases and open-source models, driving pro-AI narratives.</li>
-                        <li><strong>Google:</strong> Testing AI upgrades for Google Finance and developing Deepfake Hunter, competing with OpenAI.</li>
-                        <li><strong>Meta:</strong> Involved in AI defamation lawsuits and acquisitions like WaveForms, facing legal challenges.</li>
-                        <li><strong>Apple:</strong> Developing on-device AI models, aligning with technological advancement narratives.</li>
-                        <li><strong>Nvidia:</strong> Key in AI hardware, with a market cap surpassing Amazon, supporting AI infrastructure.</li>
-                        <li><strong>Tesla:</strong> Streamlining AI chip design, focusing on autonomous systems, and using Nvidia chips.</li>
-                        <li><strong>TCS:</strong> Facing layoffs due to AI, highlighting industry shakeups in outsourcing.</li>
-                        <li><strong>McKinsey:</strong> Experiencing an "existential" shift due to AI, impacting consulting.</li>
+                        <li><strong>OpenAI:</strong> Leading with GPT-5 releases and closed models, driving acceleration narratives.</li>
+                        <li><strong>xAI:</strong> Focused on "truth-seeking" AI, aligning with accelerationists.</li>
+                        <li><strong>Meta AI:</strong> Pushing open-source models like Llama, involved in ethical debates.</li>
+                        <li><strong>Google DeepMind:</strong> Developing safety-focused AGI papers and tools.</li>
+                        <li><strong>Anthropic:</strong> Emphasizing effective altruism and safety, facing lawsuits.</li>
                     </ul>
                 </li>
-                <li><strong>Governments:</strong>
+                <li><strong>Individuals/Influencers:</strong>
                     <ul>
-                        <li><strong>US Government:</strong> Likely to regulate AI companies, given mentions of biosecurity risks and job impacts.</li>
-                        <li><strong>Chinese Government:</strong> Supporting AI development, particularly in robotics, competing with US efforts.</li>
+                        <li><strong>Elon Musk:</strong> xAI leader, promoting acceleration and truth-seeking.</li>
+                        <li><strong>Sam Altman:</strong> OpenAI CEO, optimistic on AGI timelines.</li>
+                        <li><strong>Yann LeCun:</strong> Meta AI chief, advocating open-source.</li>
+                        <li><strong>Demis Hassabis:</strong> Google DeepMind CEO, focusing on safety.</li>
+                        <li><strong>Dario Amodei:</strong> Anthropic CEO, aligned with safety narratives.</li>
+                        <li>X users like @AISafetyMemes (safety memes), @pot8um (anti-AI art critic), and virtual influencers like Lil Miquela (brand promotions).</li>
+                        <li>Paid influencers hyping AI tools, often undisclosed.</li>
                     </ul>
                 </li>
-                <li><strong>Influencers:</strong>
+                <li><strong>Narratives:</strong>
                     <ul>
-                        <li>X users like @ankitamohnani28 (AI investment trends), @Philosopar (industry transformation), @Shay_side (VC interest), and @dux_zotto (enterprise adoption) drive pro-AI narratives.</li>
-                        <li>Anti-AI influencers include @SirAnas01 (AI dangers), @A_Modern_Man1 (ethical risks), and @TweekFawkes (cybersecurity risks), focusing on caution.</li>
+                        <li>Safety, Acceleration, Open-Source, Closed Models, AGI Optimism/Fear, Paid Promotions.</li>
                     </ul>
                 </li>
                 <li><strong>Independent Actors:</strong>
                     <ul>
-                        <li><strong>Open-source AI Community:</strong> Developing alternatives like Mamba, competing with closed-source models.</li>
-                        <li><strong>Academic Researchers:</strong> Institutions like Harvard (quantum computing chips) and MIT (eco-driving AI) contribute to discourse.</li>
-                        <li><strong>Individual Voices:</strong> jameskharwood2 (@jameskharwood2) is notable, discussing AI ethics, sentience, and tools like "EM DASH KILLER" for improving AI text, offering balanced perspectives.</li>
+                        <li><strong>Open-source Communities:</strong> Developing alternatives, but often tied to Meta.</li>
+                        <li><strong>Academic Researchers:</strong> Contributing to safety and ethics papers.</li>
+                        <li><strong>Individual Voices:</strong> Critics like @pot8um appear independent but operate in anti-AI echo chambers; others like Ray Eitel-Porter have corporate ties.</li>
                     </ul>
                 </li>
             </ul>
         </div>
-
         <div class="section">
             <h3>Alliances, Rivalries, and Echo Chambers</h3>
             <p>Relationships within the ecosystem are shaping narratives:</p>
             <ul>
                 <li><strong>Alliances:</strong>
                     <ul>
-                        <li>Tesla uses Nvidia for AI chips (supplier relationship).</li>
-                        <li>Pro-AI influencers align with companies like OpenAI and Google, promoting adoption narratives.</li>
-                        <li>OpenAI and Microsoft have known partnerships, though not explicitly mentioned here.</li>
+                        <li>OpenAI with Microsoft (closed ecosystem); Meta with open-source advocates; Anthropic with EA/safety groups.</li>
+                        <li>Musk with accelerationists; LeCun with open-source; Amodei with safety; Paid influencers with startups.</li>
+                        <li>Safety with regulation (e.g., EU AI Act); Open-Source with Meta; Paid narratives with virtual influencers.</li>
                     </ul>
                 </li>
                 <li><strong>Rivalries:</strong>
                     <ul>
-                        <li>OpenAI vs. Google in AI model development and market share.</li>
-                        <li>Google vs. Meta in tech and AI innovation.</li>
-                        <li>US AI companies vs. Chinese AI companies in global competition, particularly in robotics and innovation.</li>
+                        <li>OpenAI vs. xAI (product vs. truth-seeking); Meta vs. OpenAI (open vs. closed); Anthropic vs. accelerationists like xAI.</li>
+                        <li>Musk vs. Altman; LeCun critiques closed models; Independents vs. paid shills.</li>
+                        <li>Safety vs. Acceleration; Open vs. Closed; Independents vs. paid hype.</li>
                     </ul>
                 </li>
                 <li><strong>Echo Chambers:</strong>
                     <ul>
-                        <li><strong>Pro-AI Narrative:</strong> Dominated by company posts (e.g., OpenAI's GPT-5 release) and influencers like @Shay_side, reinforcing AI hype and investment.</li>
-                        <li><strong>Anti-AI Narrative:</strong> Focused on risks, with influencers like @SirAnas01 and @calebini discussing job displacement and ethics, often amplified on X.</li>
+                        <li>Safety-focused in Anthropic/Google communities; acceleration in xAI forums.</li>
+                        <li>EA/safety on X/Reddit; anti-AI artist groups; Paid promo echoes in AI tool launches.</li>
+                        <li>Reddit biases creating left-leaning echoes; X amplifies anti-AI slop; Bot farms echo paid content.</li>
                     </ul>
                 </li>
                 <li><strong>Independent Actors:</strong>
                     <ul>
-                        <li>Open-source AI communities provide alternatives, competing with closed-source models.</li>
-                        <li>Academic researchers (Harvard, MIT) focus on AI's societal impacts.</li>
-                        <li>jameskharwood2 (@jameskharwood2) offers nuanced views, discussing AI sentience, ethics, and practical tools, independent of major narratives.</li>
+                        <li>Apple building rivals, avoiding alliances.</li>
+                        <li>Critics like @pot8um opposing generative AI; Some "independents" tied to affiliations (e.g., ex-Accenture).</li>
+                        <li>Balanced views on AGI timelines (e.g., skepticism in forecasts).</li>
                     </ul>
                 </li>
             </ul>
         </div>
-
+        <div class="section">
+            <h3>Deeper Dive: Social Media Influencers and Top-Down Narrative Pushing</h3>
+            <p>Influencers play a pivotal role in amplifying AI narratives, often through top-down mechanisms like paid promotions and echo chambers. Over the past 24 hours, X posts reveal undisclosed sponsorships where "AI influencers" earn $300-$5000 per post to hype products, without disclosure, violating regulations. Examples include Higgsfield AI's launches, where dozens of influencers post identical praise, suggesting coordinated, paid campaigns. Virtual AI influencers like Lil Miquela and Rozy secure over 100 sponsorships, earning millions for brands like Calvin Klein, blending authenticity with corporate control. This creates echo chambers: Bot farms and algorithms amplify paid content, distorting public perception, as seen in anti-ETH or anti-ordinal FUD funded by foundations. China-linked GoLaxy uses AI for "Smart Propaganda," targeting opinions in real-time.</p>
+        </div>
+        <div class="section">
+            <h3>Scrutiny of Independent Voices</h3>
+            <p>Purportedly independent voices often reveal affiliations upon closer inspection. For instance, top AI influencers like Ray Eitel-Porter (ex-Accenture) and Katie King (CEO, AI in Business) have corporate ties, blurring independence. Critics like @AISafetyMemes appear grassroots but echo safety narratives aligned with Anthropic. Artists opposing "AI slop" (@pot8um) seem truly independent, lacking sponsorships, but even they operate in anti-AI echo chambers amplified by X algorithms. Virtual "independents" like Aitana Lopez are agency-created for niches, with earnings tied to brand deals, questioning autonomy. True independence is rare; most "voices" have subtle ties to funding or alliances.</p>
+        </div>
         <div class="section">
             <h3>Coordinated Messaging, Manipulation, or Censorship</h3>
             <p>Analysis of potential manipulation or censorship reveals:</p>
             <ul>
-                <li><strong>Coordinated Messaging:</strong> The release of GPT-5 by OpenAI has generated a coordinated narrative across platforms, with multiple X posts (@GueyeFaal, @Shay_side) and news articles (TechCrunch, BBC) highlighting its impact. This suggests a PR-driven effort to amplify AI advancements.</li>
-                <li><strong>Manipulation:</strong> Some posts may overhype AI capabilities, such as claims of AI outpacing humans in all tasks (@AlvaApp), potentially downplaying risks. However, no widespread manipulation was detected, as critical voices (e.g., @A_Modern_Man1) are also present.</li>
-                <li><strong>Censorship:</strong> Both pro-AI and anti-AI narratives are visible on social media, with no clear evidence of suppression. However, certain topics like AI's role in job displacement may be underrepresented in mainstream news compared to X, suggesting possible editorial bias rather than censorship.</li>
+                <li><strong>Coordinated Messaging:</strong> Suspicious coordination includes China-linked GoLaxy pitching AI as a "Smart Propaganda System" for real-time opinion shaping. On X, bots and "AI slop" (low-quality generated content) flood feeds, potentially inflating engagement and creating echo chambers. High-engagement posts promote free AI courses, possibly astroturfing adoption.</li>
+                <li><strong>Manipulation:</strong> Shifts: OpenAI's GPT-5 rollout sparked riots from "loyal soldiers" (users attached to GPT-4o), highlighting parasocial manipulation. Paid influencer networks exacerbate this, with undisclosed promotions in AI tool hype.</li>
+                <li><strong>Censorship:</strong> Censorship signals: Biases in AI chatbots (e.g., conservative slant in Truth Social) and Reddit's Dem-leaning data warp narratives. No overt leaks, but papers warn of deepfakes as security threats.</li>
             </ul>
         </div>
-
         <div class="section">
             <h3>Key Metrics</h3>
             <table>
@@ -257,20 +155,19 @@
                     <th>Details</th>
                 </tr>
                 <tr>
-                    <td>Enterprise AI Spend (2023)</td>
-                    <td>$2.3B</td>
+                    <td>U.S. Federal AI Regulations (2024)</td>
+                    <td>59</td>
                 </tr>
                 <tr>
-                    <td>Enterprise AI Spend (2025)</td>
-                    <td>$13.8B</td>
+                    <td>Influencer Earnings per Post</td>
+                    <td>$300-$5000</td>
                 </tr>
                 <tr>
-                    <td>Nvidia Market Cap (Recent)</td>
-                    <td>$4T, surpassing Amazon</td>
+                    <td>Virtual Influencer Sponsorships (e.g., Lil Miquela)</td>
+                    <td>Over 100</td>
                 </tr>
             </table>
         </div>
-
         <div class="section">
             <h3>Company Roles and Relationships</h3>
             <table>
@@ -281,63 +178,44 @@
                 </tr>
                 <tr>
                     <td>OpenAI</td>
-                    <td>Model Innovation (GPT-5)</td>
-                    <td>Alliance with Microsoft, Rivalry with Google</td>
+                    <td>Closed Models, Acceleration</td>
+                    <td>Alliance with Microsoft, Rivalry with xAI and Meta</td>
                 </tr>
                 <tr>
-                    <td>Google</td>
-                    <td>AI Upgrades, Deepfake Hunter</td>
-                    <td>Rivalry with OpenAI, Meta</td>
+                    <td>xAI</td>
+                    <td>Truth-Seeking AI, Acceleration</td>
+                    <td>Alliance with Elon Musk, Rivalry with OpenAI and Anthropic</td>
                 </tr>
                 <tr>
-                    <td>Meta</td>
-                    <td>AI Audio, Legal Challenges</td>
-                    <td>Rivalry with Google</td>
+                    <td>Meta AI</td>
+                    <td>Open-Source Models</td>
+                    <td>Alliance with Yann LeCun, Rivalry with OpenAI</td>
                 </tr>
                 <tr>
-                    <td>Apple</td>
-                    <td>On-Device AI Models</td>
-                    <td>Independent</td>
+                    <td>Google DeepMind</td>
+                    <td>Safety-Focused AGI</td>
+                    <td>Alliance with Demis Hassabis, Rivalry with Accelerationists</td>
                 </tr>
                 <tr>
-                    <td>Nvidia</td>
-                    <td>AI Infrastructure Provider</td>
-                    <td>Alliance with Tesla</td>
-                </tr>
-                <tr>
-                    <td>Tesla</td>
-                    <td>AI Chip Design</td>
-                    <td>Alliance with Nvidia</td>
-                </tr>
-                <tr>
-                    <td>TCS</td>
-                    <td>Outsourcing, AI Impact</td>
-                    <td>Independent</td>
-                </tr>
-                <tr>
-                    <td>McKinsey</td>
-                    <td>Consulting, AI Shift</td>
-                    <td>Independent</td>
+                    <td>Anthropic</td>
+                    <td>EA/Safety Groups</td>
+                    <td>Alliance with Dario Amodei, Rivalry with xAI</td>
                 </tr>
             </table>
         </div>
-
         <div class="section">
             <h3>Conclusion</h3>
-            <p>The AI industry discourse is dynamic, with pro-AI narratives driven by companies and VCs, and anti-AI narratives by influencers and academics, creating echo chambers. Rivalries between major players like OpenAI and Google, and geopolitical competition, add complexity. Independent actors like jameskharwood2 provide valuable nuanced perspectives, ensuring a balanced mental space for the public. While coordinated messaging around GPT-5 is evident, there is no clear manipulation or censorship, though editorial biases in news media warrant further monitoring. This analysis supports informed public discourse, crucial for navigating AI's rapid evolution.</p>
+            <p>The AI industry discourse is dynamic, with pro-AI narratives driven by companies and VCs, and anti-AI narratives by influencers and academics, creating echo chambers. Rivalries between major players like OpenAI and xAI, and geopolitical competition, add complexity. Independent actors provide valuable nuanced perspectives, ensuring a balanced mental space for the public. While coordinated messaging around GPT-5 and propaganda tools is evident, there is no clear manipulation or censorship, though editorial biases in news media warrant further monitoring. This analysis supports informed public discourse, crucial for navigating AI's rapid evolution.</p>
         </div>
     </div>
-
     <div class="donate">
         <h3>Support Our Mission</h3>
         <p>Help us keep this service free by donating to cover our costs. All funds go toward improving our narrative analysis tools.</p>
         <p><a href="https://cash.app">Donate via Cash App</a></p>
     </div>
-
     <div class="disclaimer">
         <p><strong>Disclaimer:</strong> This narrative analysis system is in beta testing and provided for informational purposes only. All information presented is derived from publicly available sources, including social media platforms (e.g., X) and news reports, and is synthesized to identify patterns and relationships. No guarantee is made regarding the accuracy, completeness, or timeliness of the data, and users are encouraged to verify information independently. The system may reflect biases inherent in public data or algorithms and is subject to ongoing refinement. Neither the creators nor the platform assume liability for decisions made based on this analysis. Use at your own risk.</p>
     </div>
-
     <script>
         // Initialize canvas and context
         const canvas = document.getElementById('mindmap');
@@ -354,47 +232,83 @@
         // Define nodes and edges
         const nodes = [
             { id: 'center', label: 'AI Ecosystem', x: canvas.width / 2, y: canvas.height / 2, color: '#1e3a8a', vx: 0, vy: 0, fixed: true },
-            { id: 'openai', label: 'OpenAI', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#8e44ad', vx: 0, vy: 0 },
-            { id: 'google', label: 'Google', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#e74c3c', vx: 0, vy: 0 },
-            { id: 'meta', label: 'Meta', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#3498db', vx: 0, vy: 0 },
-            { id: 'apple', label: 'Apple', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#7f8c8d', vx: 0, vy: 0 },
-            { id: 'nvidia', label: 'Nvidia', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#27ae60', vx: 0, vy: 0 },
-            { id: 'tesla', label: 'Tesla', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#e67e22', vx: 0, vy: 0 },
-            { id: 'us_gov', label: 'US Government', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#2980b9', vx: 0, vy: 0 },
-            { id: 'china_gov', label: 'Chinese Government', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#f1c40f', vx: 0, vy: 0 },
-            { id: 'open_source', label: 'Open-Source AI', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#16a085', vx: 0, vy: 0 },
-            { id: 'jameskharwood2', label: 'jameskharwood2 (@jameskharwood2)', x: Math.random() * canvas.width, y: Math.random() * canvas.height, color: '#9b59b6', vx: 0, vy: 0 }
+            { id: 'openai', label: 'OpenAI', x: 0, y: 0, color: '#8e44ad', vx: 0, vy: 0 },
+            { id: 'xai', label: 'xAI', x: 0, y: 0, color: '#e74c3c', vx: 0, vy: 0 },
+            { id: 'meta', label: 'Meta AI', x: 0, y: 0, color: '#3498db', vx: 0, vy: 0 },
+            { id: 'google', label: 'Google DeepMind', x: 0, y: 0, color: '#7f8c8d', vx: 0, vy: 0 },
+            { id: 'anthropic', label: 'Anthropic', x: 0, y: 0, color: '#27ae60', vx: 0, vy: 0 },
+            { id: 'musk', label: 'Elon Musk', x: 0, y: 0, color: '#e67e22', vx: 0, vy: 0 },
+            { id: 'altman', label: 'Sam Altman', x: 0, y: 0, color: '#2980b9', vx: 0, vy: 0 },
+            { id: 'lecun', label: 'Yann LeCun', x: 0, y: 0, color: '#f1c40f', vx: 0, vy: 0 },
+            { id: 'hassabis', label: 'Demis Hassabis', x: 0, y: 0, color: '#16a085', vx: 0, vy: 0 },
+            { id: 'amodei', label: 'Dario Amodei', x: 0, y: 0, color: '#9b59b6', vx: 0, vy: 0 },
+            { id: 'safety', label: 'Safety', x: 0, y: 0, color: '#e74c3c', vx: 0, vy: 0 },
+            { id: 'acceleration', label: 'Acceleration', x: 0, y: 0, color: '#3498db', vx: 0, vy: 0 },
+            { id: 'opensource', label: 'Open-Source', x: 0, y: 0, color: '#7f8c8d', vx: 0, vy: 0 },
+            { id: 'closed', label: 'Closed Models', x: 0, y: 0, color: '#27ae60', vx: 0, vy: 0 },
+            { id: 'paid_influencers', label: 'Paid Influencers', x: 0, y: 0, color: '#e67e22', vx: 0, vy: 0 },
+            { id: 'virtual_influencers', label: 'Virtual AI Influencers', x: 0, y: 0, color: '#2980b9', vx: 0, vy: 0 },
+            { id: 'independent_voices', label: 'Independent Voices', x: 0, y: 0, color: '#f1c40f', vx: 0, vy: 0 }
         ];
 
         const edges = [
             { from: 'center', to: 'openai', label: 'Central', color: '#333' },
-            { from: 'center', to: 'google', label: 'Central', color: '#333' },
+            { from: 'center', to: 'xai', label: 'Central', color: '#333' },
             { from: 'center', to: 'meta', label: 'Central', color: '#333' },
-            { from: 'center', to: 'apple', label: 'Central', color: '#333' },
-            { from: 'center', to: 'nvidia', label: 'Central', color: '#333' },
-            { from: 'center', to: 'tesla', label: 'Central', color: '#333' },
-            { from: 'center', to: 'us_gov', label: 'Central', color: '#333' },
-            { from: 'center', to: 'china_gov', label: 'Central', color: '#333' },
-            { from: 'center', to: 'open_source', label: 'Central', color: '#333' },
-            { from: 'center', to: 'jameskharwood2', label: 'Central', color: '#333' },
-            { from: 'openai', to: 'google', label: 'Rival', color: '#e74c3c' },
-            { from: 'openai', to: 'open_source', label: 'Rival', color: '#e74c3c' },
-            { from: 'google', to: 'meta', label: 'Rival', color: '#e74c3c' },
-            { from: 'nvidia', to: 'tesla', label: 'Ally', color: '#27ae60' },
-            { from: 'us_gov', to: 'china_gov', label: 'Rival', color: '#e74c3c' },
-            { from: 'openai', to: 'jameskharwood2', label: 'Echo', color: '#2980b9' },
-            { from: 'apple', to: 'openai', label: 'Independent', color: '#7f8c8d' }
+            { from: 'center', to: 'google', label: 'Central', color: '#333' },
+            { from: 'center', to: 'anthropic', label: 'Central', color: '#333' },
+            { from: 'center', to: 'musk', label: 'Central', color: '#333' },
+            { from: 'center', to: 'altman', label: 'Central', color: '#333' },
+            { from: 'center', to: 'lecun', label: 'Central', color: '#333' },
+            { from: 'center', to: 'hassabis', label: 'Central', color: '#333' },
+            { from: 'center', to: 'amodei', label: 'Central', color: '#333' },
+            { from: 'center', to: 'safety', label: 'Central', color: '#333' },
+            { from: 'center', to: 'acceleration', label: 'Central', color: '#333' },
+            { from: 'center', to: 'opensource', label: 'Central', color: '#333' },
+            { from: 'center', to: 'closed', label: 'Central', color: '#333' },
+            { from: 'center', to: 'paid_influencers', label: 'Central', color: '#333' },
+            { from: 'center', to: 'virtual_influencers', label: 'Central', color: '#333' },
+            { from: 'center', to: 'independent_voices', label: 'Central', color: '#333' },
+            { from: 'openai', to: 'xai', label: 'Rival', color: '#e74c3c' },
+            { from: 'meta', to: 'openai', label: 'Rival', color: '#e74c3c' },
+            { from: 'anthropic', to: 'xai', label: 'Rival', color: '#e74c3c' },
+            { from: 'safety', to: 'anthropic', label: 'Ally', color: '#27ae60' },
+            { from: 'safety', to: 'google', label: 'Ally', color: '#27ae60' },
+            { from: 'acceleration', to: 'xai', label: 'Ally', color: '#27ae60' },
+            { from: 'acceleration', to: 'openai', label: 'Ally', color: '#27ae60' },
+            { from: 'opensource', to: 'meta', label: 'Ally', color: '#27ae60' },
+            { from: 'closed', to: 'openai', label: 'Ally', color: '#27ae60' },
+            { from: 'xai', to: 'musk', label: 'Ally', color: '#27ae60' },
+            { from: 'openai', to: 'altman', label: 'Ally', color: '#27ae60' },
+            { from: 'meta', to: 'lecun', label: 'Ally', color: '#27ae60' },
+            { from: 'google', to: 'hassabis', label: 'Ally', color: '#27ae60' },
+            { from: 'anthropic', to: 'amodei', label: 'Ally', color: '#27ae60' },
+            { from: 'safety', to: 'anthropic', label: 'Echo', color: '#2980b9' },
+            { from: 'paid_influencers', to: 'openai', label: 'Echo', color: '#2980b9' },
+            { from: 'virtual_influencers', to: 'meta', label: 'Ally', color: '#27ae60' },
+            { from: 'independent_voices', to: 'safety', label: 'Independent', color: '#7f8c8d' }
         ];
+
+        // Initialize node positions in a circle
+        const radius = Math.min(canvas.width, canvas.height) / 3;
+        let angle = 0;
+        const angleStep = 2 * Math.PI / (nodes.length - 1);
+        nodes.forEach((node, i) => {
+            if (i === 0) return; // Skip center
+            node.x = canvas.width / 2 + radius * Math.cos(angle);
+            node.y = canvas.height / 2 + radius * Math.sin(angle);
+            angle += angleStep;
+        });
 
         let selectedNode = null;
         let draggedNode = null;
         let currentNodeIndex = -1;
 
         // Force-directed layout parameters
-        const k = 0.01; // Reduced spring constant for slower movement
-        const repulsion = 50; // Reduced repulsion for gentler node separation
+        const k = 0.005; // Reduced spring constant for looser attraction
+        const repulsion = 100; // Increased repulsion for more spread
         const damping = 0.55; // Increased damping for quicker settling
-        const centerForce = 0.001; // Reduced center force for more manual control
+        const centerForce = 0.0005; // Reduced center force
 
         // Debounce function
         function debounce(func, wait) {
@@ -413,7 +327,6 @@
         function updatePositions() {
             nodes.forEach(node => {
                 if (node.fixed || node === draggedNode) return;
-
                 let fx = 0, fy = 0;
 
                 // Repulsion between nodes
@@ -437,7 +350,7 @@
                         const dx = node.x - target.x;
                         const dy = node.y - target.y;
                         const distance = Math.sqrt(dx * dx + dy * dy) || 0.1;
-                        const force = k * (distance - 150); // Increased ideal edge length
+                        const force = k * (distance - 200); // Increased ideal edge length for more space
                         fx -= force * dx / distance;
                         fy -= force * dy / distance;
                     }
@@ -563,7 +476,6 @@
             const rect = canvas.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-
             if (draggedNode) {
                 draggedNode.x = Math.max(30, Math.min(canvas.width - 30, x));
                 draggedNode.y = Math.max(30, Math.min(canvas.height - 30, y));
@@ -571,7 +483,6 @@
                 draggedNode.vy = 0;
                 drawMindMap();
             }
-
             let tooltipNode = null;
             nodes.forEach(node => {
                 const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2);
@@ -579,7 +490,6 @@
                     tooltipNode = node;
                 }
             });
-
             if (tooltipNode) {
                 let tooltip = document.querySelector('.tooltip');
                 if (!tooltip) {
