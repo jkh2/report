@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><center>WhiteBird<br>
-        Mapping Narratives That Shape Perspectives<br>
-        August 9-10, 2025<br>
-    A free service provided by Sentinel AI Systems</center></title>
+    <title>WhiteBird - Mapping Narratives That Shape Perspectives - August 9-10, 2025</title>
     <style>
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
@@ -167,7 +164,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>WhiteBird AI - Mapping Narratives That Shape Perspectives - August 9-10, 2025</h1>
+        <h1>WhiteBird AI<h1></h1><br>Mapping Narratives That Shape Perspectives<br>August 9-10, 2025
         <p>Unveiling the forces and relationships shaping the AI landscape with clarity and insight</p>
     </div>
     <canvas id="mindmap" tabindex="0" aria-label="Interactive mind map of AI ecosystem entities and relationships"></canvas>
@@ -446,7 +443,7 @@
                         const dx = node.x - target.x;
                         const dy = node.y - target.y;
                         const distance = Math.sqrt(dx * dx + dy * dy) || 0.1;
-                        const force = k * (distance - 100);
+                        const force = k * (distance - 200);
                         fx -= force * dx / distance;
                         fy -= force * dy / distance;
                     }
