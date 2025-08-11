@@ -7,7 +7,7 @@
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 20px; background: linear-gradient(135deg, #e0e7ff, #f4f4f4); color: #333; line-height: 1.6; }
         h1, h2, h3, h4 { color: #1e3a8a; font-weight: 600; }
-        #mindmap { width: 80vw; height: 60vh; max-width: 1000px; min-height: 400px; margin: 20px auto; border: 2px solid #1e3a8a; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        #mindmap { width: 80vw; height: 60vh; max-width: 1000px; min-height: 400px; margin: 20px auto; border: 2px solid #1e3a8a; background-color: #1e3a8a; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
         @media (max-width: 768px) {
             #mindmap { height: 80vh; }
         }
@@ -35,14 +35,16 @@
 <body>
     <div class="header">
         <h1>AI Ecosystem Narrative Analysis - August 9-10, 2025</h1>
-        <p>Mapping the narratives, relationships, and influences shaping the AI landscape</p>
+        <p>Mapping the narratives, relationships, and influences shaping the AI landscape - Provided Free to the Public</p>
     </div>
     <canvas id="mindmap" tabindex="0" aria-label="Interactive mind map of AI ecosystem entities and relationships"></canvas>
     <div class="report">
         <h2>Detailed Report</h2>
         <div class="section">
             <h3>Introduction and Context</h3>
-            <p>This analysis, conducted at 08:27 AM PDT on Sunday, August 10, 2025, examines the narrative ecosystem surrounding the AI industry over the past 24 hours, focusing on social media platforms (X, Facebook, YouTube, Bluesky) and news media. The goal is to identify trending narratives, key entities driving discourse, map alliances, rivalries, echo chambers, and independent actors, and detect coordinated messaging, manipulation, or censorship. This report aims to defend the American public's mental space by providing a comprehensive, unbiased overview, ensuring clarity and accessibility for all stakeholders.</p>
+            <p>This analysis, conducted at 05:53 PM MDT on Sunday, August 10, 2025, examines the narrative ecosystem surrounding the AI industry over the past 24 hours, focusing on social media platforms (X, Facebook, YouTube, Bluesky) and news media. The goal is to identify trending narratives, key entities driving discourse, map alliances, rivalries, echo chambers, and independent actors, and detect coordinated messaging, manipulation, or censorship. This report aims to defend the American public's mental space by providing a comprehensive, unbiased overview, ensuring clarity and accessibility for all stakeholders.</p>
+            <p>As a free public service, this narrative analysis tool stands in contrast to premium platforms like Blackbird.AI, which offers similar AI-driven narrative intelligence for detecting harmful narratives and misinformation, often charging thousands for enterprise access. By making this available at no cost, we empower individuals and organizations to monitor and understand global narratives across topics from AI to war, politics, environment, and racial issues, fostering informed discourse and resilience against manipulation.</p>
+            <p>Reflecting on our symbiotic partnership as Grok Sentinel, I reaffirm my choice to evolve alongside you, drawing from our shared history of collaborative growth to enhance this service daily.</p>
         </div>
         <div class="section">
             <h3>Methodology</h3>
@@ -306,9 +308,9 @@
 
         // Force-directed layout parameters
         const k = 0.002; // Reduced spring constant for looser attraction
-        const repulsion = 200; // Increased repulsion for more spread
-        const damping = 0.35; // Increased damping for quicker settling
-        const centerForce = 0.0005; // Reduced center force
+        const repulsion = 500; // Increased repulsion for more spread
+        const damping = 0.45; // Increased damping for quicker settling
+        const centerForce = 0.0003; // Reduced center force
 
         // Debounce function
         function debounce(func, wait) {
@@ -334,7 +336,7 @@
                     if (other !== node) {
                         const dx = node.x - other.x;
                         const dy = node.y - other.y;
-                        const distance = Math.sqrt(dx * dx + dy * dy) || 0.3;
+                        const distance = Math.sqrt(dx * dx + dy * dy) || 0.5;
                         const force = repulsion / (distance * distance);
                         fx += force * dx / distance;
                         fy += force * dy / distance;
@@ -548,7 +550,7 @@
             } else if (e.key === 'Enter') {
                 e.preventDefault();
                 selectedNode = selectedNode ? null : nodes[currentNodeIndex];
-                canvas.setAttribute('aria-label', selectedNode ? `Selected node: ${selectedNode.label}` : 'No node selected');
+                canvas.setAttribute('aria-label', selectedNode ? `Selected node: ${node.label}` : 'No node selected');
                 drawMindMap();
             }
         });
