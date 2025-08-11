@@ -404,10 +404,10 @@
         let draggedNode = null;
         let currentNodeIndex = -1;
 
-        const k = 0.01;
+        const k = 0.005;
         const repulsion = 600;
-        const damping = 0.15;
-        const centerForce = 0.001;
+        const damping = 0.75;
+        const centerForce = 0.0005;
 
         function debounce(func, wait) {
             let timeout;
