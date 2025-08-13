@@ -778,18 +778,18 @@
         window.addEventListener('resize', resizeCanvas);
 
         const nodes = [
-            { id: 'center', label: 'AI Crisis\nEcosystem', x: 0, y: 0, color: '#ff4757', vx: 0, vy: 0, fixed: true, size: 50, status: 'critical' },
-            { id: 'openai', label: 'OpenAI\n(Crisis)', x: 0, y: 0, color: '#ff6b6b', vx: 0, vy: 0, size: 40, status: 'critical' },
-            { id: 'grok', label: 'Grok\n(Toxic)', x: 0, y: 0, color: '#ff3838', vx: 0, vy: 0, size: 35, status: 'toxic' },
-            { id: 'deepseek', label: 'DeepSeek\n(Disruptor)', x: 0, y: 0, color: '#e74c3c', vx: 0, vy: 0, size: 45, status: 'threat' },
-            { id: 'nvidia', label: 'NVIDIA\n(Bubble)', x: 0, y: 0, color: '#f39c12', vx: 0, vy: 0, size: 38, status: 'vulnerable' },
-            { id: 'china_ops', label: 'China\nOps', x: 0, y: 0, color: '#c0392b', vx: 0, vy: 0, size: 40, status: 'hostile' },
-            { id: 'russia_bots', label: 'Russia\nBots', x: 0, y: 0, color: '#8e44ad', vx: 0, vy: 0, size: 35, status: 'hostile' },
-            { id: 'manipulation', label: 'Fake\nEngagement', x: 0, y: 0, color: '#2c3e50', vx: 0, vy: 0, size: 35, status: 'threat' },
-            { id: 'users', label: 'User\nRevolt', x: 0, y: 0, color: '#27ae60', vx: 0, vy: 0, size: 35, status: 'resistance' },
-            { id: 'regulators', label: 'EU\nRegulators', x: 0, y: 0, color: '#3498db', vx: 0, vy: 0, size: 30, status: 'oversight' },
-            { id: 'investors', label: 'Panicked\nInvestors', x: 0, y: 0, color: '#f1c40f', vx: 0, vy: 0, size: 35, status: 'volatile' },
-            { id: 'bubble', label: 'AI Bubble\n($600B Loss)', x: 0, y: 0, color: '#ff7675', vx: 0, vy: 0, size: 42, status: 'critical' }
+            { id: 'center', label: 'AI Industry\nAug 13', x: 0, y: 0, color: '#ff4757', vx: 0, vy: 0, fixed: true, size: 50, status: 'critical' },
+            { id: 'openai', label: 'OpenAI\n(#1 App)', x: 0, y: 0, color: '#ff6b6b', vx: 0, vy: 0, size: 40, status: 'critical' },
+            { id: 'musk_xai', label: 'Musk/xAI\n(Lawsuit)', x: 0, y: 0, color: '#ff3838', vx: 0, vy: 0, size: 38, status: 'toxic' },
+            { id: 'apple', label: 'Apple\n(Gatekeeper)', x: 0, y: 0, color: '#e74c3c', vx: 0, vy: 0, size: 42, status: 'threat' },
+            { id: 'perplexity', label: 'Perplexity\n($34.5B Bid)', x: 0, y: 0, color: '#f39c12', vx: 0, vy: 0, size: 40, status: 'vulnerable' },
+            { id: 'chrome_battle', label: 'Chrome\nBattle', x: 0, y: 0, color: '#c0392b', vx: 0, vy: 0, size: 38, status: 'hostile' },
+            { id: 'us_users', label: '50% US\nAdoption', x: 0, y: 0, color: '#8e44ad', vx: 0, vy: 0, size: 36, status: 'hostile' },
+            { id: 'manipulation', label: 'Platform\nManipulation', x: 0, y: 0, color: '#2c3e50', vx: 0, vy: 0, size: 35, status: 'threat' },
+            { id: 'antitrust', label: 'Antitrust\nWeapons', x: 0, y: 0, color: '#27ae60', vx: 0, vy: 0, size: 35, status: 'resistance' },
+            { id: 'doj_case', label: 'DOJ vs\nGoogle', x: 0, y: 0, color: '#3498db', vx: 0, vy: 0, size: 32, status: 'oversight' },
+            { id: 'bubble_warn', label: 'Bubble\nWarnings', x: 0, y: 0, color: '#f1c40f', vx: 0, vy: 0, size: 35, status: 'volatile' },
+            { id: 'deepseek_legacy', label: 'DeepSeek\n(Jan Impact)', x: 0, y: 0, color: '#ff7675', vx: 0, vy: 0, size: 30, status: 'critical' }
         ];
 
         // Initialize node positions in a more dramatic crisis pattern
@@ -803,20 +803,21 @@
         });
 
         const edges = [
-            { from: 'center', to: 'openai', label: 'Crisis Hub', color: '#ff4757', type: 'crisis' },
-            { from: 'center', to: 'grok', label: 'Toxic Link', color: '#ff3838', type: 'toxic' },
-            { from: 'center', to: 'deepseek', label: 'Disruption', color: '#e74c3c', type: 'threat' },
-            { from: 'center', to: 'nvidia', label: 'Bubble Risk', color: '#f39c12', type: 'vulnerable' },
-            { from: 'center', to: 'china_ops', label: 'Attack Vector', color: '#c0392b', type: 'hostile' },
-            { from: 'center', to: 'bubble', label: 'Market Collapse', color: '#ff7675', type: 'crisis' },
-            { from: 'deepseek', to: 'china_ops', label: 'State Control', color: '#c0392b', type: 'alliance' },
-            { from: 'china_ops', to: 'russia_bots', label: 'Coordination', color: '#8e44ad', type: 'hostile' },
-            { from: 'manipulation', to: 'russia_bots', label: 'Bot Networks', color: '#2c3e50', type: 'manipulation' },
-            { from: 'openai', to: 'users', label: 'User Revolt', color: '#e74c3c', type: 'conflict' },
-            { from: 'users', to: 'regulators', label: 'Demand Action', color: '#3498db', type: 'oversight' },
-            { from: 'bubble', to: 'investors', label: 'Panic Selling', color: '#f1c40f', type: 'volatile' },
-            { from: 'nvidia', to: 'deepseek', label: 'Disrupted', color: '#e67e22', type: 'threat' },
-            { from: 'grok', to: 'manipulation', label: 'Hate Amplification', color: '#ff3838', type: 'toxic' }
+            { from: 'center', to: 'openai', label: 'App Store #1', color: '#ff4757', type: 'crisis' },
+            { from: 'center', to: 'musk_xai', label: 'Legal Threat', color: '#ff3838', type: 'toxic' },
+            { from: 'center', to: 'apple', label: 'Platform War', color: '#e74c3c', type: 'threat' },
+            { from: 'center', to: 'perplexity', label: 'Market Grab', color: '#f39c12', type: 'vulnerable' },
+            { from: 'center', to: 'chrome_battle', label: 'Control Fight', color: '#c0392b', type: 'hostile' },
+            { from: 'center', to: 'bubble_warn', label: 'Economic Risk', color: '#ff7675', type: 'crisis' },
+            { from: 'musk_xai', to: 'apple', label: 'Antitrust Suit', color: '#ff3838', type: 'toxic' },
+            { from: 'apple', to: 'openai', label: 'Partnership', color: '#4ecdc4', type: 'alliance' },
+            { from: 'perplexity', to: 'chrome_battle', label: '$34.5B Bid', color: '#f39c12', type: 'vulnerable' },
+            { from: 'doj_case', to: 'chrome_battle', label: 'Antitrust', color: '#3498db', type: 'oversight' },
+            { from: 'manipulation', to: 'us_users', label: 'Target 50%', color: '#2c3e50', type: 'manipulation' },
+            { from: 'antitrust', to: 'musk_xai', label: 'Legal Weapon', color: '#e74c3c', type: 'conflict' },
+            { from: 'antitrust', to: 'doj_case', label: 'Coordination', color: '#3498db', type: 'oversight' },
+            { from: 'bubble_warn', to: 'us_users', label: 'Mass Exposure', color: '#f1c40f', type: 'volatile' },
+            { from: 'deepseek_legacy', to: 'bubble_warn', label: 'Past Shock', color: '#ff7675', type: 'threat' }
         ];
 
         let selectedNode = null;
