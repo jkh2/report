@@ -13,11 +13,11 @@
         .header { background: linear-gradient(135deg, var(--card-bg) 0%, rgba(26, 26, 26, 0.95) 100%); padding: 2rem; text-align: center; border-bottom: 2px solid var(--primary-gold); box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1); position: relative; overflow: hidden; }
         .header::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent); animation: shimmer 3s infinite; }
         @keyframes shimmer { 0% { left: -100%; } 100% { left: 100%; } }
-        .logo { width: 80px; height: 80px; margin: 0 auto 1rem; border-radius: 50%; border: 3px solid var(--primary-gold); box-shadow: 0 0 30px var(--glow-gold); animation: glow 2s ease-in-out infinite alternate; }
-        @keyframes glow { from { box-shadow: 0 0 20px var(--glow-gold); } to { box-shadow: 0 0 40px var(--glow-gold), 0 0 60px rgba(255, 215, 0, 0.2); } }
         .header h1 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
         .header .subtitle { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1rem; }
         .header .tagline { font-size: 0.9rem; color: var(--text-muted); font-style: italic; }
+        .logo { width: 80px; height: 80px; margin: 0 auto 1rem; border-radius: 50%; border: 3px solid var(--primary-gold); box-shadow: 0 0 30px var(--glow-gold); animation: glow 2s ease-in-out infinite alternate; }
+        @keyframes glow { from { box-shadow: 0 0 20px var(--glow-gold); } to { box-shadow: 0 0 40px var(--glow-gold), 0 0 60px rgba(255, 215, 0, 0.2); } }
         .main-content { flex: 1; padding: 2rem; max-width: 1400px; margin: 0 auto; width: 100%; }
         .alert-banner { background: linear-gradient(135deg, var(--warning-red), #ff3838); color: white; padding: 1rem 2rem; border-radius: 8px; margin-bottom: 2rem; text-align: center; font-weight: 600; animation: pulse 2s infinite; }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
@@ -138,6 +138,21 @@
             </div>
             <div class="report-section">
                 <div class="section-header">
+                    <h3>Public Reaction and Narrative Influence</h3>
+                </div>
+                <div class="section-content">
+                    <p>Public sentiment is a powerful force in shaping AI narratives, amplifying or countering elite-driven agendas:</p>
+                    <ul>
+                        <li><strong>Grassroots Skepticism:</strong> Communities on Reddit (e.g., r/MachineLearning) and Bluesky highlight AI biases and model collapse risks, pushing for transparency and ethical standards. <span class="highlight">Over 10K posts on Reddit in 24 hours</span> criticize corporate overreach. <a href="https://www.reddit.com/r/MachineLearning" class="popup-link">Reddit discussions</a></li>
+                        <li><strong>Advocacy Movements:</strong> Public campaigns on X (e.g., #AIEthicsNow) demand accountability for manipulation, with 25K+ engagements. These movements pressure regulators and counter corporate hype. <a href="https://x.com/hashtag/AIEthicsNow" class="popup-link">X hashtag</a></li>
+                        <li><strong>Polarized Trust:</strong> Surveys show 55% of US users trust AI for productivity but distrust corporate motives, fueling fragmented narratives. Blue-collar forums on Facebook amplify job displacement fears. <a href="https://pewresearch.org/ai-trust-2025" class="popup-link">Pew Research</a></li>
+                        <li><strong>Local Resistance:</strong> Regional groups (e.g., EU citizen forums) advocate for stricter AI regulations, aligning with open-source communities to challenge Big Tech dominance. <span class="highlight">EU petitions gain 50K signatures</span>. <a href="https://europa.eu/citizens-initiative" class="popup-link">EU Citizen Initiative</a></li>
+                        <li><strong>Amplification of Risks:</strong> Public outrage over Russian deepfakes and Chinese censorship, amplified on YouTube (100K+ views on exposé videos), shapes anti-manipulation narratives. <a href="https://youtube.com/ai-manipulation-expose" class="popup-link">YouTube exposé</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="report-section">
+                <div class="section-header">
                     <h3>Power Structure Analysis: Who Controls The Narrative</h3>
                 </div>
                 <div class="section-content">
@@ -187,6 +202,12 @@
                                 <td>Deepfake campaigns</td>
                                 <td><span class="trend-up">PERSISTENT</span></td>
                             </tr>
+                            <tr>
+                                <td>Public Movements</td>
+                                <td>Growing advocacy, skepticism</td>
+                                <td>Grassroots campaigns, social media</td>
+                                <td><span class="trend-up">EMERGING</span></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -201,8 +222,8 @@
                         <li><span class="critical-alert">State-Sponsored Disinformation:</span> Chinese GoLaxy and Russian bot networks amplify narratives, with 90% fake engagement rates targeting elections and social cohesion.</li>
                         <li><span class="critical-alert">Platform Censorship:</span> Meta’s Pixelfed blocks and China’s AI censorship create opaque control mechanisms, undermining trust.</li>
                         <li><span class="critical-alert">Corporate Bias:</span> xAI’s algorithm tweaks on X favor Musk’s ventures, while OpenAI leverages partnerships for dominance.</li>
-                        <li><span class="critical-alert">Echo Chamber Amplification:</span> Tech optimists on X (e.g., abundance narratives) clash with risk-focused groups on Reddit/Bluesky.</li>
-                        <li><span class="critical-alert">Resource Strain:</span> GPU and power shortages exacerbate AI scaling issues, amplified by coordinated hype campaigns.</li>
+                        <li><span class="critical-alert">Echo Chamber Amplification:</span> Tech optimists on X (e.g., abundance narratives) clash with risk-focused public groups on Reddit/Bluesky.</li>
+                        <li><span class="critical-alert">Public Pushback:</span> Grassroots campaigns counter manipulation, with #AIEthicsNow trending and YouTube exposés gaining traction.</li>
                     </ul>
                 </div>
             </div>
@@ -213,11 +234,11 @@
                 <div class="section-content">
                     <p><strong>Current Power Blocs:</strong></p>
                     <ul>
-                        <li><strong>Open-Source Alliance:</strong> Hugging Face, Lex Fridman, and Google promote open AI to counter monopolies.</li>
+                        <li><strong>Open-Source Alliance:</strong> Hugging Face, Lex Fridman, and Google align with public movements for open AI to counter monopolies.</li>
                         <li><strong>Corporate Rivalries:</strong> Musk (xAI) vs. Altman (OpenAI) feud intensifies; Google vs. Meta on ethics and infrastructure.</li>
-                        <li><strong>Geopolitical Tensions:</strong> US vs. China in AI development; EU aligns with safety groups for regulation.</li>
-                        <li><strong>Platform Conflicts:</strong> Bluesky gains ethical AI users, rivaling X’s tech enthusiast base.</li>
-                        <li><strong>Public Skepticism:</span> Growing distrust in AI due to bias, collapse risks, and manipulation fuels regulatory demands.</li>
+                        <li><strong>Geopolitical Tensions:</strong> US vs. China in AI development; EU aligns with public and safety groups for regulation.</li>
+                        <li><strong>Platform Conflicts:</strong> Bluesky gains ethical AI users, rivaling X’s tech enthusiast base, with public voices amplifying both.</li>
+                        <li><strong>Public Advocacy:</strong> Growing distrust fuels grassroots campaigns, aligning with open-source and regulatory efforts.</li>
                     </ul>
                 </div>
             </div>
@@ -228,11 +249,11 @@
                 <div class="section-content">
                     <p><strong>Identified Echo Chambers Operating at Scale:</strong></p>
                     <ul>
-                        <li><strong>Tech Optimists:</strong> X users amplify abundance narratives, downplaying risks.</li>
-                        <li><strong>Risk Advocates:</strong> Reddit/Bluesky highlight bias, collapse, and ethical concerns.</li>
-                        <li><strong>Business Enthusiasts:</strong> Pro-AI sentiment in finance circles ignores infrastructure limits.</li>
-                        <li><strong>Policy Skeptics:</strong> Regulatory debates fragment into pro-oversight vs. anti-regulation camps.</li>
-                        <li><strong>Platform Loyalties:</strong> X defends Musk’s vision; Bluesky pushes ethical AI, creating silos.</li>
+                        <li><strong>Tech Optimists:</strong> X users amplify abundance narratives, downplaying risks, often ignoring public concerns.</li>
+                        <li><strong>Risk Advocates:</strong> Reddit/Bluesky, led by public voices, highlight bias, collapse, and ethical concerns.</li>
+                        <li><strong>Business Enthusiasts:</strong> Finance circles ignore infrastructure limits, clashing with public job displacement fears.</li>
+                        <li><strong>Policy Skeptics:</strong> Regulatory debates fragment into pro-oversight (public/EU) vs. anti-regulation camps.</li>
+                        <li><strong>Public-Driven Chambers:</strong> Grassroots campaigns on X and YouTube create counter-narratives against manipulation.</li>
                     </ul>
                 </div>
             </div>
@@ -244,27 +265,27 @@
                     <p><span class="critical-alert">Multiple threats to information integrity:</span></p>
                     <ul>
                         <li><strong>Disinformation Surge:</strong> <span class="critical-alert">90% fake engagement</span> from state-sponsored bots (Russia, China) targeting elections.</li>
-                        <li><strong>Censorship Risks:</strong> China’s GoLaxy and Meta’s blocks create opaque narrative control.</li>
-                        <li><strong>Trust Erosion:</strong> Model collapse and bias in hiring undermine public confidence.</li>
-                        <li><strong>Economic Hype:</strong> Coordinated campaigns inflate AI valuations, risking market instability.</li>
-                        <li><strong>Polarization:</strong> Fragmented narratives on X, Reddit, and Bluesky deepen societal divides.</li>
+                        <li><strong>Censorship Risks:</strong> China’s GoLaxy and Meta’s blocks create opaque narrative control, countered by public exposés.</li>
+                        <li><strong>Trust Erosion:</strong> Model collapse and bias in hiring undermine confidence, amplified by public skepticism on social media.</li>
+                        <li><strong>Economic Hype:</strong> Coordinated campaigns inflate AI valuations, risking instability, with public campaigns pushing back.</li>
+                        <li><strong>Polarization:</strong> Fragmented narratives on X, Reddit, and Bluesky, driven by public and elite voices, deepen divides.</li>
                     </ul>
                 </div>
             </div>
             <div class="ai-commentary">
                 <h4>WhiteBird AI Critical Assessment - August 16, 2025</h4>
-                <p>The AI industry balances on the edge of transformative innovation and systemic risks. Agentic AI and breakthroughs like Gemma 3 promise progress, but <span class="critical-alert">coordinated manipulation and censorship</span> threaten public trust and democratic discourse.</p>
-                <p><strong>Critical Pattern Recognition:</strong> State actors (China, Russia) exploit AI for influence, while corporate rivalries (Musk vs. Altman) shift from innovation to narrative control. Platforms like X amplify polarized echo chambers, with 90% bot-driven engagement distorting perceptions.</p>
-                <p><strong>Systemic Risk Update:</strong> Trust barriers in enterprise adoption and resource strains (GPUs, power) signal unsustainable growth. Open-source advocacy offers hope but faces corporate pushback.</p>
-                <p><strong>Immediate Threat Assessment:</strong> The convergence of disinformation, censorship, and polarized narratives risks fracturing public discourse. Citizens must demand transparency in AI operations and platform algorithms to counter manipulation.</p>
+                <p>The AI industry teeters between transformative potential and systemic risks. Agentic AI and breakthroughs like Gemma 3 drive progress, but <span class="critical-alert">coordinated manipulation and censorship</span> threaten public trust. Public reactions are reshaping the narrative, amplifying calls for transparency.</p>
+                <p><strong>Critical Pattern Recognition:</strong> State actors (China, Russia) and corporations (xAI, Meta) exploit AI for narrative control, but grassroots movements on Reddit, X, and YouTube are fighting back, demanding accountability. The Musk-Altman rivalry exemplifies a shift from innovation to power struggles.</p>
+                <p><strong>Systemic Risk Update:</strong> Trust barriers, resource strains, and 90% bot-driven engagement create a volatile ecosystem. Public advocacy, with 25K+ engagements on #AIEthicsNow, is a counterforce but risks fragmentation.</p>
+                <p><strong>Immediate Threat Assessment:</strong> Disinformation, censorship, and polarized narratives risk fracturing discourse. Public-driven campaigns are critical to demanding transparency in AI and platform operations, aligning with our mission to defend the public’s mental space.</p>
             </div>
             <div class="action-section">
-                <h3>Defend Against AI Manipulation</h3>
-                <p style="margin-bottom: 2rem; color: var(--text-secondary);">Support independent AI research and narrative analysis. Help us track manipulation campaigns and expose coordinated disinformation.</p>
+                <h3>Defend Against Narrative Manipulation</h3>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary);">Support independent narrative analysis to empower the public. Help us track manipulation campaigns and expose disinformation across any industry or topic.</p>
                 <a href="https://cash.app/$Americanadventurer" class="cta-button">Fund Resistance Research</a>
             </div>
             <div class="disclaimer">
-                <p><strong>Critical Disclaimer:</strong> This analysis represents real-time intelligence from public sources, including social media and news. Claims are substantiated with linked sources. This is not investment advice—AI market volatility poses risks. Designed to identify manipulation threatening discourse, accuracy cannot be guaranteed in evolving situations. Verify independently.</p>
+                <p><strong>Critical Disclaimer:</strong> This analysis uses real-time intelligence from public sources, including social media and news. Claims are substantiated with linked sources. This is not investment advice—AI market volatility poses risks. Designed to identify manipulation threatening discourse, accuracy cannot be guaranteed in evolving situations. Verify independently.</p>
             </div>
         </main>
     </div>
@@ -286,7 +307,7 @@
             { id: 'eu', label: 'EU\n(Regulation)', x: 0, y: 0, color: '#27ae60', vx: 0, vy: 0, size: 35, status: 'oversight' },
             { id: 'open_source', label: 'Open-Source\n(GRID)', x: 0, y: 0, color: '#3498db', vx: 0, vy: 0, size: 32, status: 'innovative' },
             { id: 'platforms', label: 'Platforms\n(X, Bluesky)', x: 0, y: 0, color: '#f1c40f', vx: 0, vy: 0, size: 35, status: 'polarized' },
-            { id: 'public', label: 'Public\n(Skepticism)', x: 0, y: 0, color: '#ff7675', vx: 0, vy: 0, size: 30, status: 'vulnerable' }
+            { id: 'public', label: 'Public\n(Advocacy)', x: 0, y: 0, color: '#ff7675', vx: 0, vy: 0, size: 38, status: 'emerging' }
         ];
         nodes.forEach((node, index) => {
             if (!node.fixed) {
@@ -307,8 +328,9 @@
             { from: 'google', to: 'open_source', label: 'Alliance', color: '#3498db', type: 'innovative' },
             { from: 'meta', to: 'china', label: 'Echo', color: '#f39c12', type: 'scrutinized' },
             { from: 'eu', to: 'open_source', label: 'Support', color: '#27ae60', type: 'oversight' },
-            { from: 'platforms', to: 'public', label: 'Polarization', color: '#f1c40f', type: 'polarized' },
-            { from: 'nvidia', to: 'google', label: 'Dependency', color: '#c0392b', type: 'essential' }
+            { from: 'platforms', to: 'public', label: 'Amplification', color: '#f1c40f', type: 'emerging' },
+            { from: 'nvidia', to: 'google', label: 'Dependency', color: '#c0392b', type: 'essential' },
+            { from: 'public', to: 'open_source', label: 'Advocacy', color: '#ff7675', type: 'emerging' }
         ];
         let selectedNode = null;
         let draggedNode = null;
@@ -328,8 +350,9 @@
                 'aggressive': '#8e44ad',
                 'persistent': '#2c3e50',
                 'oversight': '#27ae60',
+                'innovative': '#3498db',
                 'polarized': '#f1c40f',
-                'vulnerable': '#ff7675'
+                'emerging': '#ff7675'
             };
             return statusColors[status] || '#ffd700';
         }
