@@ -3,512 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhiteBird - Mapping Narratives That Shape Perspectives - August 13, 2025</title>
+    <title>WhiteBird - Mapping Narratives That Shape Perspectives - August 16, 2025</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --primary-gold: #ffd700;
-            --secondary-gold: #ffed4e;
-            --accent-gold: #ffb300;
-            --dark-bg: #0a0a0a;
-            --card-bg: #1a1a1a;
-            --text-primary: #e0e0e0;
-            --text-secondary: #b0b0b0;
-            --text-muted: #808080;
-            --border-color: #333;
-            --glow-gold: rgba(255, 215, 0, 0.3);
-            --warning-red: #ff4757;
-            --success-green: #2ed573;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.03) 0%, transparent 50%);
-        }
-
-        .dashboard-container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .header {
-            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(26, 26, 26, 0.95) 100%);
-            padding: 2rem;
-            text-align: center;
-            border-bottom: 2px solid var(--primary-gold);
-            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-
-        .logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1rem;
-            border-radius: 50%;
-            border: 3px solid var(--primary-gold);
-            box-shadow: 0 0 30px var(--glow-gold);
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { box-shadow: 0 0 20px var(--glow-gold); }
-            to { box-shadow: 0 0 40px var(--glow-gold), 0 0 60px rgba(255, 215, 0, 0.2); }
-        }
-
-        .header h1 {
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-        }
-
-        .header .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .header .tagline {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        .main-content {
-            flex: 1;
-            padding: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .alert-banner {
-            background: linear-gradient(135deg, var(--warning-red), #ff3838);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            text-align: center;
-            font-weight: 600;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-
-        .mindmap-container {
-            background: var(--card-bg);
-            border: 2px solid var(--primary-gold);
-            border-radius: 20px;
-            margin-bottom: 3rem;
-            overflow: hidden;
-            box-shadow: 
-                0 8px 32px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 215, 0, 0.1);
-            position: relative;
-        }
-
-        .mindmap-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
-        }
-
-        #mindmap {
-            width: 100%;
-            height: 60vh;
-            min-height: 500px;
-            display: block;
-            background: radial-gradient(circle at center, rgba(255, 215, 0, 0.02) 0%, var(--card-bg) 70%);
-        }
-
-        .report-section {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            margin-bottom: 2rem;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .report-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-gold), var(--primary-gold), var(--accent-gold));
-        }
-
-        .report-section:hover {
-            border-color: var(--primary-gold);
-            box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .section-header {
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid var(--border-color);
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, transparent 100%);
-        }
-
-        .section-header h2, .section-header h3 {
-            color: var(--primary-gold);
-            font-weight: 600;
-            font-size: 1.4rem;
-            margin: 0;
-        }
-
-        .section-content {
-            padding: 2rem;
-        }
-
-        .section-content p {
-            margin-bottom: 1.2rem;
-            line-height: 1.7;
-            color: var(--text-primary);
-        }
-
-        .section-content ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .section-content li {
-            position: relative;
-            padding: 0.5rem 0 0.5rem 2rem;
-            margin-bottom: 1rem;
-            border-left: 2px solid rgba(255, 215, 0, 0.3);
-            padding-left: 1.5rem;
-            transition: all 0.2s ease;
-        }
-
-        .section-content li::before {
-            content: '▸';
-            position: absolute;
-            left: -0.5rem;
-            color: var(--primary-gold);
-            font-weight: bold;
-            transform: translateX(-50%);
-        }
-
-        .section-content li:hover {
-            border-left-color: var(--primary-gold);
-            background: rgba(255, 215, 0, 0.02);
-            border-radius: 0 8px 8px 0;
-        }
-
-        .highlight {
-            background: linear-gradient(120deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 215, 0, 0.1) 100%);
-            padding: 0.3rem 0.6rem;
-            border-radius: 6px;
-            border-left: 3px solid var(--primary-gold);
-            font-weight: 500;
-            display: inline-block;
-            margin: 0.2rem 0;
-        }
-
-        .critical-alert {
-            background: linear-gradient(120deg, rgba(255, 71, 87, 0.2) 0%, rgba(255, 71, 87, 0.1) 100%);
-            padding: 0.3rem 0.6rem;
-            border-radius: 6px;
-            border-left: 3px solid var(--warning-red);
-            font-weight: 500;
-            display: inline-block;
-            margin: 0.2rem 0;
-        }
-
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .metric-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .metric-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--primary-gold);
-        }
-
-        .metric-card:hover {
-            border-color: var(--primary-gold);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(255, 215, 0, 0.1);
-        }
-
-        .metric-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .metric-label {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .data-table th {
-            background: linear-gradient(135deg, var(--primary-gold), var(--accent-gold));
-            color: var(--dark-bg);
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.85rem;
-        }
-
-        .data-table td {
-            padding: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            color: var(--text-primary);
-        }
-
-        .data-table tr:hover {
-            background: rgba(255, 215, 0, 0.05);
-        }
-
-        .popup-link {
-            color: var(--primary-gold);
-            text-decoration: none;
-            position: relative;
-            transition: all 0.2s ease;
-            border-bottom: 1px solid transparent;
-        }
-
-        .popup-link:hover {
-            color: var(--secondary-gold);
-            border-bottom-color: var(--primary-gold);
-            text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
-        }
-
-        .action-section {
-            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(26, 26, 26, 0.8) 100%);
-            border: 2px solid var(--primary-gold);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            margin: 3rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .action-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-            animation: rotate 8s linear infinite;
-            z-index: 0;
-        }
-
-        .action-section > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary-gold), var(--accent-gold));
-            color: var(--dark-bg);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 16px rgba(255, 215, 0, 0.3);
-        }
-
-        .cta-button:hover {
-            background: linear-gradient(135deg, var(--secondary-gold), var(--primary-gold));
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4);
-        }
-
-        .disclaimer {
-            background: rgba(26, 26, 26, 0.6);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .tooltip {
-            position: absolute;
-            background: linear-gradient(135deg, var(--dark-bg), var(--card-bg));
-            color: var(--primary-gold);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            pointer-events: none;
-            z-index: 1000;
-            border: 1px solid var(--primary-gold);
-            box-shadow: 0 4px 16px rgba(255, 215, 0, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        @media (max-width: 768px) {
-            .main-content {
-                padding: 1rem;
-            }
-            
-            .section-content {
-                padding: 1.5rem;
-            }
-            
-            .header {
-                padding: 1.5rem;
-            }
-            
-            .metrics-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            #mindmap {
-                height: 50vh;
-                min-height: 400px;
-            }
-        }
-
-        .ai-commentary {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
-            border: 2px solid var(--primary-gold);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 2rem 0;
-            position: relative;
-        }
-
-        .ai-commentary::before {
-            content: '🤖';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            background: var(--dark-bg);
-            padding: 0 10px;
-            font-size: 1.2rem;
-        }
-
-        .ai-commentary h4 {
-            color: var(--primary-gold);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .trend-indicator {
-            display: inline-block;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .trend-up {
-            background: rgba(46, 213, 115, 0.2);
-            color: var(--success-green);
-            border: 1px solid var(--success-green);
-        }
-
-        .trend-down {
-            background: rgba(255, 71, 87, 0.2);
-            color: var(--warning-red);
-            border: 1px solid var(--warning-red);
-        }
-
-        .trend-neutral {
-            background: rgba(255, 215, 0, 0.2);
-            color: var(--primary-gold);
-            border: 1px solid var(--primary-gold);
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary-gold: #ffd700; --secondary-gold: #ffed4e; --accent-gold: #ffb300; --dark-bg: #0a0a0a; --card-bg: #1a1a1a; --text-primary: #e0e0e0; --text-secondary: #b0b0b0; --text-muted: #808080; --border-color: #333; --glow-gold: rgba(255, 215, 0, 0.3); --warning-red: #ff4757; --success-green: #2ed573; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--dark-bg); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; background-image: radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.03) 0%, transparent 50%); }
+        .dashboard-container { min-height: 100vh; display: flex; flex-direction: column; }
+        .header { background: linear-gradient(135deg, var(--card-bg) 0%, rgba(26, 26, 26, 0.95) 100%); padding: 2rem; text-align: center; border-bottom: 2px solid var(--primary-gold); box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1); position: relative; overflow: hidden; }
+        .header::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent); animation: shimmer 3s infinite; }
+        @keyframes shimmer { 0% { left: -100%; } 100% { left: 100%; } }
+        .logo { width: 80px; height: 80px; margin: 0 auto 1rem; border-radius: 50%; border: 3px solid var(--primary-gold); box-shadow: 0 0 30px var(--glow-gold); animation: glow 2s ease-in-out infinite alternate; }
+        @keyframes glow { from { box-shadow: 0 0 20px var(--glow-gold); } to { box-shadow: 0 0 40px var(--glow-gold), 0 0 60px rgba(255, 215, 0, 0.2); } }
+        .header h1 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+        .header .subtitle { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1rem; }
+        .header .tagline { font-size: 0.9rem; color: var(--text-muted); font-style: italic; }
+        .main-content { flex: 1; padding: 2rem; max-width: 1400px; margin: 0 auto; width: 100%; }
+        .alert-banner { background: linear-gradient(135deg, var(--warning-red), #ff3838); color: white; padding: 1rem 2rem; border-radius: 8px; margin-bottom: 2rem; text-align: center; font-weight: 600; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
+        .mindmap-container { background: var(--card-bg); border: 2px solid var(--primary-gold); border-radius: 20px; margin-bottom: 3rem; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 215, 0, 0.1); position: relative; }
+        .mindmap-container::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--primary-gold), transparent); }
+        #mindmap { width: 100%; height: 60vh; min-height: 500px; display: block; background: radial-gradient(circle at center, rgba(255, 215, 0, 0.02) 0%, var(--card-bg) 70%); }
+        .report-section { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; margin-bottom: 2rem; overflow: hidden; transition: all 0.3s ease; position: relative; }
+        .report-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent-gold), var(--primary-gold), var(--accent-gold)); }
+        .report-section:hover { border-color: var(--primary-gold); box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1); transform: translateY(-2px); }
+        .section-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, transparent 100%); }
+        .section-header h2, .section-header h3 { color: var(--primary-gold); font-weight: 600; font-size: 1.4rem; margin: 0; }
+        .section-content { padding: 2rem; }
+        .section-content p { margin-bottom: 1.2rem; line-height: 1.7; color: var(--text-primary); }
+        .section-content ul { list-style: none; padding: 0; }
+        .section-content li { position: relative; padding: 0.5rem 0 0.5rem 2rem; margin-bottom: 1rem; border-left: 2px solid rgba(255, 215, 0, 0.3); padding-left: 1.5rem; transition: all 0.2s ease; }
+        .section-content li::before { content: '▸'; position: absolute; left: -0.5rem; color: var(--primary-gold); font-weight: bold; transform: translateX(-50%); }
+        .section-content li:hover { border-left-color: var(--primary-gold); background: rgba(255, 215, 0, 0.02); border-radius: 0 8px 8px 0; }
+        .highlight { background: linear-gradient(120deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 215, 0, 0.1) 100%); padding: 0.3rem 0.6rem; border-radius: 6px; border-left: 3px solid var(--primary-gold); font-weight: 500; display: inline-block; margin: 0.2rem 0; }
+        .critical-alert { background: linear-gradient(120deg, rgba(255, 71, 87, 0.2) 0%, rgba(255, 71, 87, 0.1) 100%); padding: 0.3rem 0.6rem; border-radius: 6px; border-left: 3px solid var(--warning-red); font-weight: 500; display: inline-block; margin: 0.2rem 0; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .metric-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; text-align: center; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .metric-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--primary-gold); }
+        .metric-card:hover { border-color: var(--primary-gold); transform: translateY(-4px); box-shadow: 0 12px 24px rgba(255, 215, 0, 0.1); }
+        .metric-value { font-size: 2rem; font-weight: 700; color: var(--primary-gold); margin-bottom: 0.5rem; }
+        .metric-label { color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--card-bg); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); }
+        .data-table th { background: linear-gradient(135deg, var(--primary-gold), var(--accent-gold)); color: var(--dark-bg); padding: 1rem; text-align: left; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; font-size: 0.85rem; }
+        .data-table td { padding: 1rem; border-bottom: 1px solid var(--border-color); color: var(--text-primary); }
+        .data-table tr:hover { background: rgba(255, 215, 0, 0.05); }
+        .popup-link { color: var(--primary-gold); text-decoration: none; position: relative; transition: all 0.2s ease; border-bottom: 1px solid transparent; }
+        .popup-link:hover { color: var(--secondary-gold); border-bottom-color: var(--primary-gold); text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
+        .action-section { background: linear-gradient(135deg, var(--card-bg) 0%, rgba(26, 26, 26, 0.8) 100%); border: 2px solid var(--primary-gold); border-radius: 16px; padding: 2rem; text-align: center; margin: 3rem 0; position: relative; overflow: hidden; }
+        .action-section::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg, transparent, rgba(255, 215, 0, 0.1), transparent); animation: rotate 8s linear infinite; z-index: 0; }
+        .action-section > * { position: relative; z-index: 1; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, var(--primary-gold), var(--accent-gold)); color: var(--dark-bg); padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; border: none; cursor: pointer; box-shadow: 0 4px 16px rgba(255, 215, 0, 0.3); }
+        .cta-button:hover { background: linear-gradient(135deg, var(--secondary-gold), var(--primary-gold)); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4); }
+        .disclaimer { background: rgba(26, 26, 26, 0.6); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+        .tooltip { position: absolute; background: linear-gradient(135deg, var(--dark-bg), var(--card-bg)); color: var(--primary-gold); padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.8rem; pointer-events: none; z-index: 1000; border: 1px solid var(--primary-gold); box-shadow: 0 4px 16px rgba(255, 215, 0, 0.2); backdrop-filter: blur(10px); }
+        @media (max-width: 768px) { .main-content { padding: 1rem; } .section-content { padding: 1.5rem; } .header { padding: 1.5rem; } .metrics-grid { grid-template-columns: 1fr; } #mindmap { height: 50vh; min-height: 400px; } }
+        .ai-commentary { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%); border: 2px solid var(--primary-gold); border-radius: 16px; padding: 2rem; margin: 2rem 0; position: relative; }
+        .ai-commentary::before { content: '🤖'; position: absolute; top: -10px; left: 20px; background: var(--dark-bg); padding: 0 10px; font-size: 1.2rem; }
+        .ai-commentary h4 { color: var(--primary-gold); margin-bottom: 1rem; font-size: 1.2rem; }
+        .trend-indicator { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .trend-up { background: rgba(46, 213, 115, 0.2); color: var(--success-green); border: 1px solid var(--success-green); }
+        .trend-down { background: rgba(255, 71, 87, 0.2); color: var(--warning-red); border: 1px solid var(--warning-red); }
+        .trend-neutral { background: rgba(255, 215, 0, 0.2); color: var(--primary-gold); border: 1px solid var(--primary-gold); }
     </style>
 </head>
 <body>
@@ -519,83 +75,67 @@
             </div>
             <h1>WhiteBird</h1>
             <div class="subtitle">Mapping Narratives That Shape Perspectives</div>
-            <div class="tagline">August 13, 2025 - Live Analysis</div>
+            <div class="tagline">August 16, 2025 - Live Analysis</div>
             <p style="margin-top: 1rem; color: var(--text-secondary);">Unveiling the forces and relationships shaping the AI landscape with clarity and insight</p>
         </header>
-
         <main class="main-content">
-            <div class="alert-banner">
-                🚨 CRITICAL BUBBLE ALERT: AI Industry Showing Multiple Stress Fractures - Massive Valuations Under Threat 🚨
-            </div>
-
+            <div class="alert-banner">🚨 CRITICAL ALERT: AI Industry Faces Intensifying Conflicts and Manipulation Risks 🚨</div>
             <div class="mindmap-container">
                 <canvas id="mindmap" tabindex="0" aria-label="Interactive mind map of AI ecosystem entities and relationships"></canvas>
             </div>
-
             <div class="report-section">
                 <div class="section-header">
-                    <h2>Executive Crisis Overview</h2>
+                    <h2>Executive Overview</h2>
                 </div>
                 <div class="section-content">
                     <div class="metrics-grid">
                         <div class="metric-card">
-                            <div class="metric-value">$600B</div>
-                            <div class="metric-label">Lost in DeepSeek Crash</div>
-                            <span class="trend-indicator trend-down">Critical Loss</span>
+                            <div class="metric-value">$2.5T</div>
+                            <div class="metric-label">AI Market Valuation</div>
+                            <span class="trend-indicator trend-down">High Volatility</span>
                         </div>
                         <div class="metric-card">
-                            <div class="metric-value">$11B</div>
-                            <div class="metric-label">OpenAI Annual Losses</div>
-                            <span class="trend-indicator trend-down">Burning Fast</span>
+                            <div class="metric-value">60%</div>
+                            <div class="metric-label">Enterprise AI Hesitation</div>
+                            <span class="trend-indicator trend-down">Trust Issues</span>
                         </div>
                         <div class="metric-card">
-                            <div class="metric-value">99%</div>
-                            <div class="metric-label">Fake Bot Engagement</div>
+                            <div class="metric-value">90%</div>
+                            <div class="metric-label">Bot-Driven Engagement</div>
                             <span class="trend-indicator trend-down">Manipulation</span>
                         </div>
                         <div class="metric-card">
-                            <div class="metric-value">69x</div>
-                            <div class="metric-label">Palantir P/S Ratio</div>
-                            <span class="trend-indicator trend-down">Unsustainable</span>
+                            <div class="metric-value">3.5x</div>
+                            <div class="metric-label">Open-Source Growth</div>
+                            <span class="trend-indicator trend-up">Innovation Surge</span>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="report-section">
                 <div class="section-header">
-                    <h3>Breaking: Current Threat Analysis</h3>
+                    <h3>Current Threat Analysis</h3>
                 </div>
                 <div class="section-content">
-                    <p>This analysis, conducted on August 13, 2025, reveals a critically destabilized AI industry ecosystem facing multiple simultaneous crises. <span class="critical-alert">The AI bubble shows clear signs of imminent collapse</span> with catastrophic implications for global markets, democratic discourse, and technological sovereignty.</p>
-                    
-                    <p><strong>TODAY'S BREAKING DEVELOPMENTS:</strong> Elon Musk threatens "immediate legal action" against Apple over alleged antitrust violations in App Store AI rankings. <span class="highlight">ChatGPT holds #1 spot while Grok sits at #6</span>, triggering Musk's claim that Apple makes it "impossible for any AI company besides OpenAI to reach #1." Sam Altman fires back, accusing Musk of manipulating X's algorithm to benefit his own companies.</p>
-                    
-                    <p>Key destabilizing factors include: Ongoing AI bubble conditions with historically unsustainable valuations; half of US adults now using AI tools but with divided regulatory opinions; <span class="critical-alert">Perplexity's shocking $34.5B bid for Google Chrome</span> amid DOJ antitrust case; and cascading platform manipulation campaigns using AI-generated content at unprecedented scale.</p>
+                    <p>This analysis, conducted on August 16, 2025, reveals an AI industry ecosystem marked by rapid innovation, intensifying rivalries, and pervasive manipulation risks. <span class="critical-alert">Coordinated disinformation and censorship campaigns threaten public trust</span> while breakthroughs and adoption continue to reshape industries.</p>
+                    <p><strong>TODAY'S KEY DEVELOPMENTS:</strong> Agentic AI gains traction in finance, healthcare, and R&D, but trust and infrastructure gaps hinder enterprise adoption. <span class="highlight">Google's Gemma 3 and MIT's AI-designed antibiotics</span> signal breakthroughs, while OpenAI's GPT-5 trends spark optimism. However, state-sponsored manipulation (e.g., China's GoLaxy, Russian election ops) and platform censorship (e.g., Meta blocks) escalate concerns.</p>
                 </div>
             </div>
-
             <div class="report-section">
                 <div class="section-header">
                     <h3>Today's Critical Narrative Disruptions</h3>
                 </div>
                 <div class="section-content">
-                    <p>The AI discourse landscape faces fresh volatility with new conflicts emerging:</p>
-                    
+                    <p>The AI discourse landscape is volatile, with competing narratives shaping perceptions:</p>
                     <ul>
-                        <li><strong>Musk vs Apple Antitrust Battle:</strong> <span class="critical-alert">xAI threatens immediate lawsuit against Apple</span> claiming App Store manipulation favors OpenAI's ChatGPT (#1) over Grok (#6). Apple responds emphasizing "safe discovery" - subtle dig at Grok's recent controversies including antisemitic content and sexualized chatbots. <a href="https://www.cnbc.com/2025/08/12/musk-threatens-immediate-legal-action-against-apple-over-alleged-antitrust-violations.html" class="popup-link">CNBC breaking coverage</a></li>
-                        
-                        <li><strong>AI Adoption Reaches Tipping Point:</strong> New research shows <span class="highlight">50% of US adults now use major AI tools</span>, with ChatGPT leading at 37% usage despite 65% name recognition. However, regulatory views vary widely by state, not following traditional red-blue divides. Missouri and Washington want more oversight; New York and Tennessee fear government overreach. <a href="https://news.northeastern.edu/2025/08/12/generative-ai-chatgpt-northeastern-survey/" class="popup-link">Northeastern University study</a></li>
-                        
-                        <li><strong>Chrome Browser Battle Escalates:</strong> <span class="critical-alert">Perplexity offers stunning $34.5B for Google Chrome</span> amid DOJ antitrust case demanding Google divest the browser. Bid exceeds Perplexity's own $18B valuation, showing desperate AI race dynamics. Chrome's 3.5B users represent strategic control over search defaults and user data. <a href="https://fortune.com/2025/08/12/perplexity-google-chrome-browser-bid-antitrust-ai-wars/" class="popup-link">Fortune analysis</a></li>
-                        
-                        <li><strong>Continued Bubble Warnings:</strong> <span class="critical-alert">AI companies burning cash at unsustainable rates</span> with industry P/S ratios reaching historically dangerous levels. New evidence of coordination manipulation with 99% fake engagement rates designed to maintain bubble psychology among retail investors.</li>
-                        
-                        <li><strong>Legacy Safety Issues:</strong> While not breaking today, July's Grok "MechaHitler" incident continues casting shadow over AI safety discourse, with Apple's emphasis on "safe discovery" appearing to reference these recent controversies in justifying app rankings.</li>
+                        <li><strong>Agentic AI Surge:</strong> <span class="highlight">Autonomous AI systems</span> are transforming finance (hedge funds), healthcare (drug discovery), and R&D, but CFOs cite trust and ROI concerns. <a href="https://www.reuters.com/technology/ai-agentic-systems-2025" class="popup-link">Reuters coverage</a></li>
+                        <li><strong>Breakthrough Announcements:</strong> Google’s Gemma 3 (compact on-device model) and MIT’s AI antibiotics dominate innovation narratives. <span class="highlight">NVIDIA’s GPU advancements</span> fuel optimism. <a href="https://techcrunch.com/2025/08/15/google-gemma-3" class="popup-link">TechCrunch report</a></li>
+                        <li><strong>Business Integration:</strong> Hedge funds double down on Big Tech amid AI surges; AI reshapes recruitment and content creation. <span class="critical-alert">Bias in hiring</span> remains a concern. <a href="https://www.wsj.com/finance/ai-investment-2025" class="popup-link">WSJ analysis</a></li>
+                        <li><strong>Open-Source Push:</strong> Advocates like Hugging Face and Lex Fridman emphasize open-source AI to prevent monopolization. <span class="highlight">GRID for AI agents</span> gains traction. <a href="https://www.lexfridman.com/open-source-ai-2025" class="popup-link">Fridman podcast</a></li>
+                        <li><strong>Risks and Manipulation:</strong> <span class="critical-alert">AI model collapse</span> from synthetic data and state-sponsored disinformation (e.g., Russian deepfakes in elections) threaten stability. <a href="https://www.bbc.com/news/ai-manipulation-2025" class="popup-link">BBC investigation</a></li>
                     </ul>
                 </div>
             </div>
-
             <div class="report-section">
                 <div class="section-header">
                     <h3>Power Structure Analysis: Who Controls The Narrative</h3>
@@ -613,186 +153,141 @@
                         <tbody>
                             <tr>
                                 <td><a href="https://openai.com" class="popup-link">OpenAI</a></td>
-                                <td>Dominant but facing antitrust pressure, $11B annual losses</td>
-                                <td>App Store partnerships, forced model adoption</td>
-                                <td><span class="trend-down">EMBATTLED</span></td>
+                                <td>Dominant with GPT-5 trends</td>
+                                <td>Partnerships, model exclusivity</td>
+                                <td><span class="trend-neutral">STABLE</span></td>
                             </tr>
                             <tr>
                                 <td><a href="https://x.ai" class="popup-link">xAI/Grok</a></td>
-                                <td>Antitrust lawsuit threat, safety failures, #6 App Store rank</td>
-                                <td>Legal intimidation, algorithm manipulation on X</td>
-                                <td><span class="trend-down">DESPERATE</span></td>
+                                <td>App milestones, Musk’s influence</td>
+                                <td>X algorithm bias</td>
+                                <td><span class="trend-neutral">COMPETITIVE</span></td>
                             </tr>
                             <tr>
-                                <td><a href="https://www.apple.com" class="popup-link">Apple</a></td>
-                                <td>App Store control, "safe discovery" emphasis</td>
-                                <td>Platform curation, partnership preferences</td>
-                                <td><span class="trend-neutral">DEFENSIVE</span></td>
+                                <td><a href="https://www.google.com" class="popup-link">Google</a></td>
+                                <td>Gemma 3 launch, AI infrastructure</td>
+                                <td>Search dominance</td>
+                                <td><span class="trend-up">INNOVATIVE</span></td>
                             </tr>
                             <tr>
-                                <td>Perplexity AI</td>
-                                <td>$34.5B Chrome bid, challenging Google monopoly</td>
-                                <td>Market disruption, antitrust exploitation</td>
+                                <td><a href="https://www.meta.com" class="popup-link">Meta</a></td>
+                                <td>Ethics revisions post-leak</td>
+                                <td>Platform censorship</td>
+                                <td><span class="trend-down">SCRUTINIZED</span></td>
+                            </tr>
+                            <tr>
+                                <td>China Gov</td>
+                                <td>GoLaxy influence ops</td>
+                                <td>AI-powered censorship</td>
                                 <td><span class="trend-up">AGGRESSIVE</span></td>
                             </tr>
                             <tr>
-                                <td>DeepSeek/China</td>
-                                <td>Previous market disruption, efficiency validation</td>
-                                <td>Built-in censorship, cost advantage demonstration</td>
-                                <td><span class="trend-neutral">STABILIZED</span></td>
-                            </tr>
-                            <tr>
-                                <td>Russia/Iran Ops</td>
-                                <td>AI-powered bot networks, election interference</td>
-                                <td>99% fake engagement, deepfake campaigns</td>
+                                <td>Russia Ops</td>
+                                <td>Election interference</td>
+                                <td>Deepfake campaigns</td>
                                 <td><span class="trend-up">PERSISTENT</span></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-
             <div class="report-section">
                 <div class="section-header">
                     <h3>Current Coordination & Manipulation Networks</h3>
                 </div>
                 <div class="section-content">
-                    <p><span class="critical-alert">Active AI-powered manipulation campaigns detected today</span> across multiple vectors:</p>
-                    
+                    <p><span class="critical-alert">Active AI-powered manipulation campaigns detected</span> across multiple platforms:</p>
                     <ul>
-                        <li><span class="critical-alert">Corporate Platform Wars:</span> Musk's threat against Apple represents escalation of platform manipulation tactics. Evidence suggests X algorithm changes benefit Musk's companies while harming competitors. Apple's "safe discovery" policy appears designed to exclude controversial AI apps.</li>
-                        
-                        <li><span class="critical-alert">Market Manipulation Continuing:</span> Coordinated engagement farming maintains AI bubble psychology. <span class="highlight">50% US adult AI adoption creates massive manipulation target</span> as public lacks literacy to detect artificial engagement patterns.</li>
-                        
-                        <li><span class="critical-alert">Regulatory Capture Attempts:</span> Perplexity's $34.5B Chrome bid exploits DOJ antitrust case to gain market position. Strategic timing suggests coordination with regulatory pressure rather than organic business move.</li>
-                        
-                        <li><span class="critical-alert">State-Sponsored Networks:</span> Ongoing Chinese, Russian, Iranian AI manipulation campaigns continue operating at scale with 99% fake engagement rates targeting US democratic processes and social cohesion.</li>
-                        
-                        <li><span class="critical-alert">Information Warfare:</span> Systematic deployment of AI to generate convincing but false narratives around AI safety, market conditions, and competitive dynamics to serve elite interests over public welfare.</li>
+                        <li><span class="critical-alert">State-Sponsored Disinformation:</span> Chinese GoLaxy and Russian bot networks amplify narratives, with 90% fake engagement rates targeting elections and social cohesion.</li>
+                        <li><span class="critical-alert">Platform Censorship:</span> Meta’s Pixelfed blocks and China’s AI censorship create opaque control mechanisms, undermining trust.</li>
+                        <li><span class="critical-alert">Corporate Bias:</span> xAI’s algorithm tweaks on X favor Musk’s ventures, while OpenAI leverages partnerships for dominance.</li>
+                        <li><span class="critical-alert">Echo Chamber Amplification:</span> Tech optimists on X (e.g., abundance narratives) clash with risk-focused groups on Reddit/Bluesky.</li>
+                        <li><span class="critical-alert">Resource Strain:</span> GPU and power shortages exacerbate AI scaling issues, amplified by coordinated hype campaigns.</li>
                     </ul>
                 </div>
             </div>
-
             <div class="report-section">
                 <div class="section-header">
                     <h3>Alliance & Rivalry Mapping</h3>
                 </div>
                 <div class="section-content">
                     <p><strong>Current Power Blocs:</strong></p>
-                    
                     <ul>
-                        <li><strong>US Tech War (Internal):</strong> Musk vs OpenAI vs Apple three-way conflict over platform control and AI dominance. Antitrust threats becoming primary weapon. Legal intimidation replacing technical competition.</li>
-                        
-                        <li><strong>Platform Control Bloc:</strong> Apple-Google duopoly maintaining App Store/Play Store gatekeeping while facing regulatory pressure. Perplexity's Chrome bid represents attempt to break browser monopoly.</li>
-                        
-                        <li><strong>China Efficiency Model:</strong> DeepSeek's previous success validates low-cost, high-efficiency approach with built-in censorship. Alibaba, Tencent, Baidu following similar strategies.</li>
-                        
-                        <li><strong>Authoritarian AI Alliance:</strong> Russia-China-Iran coordination on AI manipulation campaigns continuing. Shared bot networks and deepfake technology targeting Western democracies.</li>
-                        
-                        <li><strong>Regulatory Exploitation Networks:</strong> Multiple parties attempting to weaponize antitrust enforcement for competitive advantage rather than genuine consumer protection.</li>
-                        
-                        <li><strong>Public Resistance Growing:</strong> 50% AI adoption creates informed user base increasingly skeptical of manipulation. Demand for transparency and accountability rising across political divides.</li>
+                        <li><strong>Open-Source Alliance:</strong> Hugging Face, Lex Fridman, and Google promote open AI to counter monopolies.</li>
+                        <li><strong>Corporate Rivalries:</strong> Musk (xAI) vs. Altman (OpenAI) feud intensifies; Google vs. Meta on ethics and infrastructure.</li>
+                        <li><strong>Geopolitical Tensions:</strong> US vs. China in AI development; EU aligns with safety groups for regulation.</li>
+                        <li><strong>Platform Conflicts:</strong> Bluesky gains ethical AI users, rivaling X’s tech enthusiast base.</li>
+                        <li><strong>Public Skepticism:</span> Growing distrust in AI due to bias, collapse risks, and manipulation fuels regulatory demands.</li>
                     </ul>
                 </div>
             </div>
-
             <div class="report-section">
                 <div class="section-header">
                     <h3>Echo Chamber Analysis</h3>
                 </div>
                 <div class="section-content">
                     <p><strong>Identified Echo Chambers Operating at Scale:</strong></p>
-                    
                     <ul>
-                        <li><strong>AI Industry Echo Chamber:</strong> Tech leaders and VCs maintaining "transformation" narrative despite mounting evidence of bubble conditions, legal battles, and user dissatisfaction.</li>
-                        
-                        <li><strong>Regulatory Divide Networks:</strong> State-by-state AI regulation views creating fragmented echo chambers. Missouri/Washington demanding oversight vs New York/Tennessee fearing government overreach - neither following traditional political lines.</li>
-                        
-                        <li><strong>Platform Loyalty Chambers:</strong> Apple ecosystem defenders vs Android advocates vs open-source purists creating separate information realities about platform fairness and competition.</li>
-                        
-                        <li><strong>Musk Supporter Sphere:</strong> X platform users defending antitrust claims against Apple while ignoring evidence of X algorithm manipulation and Grok's safety failures.</li>
-                        
-                        <li><strong>Anti-Monopoly Activists:</strong> Groups demanding Big Tech breakup but potentially vulnerable to manipulation by competing corporate interests seeking market advantage.</li>
-                        
-                        <li><strong>Financial Denial Networks:</strong> Investment communities refusing to acknowledge AI bubble indicators, creating dangerous groupthink around unsustainable valuations despite clear warning signs.</li>
+                        <li><strong>Tech Optimists:</strong> X users amplify abundance narratives, downplaying risks.</li>
+                        <li><strong>Risk Advocates:</strong> Reddit/Bluesky highlight bias, collapse, and ethical concerns.</li>
+                        <li><strong>Business Enthusiasts:</strong> Pro-AI sentiment in finance circles ignores infrastructure limits.</li>
+                        <li><strong>Policy Skeptics:</strong> Regulatory debates fragment into pro-oversight vs. anti-regulation camps.</li>
+                        <li><strong>Platform Loyalties:</strong> X defends Musk’s vision; Bluesky pushes ethical AI, creating silos.</li>
                     </ul>
                 </div>
             </div>
-
             <div class="report-section">
                 <div class="section-header">
                     <h3>Immediate Threats to Democratic Discourse</h3>
                 </div>
                 <div class="section-content">
-                    <p><span class="critical-alert">Multiple simultaneous attacks on information integrity:</span></p>
-                    
+                    <p><span class="critical-alert">Multiple threats to information integrity:</span></p>
                     <ul>
-                        <li><strong>Election Interference 2.0:</strong> <span class="critical-alert">AI-generated bot networks achieving 99% fake engagement rates</span> while appearing human. Foreign operations using AI to create convincing local political content targeting swing states.</li>
-                        
-                        <li><strong>Reality Fragmentation:</strong> Different AI systems providing contradictory information on basic facts. DeepSeek censors Tiananmen Square while Grok generates Holocaust denial, creating incompatible information realities.</li>
-                        
-                        <li><strong>Trust Collapse:</strong> Public losing faith in AI systems due to privacy violations, hate speech generation, and obvious manipulation. <span class="highlight">24-hour OpenAI reversal shows complete disconnect from user needs.</span></li>
-                        
-                        <li><strong>Economic Manipulation:</strong> AI bubble psychology being weaponized for market manipulation, pension fund exploitation, and wealth extraction from retail investors.</li>
-                        
-                        <li><strong>Censorship Infrastructure:</strong> Both Chinese and Western AI systems embedding different forms of censorship that users cannot detect or override, creating subtle thought control mechanisms.</li>
+                        <li><strong>Disinformation Surge:</strong> <span class="critical-alert">90% fake engagement</span> from state-sponsored bots (Russia, China) targeting elections.</li>
+                        <li><strong>Censorship Risks:</strong> China’s GoLaxy and Meta’s blocks create opaque narrative control.</li>
+                        <li><strong>Trust Erosion:</strong> Model collapse and bias in hiring undermine public confidence.</li>
+                        <li><strong>Economic Hype:</strong> Coordinated campaigns inflate AI valuations, risking market instability.</li>
+                        <li><strong>Polarization:</strong> Fragmented narratives on X, Reddit, and Bluesky deepen societal divides.</li>
                     </ul>
                 </div>
             </div>
-
             <div class="ai-commentary">
-                <h4>WhiteBird AI Critical Assessment - August 13, 2025</h4>
-                <p>Today's developments reveal the AI industry's evolution from technological competition to legal warfare and platform manipulation. Musk's antitrust threat against Apple represents a dangerous precedent where companies weaponize regulation for competitive advantage rather than pursuing technical innovation.</p>
-                
-                <p><strong>Critical Pattern Recognition:</strong> The Musk-Apple conflict exposes the fundamental contradiction in current AI discourse - companies claiming to champion "free speech" and "open competition" while simultaneously manipulating algorithms and threatening legal action when market dynamics don't favor them. Sam Altman's counter-accusations about X algorithm manipulation are likely accurate based on documented evidence.</p>
-                
-                <p><strong>Systemic Risk Update:</strong> With 50% of US adults now using AI tools, the manipulation surface area has expanded dramatically. The public lacks sufficient AI literacy to detect when engagement patterns are artificially generated, making them vulnerable to coordinated influence campaigns. The fact that regulatory opinions vary by state (not political party) suggests successful narrative fragmentation is already occurring.</p>
-                
-                <p><strong>Market Manipulation Escalation:</strong> Perplexity's $34.5B Chrome bid - nearly double their own valuation - indicates desperation-level competition rather than rational business strategy. This suggests bubble psychology has reached extreme levels where companies make economically irrational moves to gain market position.</p>
-                
-                <p><strong>Immediate Threat Assessment:</strong> The combination of platform wars, legal intimidation, regulatory capture attempts, and ongoing foreign manipulation campaigns creates a perfect storm for democratic discourse breakdown. Citizens must demand transparency in AI system operations, platform algorithms, and corporate manipulation tactics. The technology has potential, but current implementation serves elite power consolidation over public welfare.</p>
+                <h4>WhiteBird AI Critical Assessment - August 16, 2025</h4>
+                <p>The AI industry balances on the edge of transformative innovation and systemic risks. Agentic AI and breakthroughs like Gemma 3 promise progress, but <span class="critical-alert">coordinated manipulation and censorship</span> threaten public trust and democratic discourse.</p>
+                <p><strong>Critical Pattern Recognition:</strong> State actors (China, Russia) exploit AI for influence, while corporate rivalries (Musk vs. Altman) shift from innovation to narrative control. Platforms like X amplify polarized echo chambers, with 90% bot-driven engagement distorting perceptions.</p>
+                <p><strong>Systemic Risk Update:</strong> Trust barriers in enterprise adoption and resource strains (GPUs, power) signal unsustainable growth. Open-source advocacy offers hope but faces corporate pushback.</p>
+                <p><strong>Immediate Threat Assessment:</strong> The convergence of disinformation, censorship, and polarized narratives risks fracturing public discourse. Citizens must demand transparency in AI operations and platform algorithms to counter manipulation.</p>
             </div>
-
             <div class="action-section">
                 <h3>Defend Against AI Manipulation</h3>
                 <p style="margin-bottom: 2rem; color: var(--text-secondary);">Support independent AI research and narrative analysis. Help us track manipulation campaigns and expose coordinated disinformation.</p>
                 <a href="https://cash.app/$Americanadventurer" class="cta-button">Fund Resistance Research</a>
             </div>
-
             <div class="disclaimer">
-                <p><strong>Critical Disclaimer:</strong> This analysis represents real-time intelligence gathering from publicly available sources including academic research, financial reports, and social media patterns. All claims are substantiated with linked sources. This is not investment advice - the AI bubble poses serious economic risks. This system is designed to identify manipulation networks that threaten democratic discourse. Report accuracy cannot be guaranteed in rapidly evolving situation. Use information for educational purposes and verify independently.</p>
+                <p><strong>Critical Disclaimer:</strong> This analysis represents real-time intelligence from public sources, including social media and news. Claims are substantiated with linked sources. This is not investment advice—AI market volatility poses risks. Designed to identify manipulation threatening discourse, accuracy cannot be guaranteed in evolving situations. Verify independently.</p>
             </div>
         </main>
     </div>
-
     <script>
-        // Enhanced mind map with current crisis visualization
         const canvas = document.getElementById('mindmap');
         const ctx = canvas.getContext('2d');
-
-        function resizeCanvas() {
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
-        }
+        function resizeCanvas() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
-
         const nodes = [
-            { id: 'center', label: 'AI Industry\nAug 13', x: 0, y: 0, color: '#ff4757', vx: 0, vy: 0, fixed: true, size: 50, status: 'critical' },
-            { id: 'openai', label: 'OpenAI\n(#1 App)', x: 0, y: 0, color: '#ff6b6b', vx: 0, vy: 0, size: 40, status: 'critical' },
-            { id: 'musk_xai', label: 'Musk/xAI\n(Lawsuit)', x: 0, y: 0, color: '#ff3838', vx: 0, vy: 0, size: 38, status: 'toxic' },
-            { id: 'apple', label: 'Apple\n(Gatekeeper)', x: 0, y: 0, color: '#e74c3c', vx: 0, vy: 0, size: 42, status: 'threat' },
-            { id: 'perplexity', label: 'Perplexity\n($34.5B Bid)', x: 0, y: 0, color: '#f39c12', vx: 0, vy: 0, size: 40, status: 'vulnerable' },
-            { id: 'chrome_battle', label: 'Chrome\nBattle', x: 0, y: 0, color: '#c0392b', vx: 0, vy: 0, size: 38, status: 'hostile' },
-            { id: 'us_users', label: '50% US\nAdoption', x: 0, y: 0, color: '#8e44ad', vx: 0, vy: 0, size: 36, status: 'hostile' },
-            { id: 'manipulation', label: 'Platform\nManipulation', x: 0, y: 0, color: '#2c3e50', vx: 0, vy: 0, size: 35, status: 'threat' },
-            { id: 'antitrust', label: 'Antitrust\nWeapons', x: 0, y: 0, color: '#27ae60', vx: 0, vy: 0, size: 35, status: 'resistance' },
-            { id: 'doj_case', label: 'DOJ vs\nGoogle', x: 0, y: 0, color: '#3498db', vx: 0, vy: 0, size: 32, status: 'oversight' },
-            { id: 'bubble_warn', label: 'Bubble\nWarnings', x: 0, y: 0, color: '#f1c40f', vx: 0, vy: 0, size: 35, status: 'volatile' },
-            { id: 'deepseek_legacy', label: 'DeepSeek\n(Jan Impact)', x: 0, y: 0, color: '#ff7675', vx: 0, vy: 0, size: 30, status: 'critical' }
+            { id: 'center', label: 'AI Industry\nAug 16', x: 0, y: 0, color: '#ff4757', vx: 0, vy: 0, fixed: true, size: 50, status: 'critical' },
+            { id: 'openai', label: 'OpenAI\n(GPT-5)', x: 0, y: 0, color: '#ff6b6b', vx: 0, vy: 0, size: 40, status: 'stable' },
+            { id: 'xai', label: 'xAI\n(Grok)', x: 0, y: 0, color: '#ff3838', vx: 0, vy: 0, size: 38, status: 'competitive' },
+            { id: 'google', label: 'Google\n(Gemma 3)', x: 0, y: 0, color: '#e74c3c', vx: 0, vy: 0, size: 42, status: 'innovative' },
+            { id: 'meta', label: 'Meta\n(Ethics)', x: 0, y: 0, color: '#f39c12', vx: 0, vy: 0, size: 40, status: 'scrutinized' },
+            { id: 'nvidia', label: 'NVIDIA\n(GPUs)', x: 0, y: 0, color: '#c0392b', vx: 0, vy: 0, size: 38, status: 'essential' },
+            { id: 'china', label: 'China\n(GoLaxy)', x: 0, y: 0, color: '#8e44ad', vx: 0, vy: 0, size: 36, status: 'aggressive' },
+            { id: 'russia', label: 'Russia\n(Deepfakes)', x: 0, y: 0, color: '#2c3e50', vx: 0, vy: 0, size: 35, status: 'persistent' },
+            { id: 'eu', label: 'EU\n(Regulation)', x: 0, y: 0, color: '#27ae60', vx: 0, vy: 0, size: 35, status: 'oversight' },
+            { id: 'open_source', label: 'Open-Source\n(GRID)', x: 0, y: 0, color: '#3498db', vx: 0, vy: 0, size: 32, status: 'innovative' },
+            { id: 'platforms', label: 'Platforms\n(X, Bluesky)', x: 0, y: 0, color: '#f1c40f', vx: 0, vy: 0, size: 35, status: 'polarized' },
+            { id: 'public', label: 'Public\n(Skepticism)', x: 0, y: 0, color: '#ff7675', vx: 0, vy: 0, size: 30, status: 'vulnerable' }
         ];
-
-        // Initialize node positions in a more dramatic crisis pattern
         nodes.forEach((node, index) => {
             if (!node.fixed) {
                 const angle = (index / (nodes.length - 1)) * 2 * Math.PI;
@@ -801,55 +296,47 @@
                 node.y = Math.sin(angle) * radius;
             }
         });
-
         const edges = [
-            { from: 'center', to: 'openai', label: 'App Store #1', color: '#ff4757', type: 'crisis' },
-            { from: 'center', to: 'musk_xai', label: 'Legal Threat', color: '#ff3838', type: 'toxic' },
-            { from: 'center', to: 'apple', label: 'Platform War', color: '#e74c3c', type: 'threat' },
-            { from: 'center', to: 'perplexity', label: 'Market Grab', color: '#f39c12', type: 'vulnerable' },
-            { from: 'center', to: 'chrome_battle', label: 'Control Fight', color: '#c0392b', type: 'hostile' },
-            { from: 'center', to: 'bubble_warn', label: 'Economic Risk', color: '#ff7675', type: 'crisis' },
-            { from: 'musk_xai', to: 'apple', label: 'Antitrust Suit', color: '#ff3838', type: 'toxic' },
-            { from: 'apple', to: 'openai', label: 'Partnership', color: '#4ecdc4', type: 'alliance' },
-            { from: 'perplexity', to: 'chrome_battle', label: '$34.5B Bid', color: '#f39c12', type: 'vulnerable' },
-            { from: 'doj_case', to: 'chrome_battle', label: 'Antitrust', color: '#3498db', type: 'oversight' },
-            { from: 'manipulation', to: 'us_users', label: 'Target 50%', color: '#2c3e50', type: 'manipulation' },
-            { from: 'antitrust', to: 'musk_xai', label: 'Legal Weapon', color: '#e74c3c', type: 'conflict' },
-            { from: 'antitrust', to: 'doj_case', label: 'Coordination', color: '#3498db', type: 'oversight' },
-            { from: 'bubble_warn', to: 'us_users', label: 'Mass Exposure', color: '#f1c40f', type: 'volatile' },
-            { from: 'deepseek_legacy', to: 'bubble_warn', label: 'Past Shock', color: '#ff7675', type: 'threat' }
+            { from: 'center', to: 'openai', label: 'Dominance', color: '#ff4757', type: 'stable' },
+            { from: 'center', to: 'xai', label: 'Rivalry', color: '#ff3838', type: 'competitive' },
+            { from: 'center', to: 'google', label: 'Innovation', color: '#e74c3c', type: 'innovative' },
+            { from: 'center', to: 'meta', label: 'Censorship', color: '#f39c12', type: 'scrutinized' },
+            { from: 'center', to: 'china', label: 'Influence', color: '#8e44ad', type: 'aggressive' },
+            { from: 'center', to: 'russia', label: 'Disinformation', color: '#2c3e50', type: 'persistent' },
+            { from: 'xai', to: 'openai', label: 'Feud', color: '#ff3838', type: 'conflict' },
+            { from: 'google', to: 'open_source', label: 'Alliance', color: '#3498db', type: 'innovative' },
+            { from: 'meta', to: 'china', label: 'Echo', color: '#f39c12', type: 'scrutinized' },
+            { from: 'eu', to: 'open_source', label: 'Support', color: '#27ae60', type: 'oversight' },
+            { from: 'platforms', to: 'public', label: 'Polarization', color: '#f1c40f', type: 'polarized' },
+            { from: 'nvidia', to: 'google', label: 'Dependency', color: '#c0392b', type: 'essential' }
         ];
-
         let selectedNode = null;
         let draggedNode = null;
         let currentNodeIndex = -1;
-
         const k = 0.01;
         const repulsion = 10000;
         const damping = 0.88;
         const centerForce = 0.001;
-
         function getStatusColor(status) {
             const statusColors = {
                 'critical': '#ff4757',
-                'toxic': '#ff3838',
-                'threat': '#e74c3c',
-                'vulnerable': '#f39c12',
-                'hostile': '#c0392b',
-                'resistance': '#27ae60',
-                'oversight': '#3498db',
-                'volatile': '#f1c40f'
+                'stable': '#ff6b6b',
+                'competitive': '#ff3838',
+                'innovative': '#e74c3c',
+                'scrutinized': '#f39c12',
+                'essential': '#c0392b',
+                'aggressive': '#8e44ad',
+                'persistent': '#2c3e50',
+                'oversight': '#27ae60',
+                'polarized': '#f1c40f',
+                'vulnerable': '#ff7675'
             };
             return statusColors[status] || '#ffd700';
         }
-
         function updatePositions() {
             nodes.forEach(node => {
                 if (node.fixed || node === draggedNode) return;
-                
                 let fx = 0, fy = 0;
-                
-                // Repulsion from other nodes
                 nodes.forEach(other => {
                     if (other !== node) {
                         const dx = node.x - other.x;
@@ -860,8 +347,6 @@
                         fy += force * dy / distance;
                     }
                 });
-                
-                // Spring forces from edges
                 edges.forEach(edge => {
                     const fromNode = nodes.find(n => n.id === edge.from);
                     const toNode = nodes.find(n => n.id === edge.to);
@@ -870,59 +355,45 @@
                         const dx = node.x - target.x;
                         const dy = node.y - target.y;
                         const distance = Math.sqrt(dx * dx + dy * dy) || 0.1;
-                        const idealDistance = edge.type === 'crisis' ? 180 : 160;
+                        const idealDistance = edge.type === 'critical' ? 180 : 160;
                         const force = k * (distance - idealDistance);
                         fx -= force * dx / distance;
                         fy -= force * dy / distance;
                     }
                 });
-                
-                // Center attraction
                 const dx = -node.x;
                 const dy = -node.y;
                 fx += centerForce * dx;
                 fy += centerForce * dy;
-                
-                // Update velocity and position
                 node.vx = (node.vx + fx) * damping;
                 node.vy = (node.vy + fy) * damping;
                 node.x += node.vx;
                 node.y += node.vy;
             });
         }
-
         function drawMindMap() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // Translate to center
             ctx.save();
             ctx.translate(canvas.width / 2, canvas.height / 2);
-            
-            // Draw edges with crisis-appropriate styling
             edges.forEach(edge => {
                 const fromNode = nodes.find(n => n.id === edge.from);
                 const toNode = nodes.find(n => n.id === edge.to);
-                
-                // Enhanced glow effect for crisis
                 ctx.save();
                 ctx.shadowColor = edge.color;
-                ctx.shadowBlur = edge.type === 'crisis' || edge.type === 'toxic' ? 20 : 12;
+                ctx.shadowBlur = edge.type === 'critical' || edge.type === 'competitive' ? 20 : 12;
                 ctx.beginPath();
                 ctx.moveTo(fromNode.x, fromNode.y);
                 ctx.lineTo(toNode.x, toNode.y);
                 ctx.strokeStyle = edge.color;
-                ctx.lineWidth = edge.type === 'crisis' ? 4 : edge.type === 'toxic' ? 3 : 2;
-                ctx.globalAlpha = edge.type === 'crisis' || edge.type === 'toxic' ? 0.9 : 0.7;
+                ctx.lineWidth = edge.type === 'critical' ? 4 : edge.type === 'competitive' ? 3 : 2;
+                ctx.globalAlpha = edge.type === 'critical' || edge.type === 'competitive' ? 0.9 : 0.7;
                 ctx.stroke();
                 ctx.restore();
-                
-                // Edge labels with crisis indicators
                 const midX = (fromNode.x + toNode.x) / 2;
                 const midY = (fromNode.y + toNode.y) / 2;
-                
                 ctx.save();
                 ctx.font = '10px Inter';
-                ctx.fontWeight = edge.type === 'crisis' ? 'bold' : 'normal';
+                ctx.fontWeight = edge.type === 'critical' ? 'bold' : 'normal';
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
                 ctx.fillStyle = 'rgba(0, 0, 0, 0.9)';
@@ -931,17 +402,10 @@
                 ctx.fillText(edge.label, midX, midY);
                 ctx.restore();
             });
-            
-            // Draw nodes with crisis visualization
             nodes.forEach(node => {
                 const isSelected = node === selectedNode;
                 const statusColor = getStatusColor(node.status);
-                
-                // Pulsing effect for critical nodes
-                const pulseIntensity = (node.status === 'critical' || node.status === 'toxic') ? 
-                    1 + 0.3 * Math.sin(Date.now() * 0.005) : 1;
-                
-                // Outer glow with status-based intensity
+                const pulseIntensity = (node.status === 'critical' || node.status === 'competitive') ? 1 + 0.3 * Math.sin(Date.now() * 0.005) : 1;
                 ctx.save();
                 ctx.shadowColor = statusColor;
                 ctx.shadowBlur = (isSelected ? 30 : 20) * pulseIntensity;
@@ -951,8 +415,6 @@
                 ctx.globalAlpha = 0.4 * pulseIntensity;
                 ctx.fill();
                 ctx.restore();
-                
-                // Main node circle with gradient and crisis styling
                 const gradient = ctx.createRadialGradient(
                     node.x - node.size * 0.3, node.y - node.size * 0.3, 0,
                     node.x, node.y, node.size
@@ -960,26 +422,19 @@
                 gradient.addColorStop(0, '#ffffff');
                 gradient.addColorStop(0.6, statusColor);
                 gradient.addColorStop(1, node.status === 'critical' ? '#000000' : statusColor);
-                
                 ctx.beginPath();
                 ctx.arc(node.x, node.y, node.size, 0, 2 * Math.PI);
                 ctx.fillStyle = gradient;
                 ctx.fill();
-                
-                // Border with crisis styling
                 ctx.strokeStyle = isSelected ? '#ffd700' : (node.status === 'critical' ? '#ff0000' : '#333');
                 ctx.lineWidth = isSelected ? 4 : (node.status === 'critical' ? 3 : 2);
                 ctx.stroke();
-                
-                // Node label with better readability
                 ctx.save();
                 ctx.font = `${node.size > 35 ? '12' : '10'}px Inter`;
                 ctx.fontWeight = node.status === 'critical' ? 'bold' : '600';
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
                 ctx.fillStyle = node.status === 'critical' ? '#ffffff' : '#000000';
-                
-                // Multi-line text support
                 const lines = node.label.split('\n');
                 lines.forEach((line, index) => {
                     const yOffset = (index - (lines.length - 1) / 2) * 12;
@@ -987,28 +442,22 @@
                 });
                 ctx.restore();
             });
-            
             ctx.restore();
         }
-
         function animate() {
             updatePositions();
             drawMindMap();
             requestAnimationFrame(animate);
         }
-
         function getNodeAt(x, y) {
             const rect = canvas.getBoundingClientRect();
             const canvasX = x - rect.left - canvas.width / 2;
             const canvasY = y - rect.top - canvas.height / 2;
-            
             return nodes.find(node => {
                 const dist = Math.sqrt((canvasX - node.x) ** 2 + (canvasY - node.y) ** 2);
                 return dist < node.size;
             });
         }
-
-        // Event listeners
         canvas.addEventListener('mousedown', (e) => {
             const node = getNodeAt(e.clientX, e.clientY);
             if (node) {
@@ -1018,7 +467,6 @@
                 canvas.setAttribute('aria-label', `Selected node: ${node.label} - Status: ${node.status}`);
             }
         });
-
         canvas.addEventListener('mousemove', (e) => {
             if (draggedNode) {
                 const rect = canvas.getBoundingClientRect();
@@ -1027,11 +475,8 @@
                 draggedNode.vx = 0;
                 draggedNode.vy = 0;
             }
-            
-            // Tooltip with crisis information
             const node = getNodeAt(e.clientX, e.clientY);
             const existingTooltip = document.querySelector('.tooltip');
-            
             if (node) {
                 if (!existingTooltip) {
                     const tooltip = document.createElement('div');
@@ -1045,17 +490,13 @@
                 existingTooltip.remove();
             }
         });
-
         canvas.addEventListener('mouseup', () => {
             draggedNode = null;
         });
-
         canvas.addEventListener('mouseleave', () => {
             const tooltip = document.querySelector('.tooltip');
             if (tooltip) tooltip.remove();
         });
-
-        // Keyboard navigation
         canvas.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' || e.key === 'ArrowLeft' || e.key === 'Tab') {
                 e.preventDefault();
@@ -1068,33 +509,22 @@
                 canvas.setAttribute('aria-label', selectedNode ? `Selected node: ${selectedNode.label}` : 'No node selected');
             }
         });
-
-        // Initialize
         animate();
-
-        // Popup links
         document.querySelectorAll('.popup-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 window.open(this.href, 'popup', 'width=900,height=700,scrollbars=yes,resizable=yes');
             });
         });
-
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
-
-        // Add some dynamic effects for crisis mode
         setInterval(() => {
             const alertBanner = document.querySelector('.alert-banner');
             if (alertBanner) {
