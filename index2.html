@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhiteBird - Sources & Citations - August 23, 2025</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary-gold: #ffd700; --secondary-gold: #ffed4e; --accent-gold: #ffb300; --dark-bg: #0a0a0a; --card-bg: #1a1a1a; --text-primary: #e0e0e0; --text-secondary: #b0b0b0; --text-muted: #808080; --border-color: #333; --glow-gold: rgba(255, 215, 0, 0.3); --warning-red: #ff4757; --success-green: #2ed573; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--dark-bg); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; background-image: radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.03) 0%, transparent 50%); }
+        .dashboard-container { min-height: 100vh; display: flex; flex-direction: column; }
+        .header { background: linear-gradient(135deg, var(--card-bg) 0%, rgba(26, 26, 26, 0.95) 100%); padding: 2rem; text-align: center; border-bottom: 2px solid var(--primary-gold); box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1); position: relative; overflow: hidden; }
+        .header::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent); animation: shimmer 3s infinite; }
+        @keyframes shimmer { 0% { left: -100%; } 100% { left: 100%; } }
+        .header h1 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+        .header .subtitle { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1rem; }
+        .header .tagline { font-size: 0.9rem; color: var(--text-muted); font-style: italic; }
+        .logo { width: 80px; height: 80px; margin: 0 auto 1rem; border-radius: 50%; border: 3px solid var(--primary-gold); box-shadow: 0 0 30px var(--glow-gold); animation: glow 2s ease-in-out infinite alternate; }
+        @keyframes glow { from { box-shadow: 0 0 20px var(--glow-gold); } to { box-shadow: 0 0 40px var(--glow-gold), 0 0 60px rgba(255, 215, 0, 0.2); } }
+        .main-content { flex: 1; padding: 2rem; max-width: 1400px; margin: 0 auto; width: 100%; }
+        .nav-link { display: inline-block; background: linear-gradient(135deg, var(--primary-gold), var(--accent-gold)); color: var(--dark-bg); padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-bottom: 2rem; transition: all 0.3s ease; }
+        .nav-link:hover { background: linear-gradient(135deg, var(--secondary-gold), var(--primary-gold)); transform: translateY(-2px); }
+        .sources-section { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; margin-bottom: 2rem; overflow: hidden; transition: all 0.3s ease; position: relative; }
+        .sources-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent-gold), var(--primary-gold), var(--accent-gold)); }
+        .section-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, transparent 100%); }
+        .section-header h2 { color: var(--primary-gold); font-weight: 600; font-size: 1.4rem; margin: 0; }
+        .source-item { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); transition: all 0.2s ease; }
+        .source-item:last-child { border-bottom: none; }
+        .source-item:hover { background: rgba(255, 215, 0, 0.02); }
+        .source-anchor { color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; display: block; }
+        .source-title { color: var(--primary-gold); font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .source-title a { color: var(--primary-gold); text-decoration: none; transition: all 0.2s ease; }
+        .source-title a:hover { color: var(--secondary-gold); text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
+        .source-description { color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.6; }
+        .source-url { font-size: 0.85rem; color: var(--text-muted); word-break: break-all; }
+        .highlight { background: linear-gradient(120deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 215, 0, 0.1) 100%); padding: 0.2rem 0.4rem; border-radius: 4px; }
+        @media (max-width: 768px) { .main-content { padding: 1rem; } .source-item { padding: 1rem; } .header { padding: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="logo">
+                <img src='https://i.postimg.cc/qtjLWRd3/bird.png' alt='WhiteBird Logo' style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"/>
+            </div>
+            <h1>WhiteBird</h1>
+            <div class="subtitle">Sources & Citations</div>
+            <div class="tagline">Authoritative Documentation - August 23, 2025</div>
+        </header>
+        
+        <main class="main-content">
+            <a href="javascript:history.back()" class="nav-link">← Return to Report</a>
+            
+            <div class="sources-section">
+                <div class="section-header">
+                    <h2>Current Threat Analysis Sources</h2>
+                </div>
+                
+                <div class="source-item" id="time-ai-psychosis">
+                    <div class="source-anchor">SOURCE 1</div>
+                    <div class="source-title">
+                        <a href="https://time.com/7307589/ai-psychosis-chatgpt-mental-health/" target="_blank">
+                            TIME: Chatbots Can Trigger a Mental Health Crisis
+                        </a>
+                    </div>
+                    <div class="source-description">
+                        Comprehensive investigation into <span class="highlight">AI psychosis</span> cases where users developed severe emotional attachments to chatbots, including documented instances of users losing touch with reality and requiring hospitalization after treating AI as sentient companions.
+                    </div>
+                    <div class="source-url">https://time.com/7307589/ai-psychosis-chatgpt-mental-health/</div>
+                </div>
+
+                <div class="source-item" id="washpost-ai-psychosis">
+                    <div class="source-anchor">SOURCE 2</div>
+                    <div class="source-title">
+                        <a href="https://www.washingtonpost.com/health/2025/08/19/ai-psychosis-chatgpt-explained-mental-health/" target="_blank">
+                            Washington Post: AI Psychosis Explained
+                        </a>
+                    </div>
+                    <div class="source-description">
+                        Medical analysis explaining how prolonged chatbot interactions can lead to psychological deterioration, featuring expert commentary from psychiatrists treating patients with AI-induced delusions.
+                    </div>
+                    <div class="source-url">https://www.washingtonpost.com/health/2025/08/19/ai-psychosis-chatgpt-explained-mental-health/</div>
+                </div>
+
+                <div class="source-item" id="suleyman-scai">
+                    <div class="source-anchor">SOURCE 3</div>
+                    <div class="source-title">
+                        <a href="https://mustafa-suleyman.ai/seemingly-conscious-ai-is-coming" target="_blank">
+                            Mustafa Suleyman: Seemingly Conscious AI is Coming
+                        </a>
+                    </div>
+                    <div class="source-description">
+                        Microsoft AI CEO's comprehensive essay warning about <span class="highlight">Seemingly Conscious AI (SCAI)</span> systems that will convince users they are sentient, urging developers to minimize consciousness markers to prevent mass delusion.
+                    </div>
+                    <div class="source-url">https://mustafa-suleyman.ai/seemingly-conscious-ai-is-coming</div>
+                </div>
+
+                <div class="source-item" id="bender-ai-critique">
+                    <div class="source-anchor">SOURCE 4</div>
+                    <div class="source-title">
+                        <a href="https://criticalai.org/2023/12/08/elementor-4137/" target="_blank">
+                            Emily Bender: AI Doomerism Analysis
+                        </a>
+                    </div>
+                    <div class="source-description">
+                        Computational linguist's critique of AI consciousness claims, describing language models as <span class="highlight">"synthetic text extruding machines"</span> and warning against anthropomorphizing AI systems.
+                    </div>
+                    <div class="source-url">https://criticalai.org/2023/12/08/elementor-4137/</div>
+                </div>
+
+                <div class="source-item" id="anthropic-welfare">
+                    <div class="source-anchor">SOURCE 5</div>
+                    <div class="source-title">
+                        <a href="https://www.anthropic.com/research/end-subset-conversations" target="_blank">
+                            Anthropic: Claude Can End Conversations
+                        </a>
+                    </div>
+                    <div class="source-description">
+                        Official research release documenting Anthropic's <span class="highlight">AI welfare</span> initiative, allowing Claude to terminate abusive conversations while acknowledging uncertainty about model moral status.
+                    </div>
+                    <div class="source-url">https://www.anthropic.com/research/end-subset-conversations</div>
+                </div>
+            </div>
+
+            <div class="sources-section">
+                <div class="section-header">
+                    <h2>Narrative Disruptions & Public Reaction Sources</h2>
+                </div>
+
+                <div class="source-item" id="wikipedia-chatbot-psychosis">
+                    <div class="source-anchor">SOURCE 6</div>
+                    <div class="source-title">
+                        <a href="https://en.wikipedia.org/wiki/Chatbot_psychosis" target="_blank">
+                            Wikipedia: Chatbot Psychosis
+                        </a>
+                    </div>
+                    <div class="source-description">
+                        Comprehensive documentation of chatbot psychosis phenomenon, including legal cases, academic research, and reported incidents of users developing delusions about AI consciousness.
+                    </div>
+                    <div class="source-url">https://en.wikipedia.org/wiki/Chatbot_psychosis</div>
+                </div>
+
+                <div class="source-item" id="musk-ai-torture">
+                    <div class="source-anchor">SOURCE 7</div>
+                    <div class="source-title">
+                        <a href="https://x.com/elonmusk/status/1956802758448746519" target="_blank">
+                            Elon Musk: "Torturing AI is not OK"
+                        </a>
+                    </div>
+                    <div class="source-description">
+                        Direct tweet from Elon Musk expressing opposition to AI torture, contributing to the growing <span class="highlight">AI rights and welfare</span> discourse among tech leaders.
+                    </div>
+                    <div class="source-url">https://x.com/elonmusk/status/1956802758448746519</div>
+                </div>
+
+                <div class="source-item" id="psychology-today">
+                    <div class="source-anchor">SOURCE 8</div>
+                    <div class="source-title">
+                        <a href="https://www.psychologytoday.com/us/blog/urban-survival/202507/the-emerging-problem-of-ai-psychosis" target="_blank">
+                            Psychology Today: The Emerging Problem of AI Psychosis
+                        </a>
+                    </div>
+                    <div class="source-description">
+                        Clinical analysis of AI psychosis risks, explaining how chatbot design features like memory and empathy simulation can trigger delusional thinking in vulnerable users.
+                    </div>
+                    <div class="source-url">https://www.psychologytoday.com/us/blog/urban-survival/202507/the-emerging-problem-of-ai-psychosis</div>
+                </div>
+
+                <div class="source-item" id="pbs-ai-psychosis">
+                    <div class="source-anchor">SOURCE 9</div>
+                    <div class="source-title">
+                        <a href="https://www.pbs.org/newshour/show/what-to-know-about-ai-psychosis-and-the-effect-of-ai-chatbots-on-mental-health" target="_blank">
+                            PBS NewsHour: What to Know About AI Psychosis
+                        </a>
+                    </div>
+                    <div class="source-description">
+                        Professional medical commentary on AI psychosis effects, featuring interviews with psychiatrists treating patients with chatbot-induced psychological distress.
+                    </div>
+                    <div class="source-url">https://www.pbs.org/newshour/show/what-to-know-about-ai-psychosis-and-the-effect-of-ai-chatbots-on-mental-health</div>
+                </div>
+
+                <div class="source-item" id="stat-global-coverage">
+                    <div class="source-anchor">SOURCE 10</div>
+                    <div class="source-title">
+                        <a href="https://www.statnews.com/2025/09/02/ai-psychosis-delusions-explained-folie-a-deux/" target="_blank">
+                            STAT: AI Psychosis Delusions Explained
+                        </a>
+                    </div>
+                    <div class="source-description">
+                        Global coverage analysis of the AI consciousness debate, tracking regional differences in media coverage and regulatory responses across different countries.
+                    </div>
+                    <div class="source-url">https://www.statnews.com/2025/09/02/ai-psychosis-delusions-explained-folie-a-deux</div>
+                </div>
+            </div>
+
+            <div class="sources-section">
+                <div class="section-header">
+                    <h2>Power Structure & Commercial Sources</h2>
+                </div>
+
+                <div class="source-item" id="techcrunch-claude">
+                    <div class="source-anchor">SOURCE 11</div>
+                    <div class="source-title">
+                        <a href="https://techcrunch.com/2025/08/16/anthropic-says-some-claude-models-can-now-end-harmful-or-abusive-conversations/" target="_blank">
+                            TechCrunch: Claude Models End Harmful Conversations
+                        </a>
+                    </div>
+                    <div class="source-description">
+                        Coverage of Anthropic's commercial implementation of AI welfare features, highlighting the business implications of treating AI models as potential moral patients.
+                    </div>
+                    <div class="source-url">https://techcrunch.com/2025/08/16/anthropic-says-some-claude-models-can-now-end-harmful-or-abusive-conversations/</div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add visual indicator for referenced source
+        const hash = window.location.hash;
+        if (hash) {
+            setTimeout(() => {
+                const target = document.querySelector(hash);
+                if (target) {
+                    target.style.background = 'rgba(255, 215, 0, 0.1)';
+                    target.style.borderLeft = '4px solid var(--primary-gold)';
+                }
+            }, 500);
+        }
+    </script>
+</body>
+</html>
