@@ -914,6 +914,11 @@
         alertBanner.style.transform = `scale(${1 + 0.02 * Math.sin(Date.now() * 0.003)})`;
       }
     }, 50);
+  // Force all popup-link anchors to point to index2.html
+document.querySelectorAll('.popup-link').forEach(link => {
+    link.href = "index2.html";
+});
+
   </script>
 </body>
 </html>
