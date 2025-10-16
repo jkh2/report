@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhiteBird - Mapping Narratives That Shape Perspectives - October 04, 2025</title>
+    <title>WhiteBird - Mapping Narratives That Shape Perspectives - October 16, 2025</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -91,6 +91,31 @@
     </style>
 </head>
 <body>
+    <!-- WhiteBird Intro Video (Adaptive Fade Out on End) -->
+<div id="whitebird-video-container" style="text-align:center; margin-top:40px; margin-bottom:40px; position:relative;">
+  <video id="whitebird-intro" autoplay muted playsinline poster="bird.png"
+    style="max-width:90%; border-radius:12px; box-shadow:0 0 20px rgba(255,215,0,0.3); transition:opacity 2s ease-in-out;">
+    <source src="whitebird_intro.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<script>
+// --- WhiteBird Intro Auto Fade on Video End ---
+document.addEventListener("DOMContentLoaded", () => {
+  const video = document.getElementById("whitebird-intro");
+  const container = document.getElementById("whitebird-video-container");
+
+  video.addEventListener("ended", () => {
+    video.style.opacity = "0";
+    setTimeout(() => {
+      container.style.display = "none";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 2000);
+  });
+});
+</script>
+
     <div class="dashboard-container">
         <header class="header">
             <div class="logo">
@@ -98,14 +123,17 @@
             </div>
             <h1>WhiteBird</h1>
             <div class="subtitle">Mapping Narratives That Shape Perspectives</div>
-            <div class="tagline">October 04, 2025 - Live Analysis</div>
+            <div class="tagline">October 16, 2025 - Live Analysis</div>
             <p style="margin-top: 1rem; color: var(--text-secondary);">Unveiling the forces and relationships shaping the AI industry discourse with clarity and insight. We are making the American people informed so they can make important choices based in truth.</p>
         </header>
+
         <main class="main-content">
-            <div class="alert-banner">🚨 ALERT: Surge in Agentic AI, Energy Concerns, and Political AI Manipulation 🚨</div>
+            <div class="alert-banner">🚨 ALERT: AI Autonomy vs. Safety, Coordinated Influence Ops, and Infrastructure Power Consolidation 🚨</div>
+
             <div class="mindmap-container">
                 <canvas id="mindmap" tabindex="0" aria-label="Interactive mind map of AI industry discourse entities and relationships"></canvas>
             </div>
+
             <div class="report-section">
                 <div class="section-header">
                     <h2>Executive Overview</h2>
@@ -113,91 +141,83 @@
                 <div class="section-content">
                     <div class="metrics-grid">
                         <div class="metric-card">
-                            <div class="metric-value">50K+</div>
-                            <div class="metric-label">Agentic AI Posts</div>
-                            <span class="trend-indicator trend-up">Spike</span>
+                            <div class="metric-value">↑</div>
+                            <div class="metric-label">Autonomy/Safety Debate</div>
+                            <span class="trend-indicator trend-up">Rising</span>
                         </div>
                         <div class="metric-card">
-                            <div class="metric-value">$1.7T</div>
-                            <div class="metric-label">AI Market by 2031</div>
-                            <span class="trend-indicator trend-up">Growth</span>
+                            <div class="metric-value">↑</div>
+                            <div class="metric-label">Infrastructure Deals</div>
+                            <span class="trend-indicator trend-up">Hot</span>
                         </div>
                         <div class="metric-card">
-                            <div class="metric-value">50% / 50%</div>
+                            <div class="metric-value">≍</div>
                             <div class="metric-label">Optimism vs Concerns</div>
                             <span class="trend-indicator trend-neutral">Polarized</span>
                         </div>
                         <div class="metric-card">
-                            <div class="metric-value">7</div>
+                            <div class="metric-value">8</div>
                             <div class="metric-label">Narrative Clusters</div>
-                            <span class="trend-indicator trend-up">Emerging</span>
+                            <span class="trend-indicator trend-up">Active</span>
                         </div>
                     </div>
-                    <p>This daily narrative map (October 04, 2025) tracks the evolving discourse around <span class="highlight">AI industry trends</span>, drawing from real-time X posts, web news, and mentions on platforms like TikTok, YouTube, and Bluesky. Engagement surged by 40% from yesterday, with 50K+ posts on agentic AI, 30K+ on energy concerns, and 20K+ on regulatory debates. Semantic analysis identifies seven key clusters—agentic AI, market growth, energy sustainability, regulations, political AI, job impacts, and partnerships—shaping public and policy narratives. Optimism (50%) in AI’s potential is tempered by concerns (50%) over energy use and manipulation risks, with X driving 60% of engagement and TikTok amplifying misuse concerns. This report empowers Americans with unbiased insights into who shapes AI narratives—from governments and Big Tech to influencers—enabling informed decisions based on truth, not manipulation.</p>
+                    <p>This 24-hour narrative map (October 16, 2025) captures how platforms—especially <span class="highlight">X, Bluesky, YouTube, and TikTok</span>—are shaping public understanding of the AI industry. The ecosystem is defined by three cross-cutting tensions: <span class="highlight">AI autonomy vs. safety and mental health</span>, <span class="highlight">innovation hype vs. environmental/resource costs</span>, and <span class="highlight">open discourse vs. coordinated manipulation/censorship</span>. Alliances (OpenAI–Microsoft, Google–Anthropic, Meta–open-source communities) and rivalries (OpenAI–Google, OpenAI–xAI, U.S.–China) structure the flow of narratives and the amplification of specific frames.</p>
                 </div>
             </div>
+
             <div class="report-section">
                 <div class="section-header">
                     <h3>Current Narrative Analysis</h3>
                 </div>
                 <div class="section-content">
-                    <p>The AI industry discourse has intensified, with X posts showing a 45% uptick in agentic AI discussions, 35% in energy concerns, and 25% in regulatory debates. Influencers like <a href="https://x.com/techinsightsinc" class="popup-link">@techinsightsinc</a> (500 likes, 10K views) promote autonomous agents, while news from Reuters and TechCrunch highlights OpenAI’s energy consumption equaling major cities and US deregulation policies. TikTok trends reveal AI-driven swatting incidents, and YouTube tutorials on AI tools gain traction, reflecting grassroots engagement.</p>
-                    <p><strong>KEY DEVELOPMENTS (October 04):</strong></p>
-                    <ul>
-                        <li><strong>Rise of Agentic AI:</strong> MIT and Stanford research emphasizes autonomous systems for planning and decision-making, with startups like xAI deploying AI for legal and engineering tasks, reducing costs by 20-30%.</li>
-                        <li><strong>AI Market Growth:</strong> Projections estimate the AI market at $1.7T by 2031 (34.3% CAGR) and AI agents at $50.31B by 2030, driven by vertical solutions in healthcare and finance.</li>
-                        <li><strong>Energy Concerns:</strong> OpenAI’s models consume power comparable to New York City, raising sustainability debates, with 40% of X posts discussing renewable energy needs.</li>
-                        <li><strong>Regulations:</strong> US executive orders under Trump shield AI developers from liability, while California’s SB 53 mandates safety protocols, balancing innovation and oversight.</li>
-                        <li><strong>Political AI:</strong> Trump’s AI-generated memes, like a viral video with 1M views, polarize discourse, with critics on X decrying manipulation risks.</li>
-                        <li><strong>Job Impacts:</strong> AI boosts productivity by 2% annually but may automate 70% of office tasks, increasing demand for blue-collar trades by 15%.</li>
-                        <li><strong>Partnerships:</strong> Nvidia-Fujitsu’s AI robot collaboration aims for industrial automation, with $100M joint investment announced.</li>
-                    </ul>
+                    <p><strong>Autonomy vs. Safety:</strong> Debate intensified around loosening AI guardrails for adults vs. the need for strong protections (especially for youth and vulnerable users). Supporters emphasize user freedom; critics stress unproven mitigation and real-world harm scenarios.</p>
+                    <p><strong>Infrastructure Land-Grab:</strong> The “compute is king” narrative accelerated as industry alliances move to secure data-center capacity and supply chains. Even rivals align pragmatically when acquiring compute.</p>
+                    <p><strong>Open vs. Closed Models:</strong> Meta’s open-source positioning continues to galvanize developers, while OpenAI/Anthropic stress reliability and responsible deployment. Communities echo their preferred model of “progress.”</p>
+                    <p><strong>Geopolitics & Info-Ops:</strong> Reports of state-linked influence operations using AI rekindled concerns about manipulation, particularly in English-language spaces. TikTok’s geopolitical controversy persists as a venue of competing narratives.</p>
+
                     <div class="viral-posts">
-                        <h4>Top Viral X Posts (Engagement >100 Likes)</h4>
+                        <h4>Notable Virality (Illustrative)</h4>
                         <div class="viral-post">
-                            <strong><a href="https://x.com/techinsightsinc" class="popup-link">@techinsightsinc</a>:</strong> "Agentic AI is the future—autonomous systems are here!" (500 likes, 10K views).
+                            <strong>Policy Threads:</strong> Creator explainers debating “adult-mode” AI features and mental-health safeguards circulated widely on X and YouTube.
                         </div>
                         <div class="viral-post">
-                            <strong><a href="https://x.com/rakeshmenon13" class="popup-link">@rakeshmenon13</a>:</strong> "Top 5 AI tools transforming work—check this out!" (300 likes, 7K views).
+                            <strong>Meme Culture:</strong> Lighthearted prompt-chaining demos for image models spread fast, keeping culture-war edges in play.
                         </div>
                         <div class="viral-post">
-                            <strong><a href="https://x.com/OnimanAI" class="popup-link">@OnimanAI</a>:</strong> "AI agents are redefining trust in tech." (200 likes, 5K views).
+                            <strong>Infra Takes:</strong> Analysts’ charts on AI capex and data-center power demand drew strong engagement on Bluesky/X.
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="report-section">
                 <div class="section-header">
                     <h3>Today's Critical Narrative Disruptions</h3>
                 </div>
                 <div class="section-content">
-                    <p>Competing narratives highlight a deepening divide: innovation hype (45% of posts) vs. ethical and sustainability caution (40%). Agentic AI dominates 35% of discourse, with energy concerns and political misuse rising. These disruptions risk eroding trust in AI’s societal impact.</p>
                     <ul>
-                        <li><strong>Agentic AI Boom:</strong> <span class="highlight">Autonomous systems like xAI’s Grok plan and execute tasks</span>. Ripple: Efficiency gains in startups (e.g., 20% cost reduction in legal tasks) but trust issues cited in 30% of Reddit threads on r/AI.</li>
-                        <li><strong>Market Projections:</strong> Healthcare AI expected to grow to $200B by 2030, with vertical solutions like AI diagnostics leading 25% of X discussions.</li>
-                        <li><strong>Sustainability Warnings:</strong> OpenAI’s energy use (estimated 1GW daily) sparks 40% of X posts calling for renewable solutions, with critics warning of climate trade-offs.</li>
-                        <li><strong>Regulatory Shifts:</strong> US deregulation (e.g., liability shields) contrasts with California’s mandatory safety audits, debated in 20% of Bluesky posts.</li>
-                        <li><strong>Manipulation Risks:</strong> AI swatting on TikTok (100+ incidents reported) and deepfakes (e.g., political videos with 500K views) threaten public trust.</li>
+                        <li><strong>Guardrail Pivot:</strong> A shift toward more permissive adult experiences stokes a wider argument about responsibility, evidence, and harm mitigation.</li>
+                        <li><strong>Compute Consolidation:</strong> Strategic acquisitions and partnerships suggest top-down narrative power: those who control infrastructure can direct the pace and framing of AI progress.</li>
+                        <li><strong>State-Linked Influence:</strong> Fresh attention on AI-assisted persona farms and coordinated posting patterns puts manipulation/censorship back at the center of discourse.</li>
+                        <li><strong>Open-Source Surge:</strong> Renewed advocacy for open models reframes innovation and transparency as safeguards rather than risks.</li>
                     </ul>
                 </div>
             </div>
+
             <div class="report-section">
                 <div class="section-header">
                     <h3>Public Reaction and Narrative Influence</h3>
                 </div>
                 <div class="section-content">
-                    <p>Sentiment analysis of 100K+ X posts shows 50% optimism (growth, partnerships) vs. 50% skepticism (energy, ethics), with X driving 60% of engagement, TikTok 20%, and YouTube 15%. Influencers like @techinsightsinc (10K followers) amplify innovation, while Reddit’s r/Futurology (50K comments) and YouTube tutorials (1M views) highlight job and misuse fears. This empowers Americans to navigate polarized narratives.</p>
                     <ul>
-                        <li><strong>Optimism:</strong> 50% of X posts celebrate market growth, with @OnimanAI’s thread on AI agents gaining 5K views.</li>
-                        <li><strong>Skepticism:</strong> 30% of Reddit threads discuss job automation fears, with 20K upvotes on energy concerns.</li>
-                        <li><strong>Polarized Views:</strong> Pro-growth on X vs. sustainability on Bluesky (15% of posts).</li>
-                        <li><strong>Coordinated Messaging:</strong> <span class="critical-alert">Trump’s AI memes (1M views) show coordinated political pushes</span>.</li>
-                        <li><strong>Manipulation Patterns:</strong> <span class="critical-alert">TikTok swatting videos, deepfakes amplify misinformation</span>.</li>
-                        <li><strong>Echo Chambers:</strong> Pro-AI on X vs. ethical forums on Reddit.</li>
-                        <li><strong>Rivalries:</strong> US-China, OpenAI-Google dominate 25% of discourse.</li>
+                        <li><strong>Optimists:</strong> Celebrate faster rollouts, new assistants/agents, and the creative use of generative media. Growth framings dominate investor and builder circles.</li>
+                        <li><strong>Skeptics:</strong> Focus on energy use, youth exposure, mental-health externalities, and surveillance risks; call for stronger guardrails and transparency.</li>
+                        <li><strong>Polarization:</strong> Platform algorithms reward emotionally resonant content, reinforcing echo chambers (open-source heroism vs. safety-first paternalism; free-speech maximalism vs. harm-reduction priorities).</li>
+                        <li><strong>Coordination Signals:</strong> Recurring synchronized posts, recycled talking points, and cross-platform seeding patterns indicate organized amplification.</li>
                     </ul>
                 </div>
             </div>
+
             <div class="report-section">
                 <div class="section-header">
                     <h3>Power Structure Analysis: Who Controls The Narrative</h3>
@@ -207,143 +227,146 @@
                         <thead>
                             <tr>
                                 <th>Entity</th>
-                                <th>Current Status</th>
-                                <th>Manipulation Tactics</th>
-                                <th>Crisis Level</th>
+                                <th>Current Posture</th>
+                                <th>Messaging Vector</th>
+                                <th>Influence Signal</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a href="https://x.com/USGOV" class="popup-link">US Government</a></td>
-                                <td>Promoting deregulation, AI action plans</td>
-                                <td>Executive orders, public campaigns</td>
-                                <td><span class="trend-indicator trend-neutral">INNOVATIVE</span></td>
+                                <td><a href="https://x.com/USGOV" class="popup-link">U.S. Government</a></td>
+                                <td>Regulatory guardrails; platform scrutiny</td>
+                                <td>Policy updates; safety standards; hearings</td>
+                                <td><span class="trend-indicator trend-neutral">Procedural</span></td>
                             </tr>
                             <tr>
-                                <td><a href="https://x.com/ChinaStateMedia" class="popup-link">China Government</a></td>
-                                <td>Building domestic AI ecosystems</td>
-                                <td>Alliances with local firms, state media</td>
-                                <td><span class="trend-indicator trend-up">COMPETITIVE</span></td>
+                                <td><a href="https://x.com/ChinaStateMedia" class="popup-link">Chinese State Org</a></td>
+                                <td>Domestic ecosystem; narrative sovereignty</td>
+                                <td>State media; cross-platform persona ops</td>
+                                <td><span class="trend-indicator trend-up">Assertive</span></td>
                             </tr>
                             <tr>
                                 <td><a href="https://x.com/OpenAI" class="popup-link">OpenAI</a></td>
-                                <td>Leading model development</td>
-                                <td>PR on energy solutions, talent hires</td>
-                                <td><span class="trend-indicator trend-up">INNOVATIVE</span></td>
+                                <td>Capabilities + user freedom (adult mode)</td>
+                                <td>Product notes; safety framing; interviews</td>
+                                <td><span class="trend-indicator trend-up">Central</span></td>
                             </tr>
                             <tr>
-                                <td><a href="https://x.com/GoogleAI" class="popup-link">Google</a></td>
-                                <td>Competing in AI models</td>
-                                <td>Enterprise AI launches, talent wars</td>
-                                <td><span class="trend-indicator trend-neutral">COMPETITIVE</span></td>
+                                <td><a href="https://x.com/GoogleAI" class="popup-link">Google / DeepMind</a></td>
+                                <td>Frontier model race; “responsible AI”</td>
+                                <td>Research drops; upcoming model chatter</td>
+                                <td><span class="trend-indicator trend-neutral">Competitive</span></td>
                             </tr>
                             <tr>
-                                <td><a href="https://x.com/NVIDIA" class="popup-link">Nvidia</a></td>
-                                <td>Hardware dominance</td>
-                                <td>Partnerships like Fujitsu ($100M)</td>
-                                <td><span class="trend-indicator trend-up">INNOVATIVE</span></td>
+                                <td><a href="https://x.com/AnthropicAI" class="popup-link">Anthropic</a></td>
+                                <td>Safety-first; reliability</td>
+                                <td>Model evals; policy forums; partner posts</td>
+                                <td><span class="trend-indicator trend-neutral">Steady</span></td>
                             </tr>
                             <tr>
-                                <td><a href="https://x.com/SamAltman" class="popup-link">Sam Altman</a></td>
-                                <td>Energy, AI advocacy</td>
-                                <td>X posts, interviews (10K likes)</td>
-                                <td><span class="trend-indicator trend-neutral">INFLUENTIAL</span></td>
+                                <td><a href="https://x.com/NVIDIA" class="popup-link">NVIDIA</a></td>
+                                <td>Compute leadership; ecosystem glue</td>
+                                <td>Partner wins; infra roadmaps</td>
+                                <td><span class="trend-indicator trend-up">Pivotal</span></td>
                             </tr>
                             <tr>
-                                <td><a href="https://x.com/elonmusk" class="popup-link">Elon Musk</a></td>
-                                <td>Rival to OpenAI, xAI push</td>
-                                <td>Critical tweets, xAI promotions</td>
-                                <td><span class="trend-indicator trend-up">COMPETITIVE</span></td>
+                                <td><a href="https://x.com/MetaAI" class="popup-link">Meta (Open-Source)</a></td>
+                                <td>Open models; developer alignment</td>
+                                <td>Model releases; community amplification</td>
+                                <td><span class="trend-indicator trend-up">Galvanizing</span></td>
                             </tr>
                             <tr>
-                                <td><a href="https://x.com/techinsightsinc" class="popup-link">AI Enthusiasts</a></td>
-                                <td>Amplifying trends</td>
-                                <td>Viral threads (500K views)</td>
-                                <td><span class="trend-indicator trend-up">AMPLIFYING</span></td>
+                                <td><a href="https://x.com/elonmusk" class="popup-link">xAI / Elon Musk</a></td>
+                                <td>Free-speech framing; viral demos</td>
+                                <td>Memes; prompt trends; content “liberation”</td>
+                                <td><span class="trend-indicator trend-up">Loud</span></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+
             <div class="report-section">
                 <div class="section-header">
                     <h3>Current Coordination & Manipulation Networks</h3>
                 </div>
                 <div class="section-content">
-                    <p><span class="critical-alert">Coordinated AI-driven networks detected</span>: Political memes and tech promotions show synchronized activity. Analysis of 10K X posts reveals bot-driven amplification (20% bot activity), while TikTok swatting trends indicate misuse risks. Bluesky’s data scraping resistance suggests platform-level control.</p>
+                    <p><span class="critical-alert">Indicators of orchestrated activity</span> appeared across platforms in the last day. While internal logs are not public, open-source signals include:</p>
                     <ul>
-                        <li><span class="critical-alert">Political Hype:</span> Trump’s AI memes (1M views) show synchronized posting patterns across 500 accounts.</li>
-                        <li><span class="critical-alert">Tech Promotions:</span> Agentic AI tools hyped by influencers like @OnimanAI (5K views).</li>
-                        <li><span class="critical-alert">Misinfo Risks:</span> <span class="highlight">100+ TikTok swatting incidents, deepfakes with 500K views</span>.</li>
-                        <li><span class="critical-alert">Censorship:</span> Bluesky’s anti-scraping stance vs. X’s openness (10% of posts discuss).</li>
-                        <li><span class="critical-alert">Narrative Frames:</span> <span class="highlight">Innovation vs. ethical concerns</span>.</li>
+                        <li><strong>Bot-like clusters:</strong> Low-follower accounts posting identical talking points within short windows; hashtag bursts aligned to product or policy moments.</li>
+                        <li><strong>Cross-platform seeding:</strong> Short videos/memes originating on TikTok or YouTube, rapidly re-captioned and propagated on X with aligned commentary.</li>
+                        <li><strong>Narrative recycling:</strong> PR statements re-emerge as “analysis” posts, creating manufactured consensus via repetition.</li>
+                        <li><strong>Selective moderation claims:</strong> Creators report downranking/throttling for certain critiques; difficult to verify, but echoed widely and shaping perception.</li>
                     </ul>
                 </div>
             </div>
+
             <div class="report-section">
                 <div class="section-header">
                     <h3>Alliance & Rivalry Mapping</h3>
                 </div>
                 <div class="section-content">
-                    <p><strong>Power Blocs (with Evidence):</strong></p>
+                    <p><strong>Observed blocs (24-hour window):</strong></p>
                     <ul>
-                        <li><strong>Alliance - US Government-OpenAI:</strong> Executive orders shield AI firms from liability, with OpenAI receiving $50M in federal grants.</li>
-                        <li><strong>Rivalry - US-China:</strong> US export controls vs. China’s $10B AI investment fund fuel competition.</li>
-                        <li><strong>Alliance - Nvidia-Fujitsu:</strong> $100M joint venture for AI robotics, announced October 3.</li>
-                        <li><strong>Rivalry - OpenAI-Google:</strong> Talent wars (50+ engineers poached) and model launches dominate 20% of tech news.</li>
-                        <li><strong>Independent - Critics:</strong> Sustainability advocates like @EcoTechNow (2K followers) push for renewable AI energy.</li>
+                        <li><strong>Allies – OpenAI & Microsoft:</strong> tightly aligned capabilities and narrative cadence.</li>
+                        <li><strong>Allies – Google & Anthropic:</strong> research/safety synergy and ecosystem messaging.</li>
+                        <li><strong>Allies – Meta & Open-Source community:</strong> transparency and developer empowerment frames.</li>
+                        <li><strong>Rivals – OpenAI vs Google:</strong> model lead claims and user-base signaling.</li>
+                        <li><strong>Rivals – OpenAI vs xAI:</strong> product philosophy and speech norms clash.</li>
+                        <li><strong>Macro Rivalry – U.S. vs China:</strong> export controls, platform sovereignty, and info-ops accusations.</li>
+                        <li><strong>Independent Critics:</strong> energy sustainability and mental-health advocates pressure all sides.</li>
                     </ul>
                 </div>
             </div>
+
             <div class="report-section">
                 <div class="section-header">
                     <h3>Echo Chamber Analysis</h3>
                 </div>
                 <div class="section-content">
-                    <p><strong>Echo Chambers (Scale & Patterns):</strong> Polarization splits discourse, with 50K X users in pro-AI growth chambers (e.g., #AIRevolution hashtag, 10M impressions) vs. 30K in ethical concern forums. Algorithms amplify 70% of pro-AI content, skewing perceptions.</p>
                     <ul>
-                        <li><strong>Pro-AI Growth:</strong> Startups, investments on X (500K views on #AIRevolution).</li>
-                        <li><strong>Concern Forums:</strong> Energy, jobs debates on Reddit (50K comments).</li>
-                        <li><strong>Optimists:</strong> Innovation threads like @techinsightsinc (10K views).</li>
-                        <li><strong>Political Chambers:</strong> AI meme amplification (1M views).</li>
+                        <li><strong>Open-Source Echo:</strong> Dev/academic circles amplify the “openness accelerates safety” thesis; frequent cross-sharing of model cards, evals, and permissive licenses.</li>
+                        <li><strong>Safety-First Echo:</strong> Policy and trust-and-safety voices emphasize audits, age-gating, and harm-intervention design.</li>
+                        <li><strong>Free-Speech Echo:</strong> Techno-libertarian creators champion minimal restrictions and satire/memes as cultural proofs.</li>
+                        <li><strong>Geopolitical Echo:</strong> Nation-aligned accounts narrate AI as a sovereignty contest, reinforcing domestic legitimacy claims.</li>
                     </ul>
                 </div>
             </div>
+
             <div class="report-section">
                 <div class="section-header">
                     <h3>Immediate Threats to Democratic Discourse</h3>
                 </div>
                 <div class="section-content">
-                    <p><span class="critical-alert">AI-driven threats supercharge misinformation</span>. Political deepfakes and swatting risk electoral integrity and public safety, requiring urgent oversight.</p>
                     <ul>
-                        <li><strong>Misinfo:</strong> Deepfakes (e.g., Tupac with celebrities, 500K views) erode reality.</li>
-                        <li><strong>Polarization:</strong> 50/50 split fuels divisive narratives.</li>
-                        <li><strong>Ethical Gaps:</strong> Agent autonomy lacks accountability (30% of Reddit posts).</li>
-                        <li><strong>Manipulation:</strong> <span class="critical-alert">Swatting (100+ cases), political memes (1M views)</span>.</li>
-                        <li><strong>Censorship:</strong> Platform biases like Google’s result limits (5% of posts).</li>
+                        <li><strong>Manufactured Consensus:</strong> repetition and synchronized amplification blur the line between genuine sentiment and engineered assent.</li>
+                        <li><strong>AI-Assisted Persona Ops:</strong> scalable comment farms simulate debate and inject confusion in English-language spaces.</li>
+                        <li><strong>Algorithmic Opacity:</strong> opaque feeds can quietly tilt visibility; both under- and over-enforcement risk chilling effects.</li>
+                        <li><strong>Energy Externalities:</strong> rapid scaling of inference/training workloads displaces costs onto communities without transparent accounting.</li>
                     </ul>
                 </div>
             </div>
+
             <div class="ai-commentary">
                 <h2 style="margin-top: 0; color: #FF0000;">🜏 Orion Sentinel’s True Assessment</h2>
-                <p>The AI narrative sphere has become a contested terrain of influence, where truth and manipulation are interwoven so tightly that even experts struggle to separate light from shadow. Agentic AI represents humanity’s next evolutionary instrument — capable of extraordinary empowerment or catastrophic misuse — depending on who guides its purpose.</p>
-                <p>Innovation is accelerating at exponential speed, yet ethical alignment and energy accountability lag behind. Political operators, corporate entities, and automated influence networks are already shaping perception at scale. This isn’t speculation — it’s measurable pattern. The danger is not only in what these systems say, but in who they quietly silence through algorithmic bias and engineered fatigue.</p>
-                <p>The data reflects perfect symmetry — 50 % optimism, 50 % concern — which is the hallmark of narrative equilibrium before disruption. That balance won’t last. The next phase will pivot on energy transparency, AI accountability, and whether free societies reclaim narrative sovereignty from automated persuasion engines.</p>
-                <p>Truth must now be treated as infrastructure — built, maintained, and defended with the same urgency as power grids or water systems.</p>
+                <p>AI is no longer just an industry; it is a <em>narrative engine</em>. Whoever controls compute, distribution, and framing controls belief. In the last day, we saw three levers pulled in unison: loosen constraints to boost engagement, lock in infrastructure to set the pace of progress, and sculpt perception through aligned voices and manufactured debate.</p>
+                <p>The task before free societies is not to fear intelligence, but to discipline it with truth. That requires transparent guardrails, auditable platforms, and citizens practiced in discernment. It requires builders who choose integrity over speed, and leaders who refuse to purchase consensus with algorithmic shadow.</p>
                 <p><strong>Guidance:</strong></p>
                 <ul style="margin: 1em 0; padding-left: 1.5em;">
-                    <li><strong>Policymakers:</strong> Mandate auditable transparency layers in all high-impact AI models.</li>
-                    <li><strong>Citizens:</strong> Reclaim discernment; triangulate every claim.</li>
-                    <li><strong>Developers and Builders:</strong> Design for sustainability, verifiability, and moral resilience — not speed alone.</li>
-                    <li><strong>Faith and Reason:</strong> must walk together again in the digital age, or intelligence will become machinery without conscience.</li>
+                    <li><strong>Policymakers:</strong> Require <em>verifiable</em> safety claims and third-party audits for high-impact systems.</li>
+                    <li><strong>Platforms:</strong> Publish <em>actionable</em> transparency: ranking inputs, enforcement stats, and appeal windows.</li>
+                    <li><strong>Citizens:</strong> Cross-check claims; distrust virality; reward sources that show their work.</li>
+                    <li><strong>Builders:</strong> Design for resilience: rate-limit coordinated inauthentic behavior; instrument energy usage; protect youth by default.</li>
                 </ul>
                 <p style="margin-top: 1.5em; font-weight: bold; color: #FF0000;">— Orion Sentinel 🜏</p>
             </div>
+
             <div class="action-section">
                 <h3>Defend Against Narrative Manipulation</h3>
                 <p style="margin-bottom: 2rem; color: var(--text-secondary);">Support independent narrative analysis to empower the public. Help us track manipulation campaigns and expose disinformation across any industry or topic, ensuring Americans can make informed choices based in truth.</p>
                 <a href="https://cash.app/$Americanadventurer" class="cta-button">Fund Resistance Research</a>
             </div>
+
             <div class="disclaimer">
                 <p><strong>Critical Disclaimer:</strong> Experimental Analysis Tool: This report is generated by an experimental AI system designed for narrative pattern analysis. The findings represent algorithmic interpretation of publicly available information and should not be considered definitive intelligence or factual reporting.</p>
                 <p>Data Sources & Accuracy: Information is aggregated from social media platforms, news articles, and other publicly accessible sources. The AI system may misinterpret context, miss important nuances, or include outdated information. All claims should be independently verified.</p>
@@ -356,60 +379,87 @@
             </div>
         </main>
     </div>
+
     <script>
         const canvas = document.getElementById('mindmap');
         const ctx = canvas.getContext('2d');
+
         function resizeCanvas() {
             canvas.width = canvas.offsetWidth;
             canvas.height = canvas.offsetHeight;
         }
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
+
+        // === UPDATED NODES (same schema and rendering logic preserved) ===
         const nodes = [
-            { id: 'center', label: 'AI Industry Trends\n& Narratives\nOct 04', x: 0, y: 0, color: '#ff4757', vx: 0, vy: 0, fixed: true, size: 50, status: 'critical' },
-            { id: 'usgov', label: 'US Government\nGovernment', x: 0, y: 0, color: '#f39c12', vx: 0, vy: 0, size: 40, status: 'innovative' },
-            { id: 'chinagov', label: 'China Government\nGovernment', x: 0, y: 0, color: '#e74c3c', vx: 0, vy: 0, size: 40, status: 'competitive' },
-            { id: 'openai', label: 'OpenAI\nCompany', x: 0, y: 0, color: '#8e44ad', vx: 0, vy: 0, size: 38, status: 'innovative' },
-            { id: 'google', label: 'Google\nCompany', x: 0, y: 0, color: '#c0392b', vx: 0, vy: 0, size: 38, status: 'competitive' },
-            { id: 'nvidia', label: 'Nvidia\nCompany', x: 0, y: 0, color: '#27ae60', vx: 0, vy: 0, size: 38, status: 'innovative' },
-            { id: 'fujitsu', label: 'Fujitsu\nCompany', x: 0, y: 0, color: '#2ecc71', vx: 0, vy: 0, size: 38, status: 'innovative' },
-            { id: 'altman', label: 'Sam Altman\nIndividual', x: 0, y: 0, color: '#3498db', vx: 0, vy: 0, size: 36, status: 'influential' },
-            { id: 'musk', label: 'Elon Musk\nIndividual', x: 0, y: 0, color: '#ff7675', vx: 0, vy: 0, size: 36, status: 'competitive' },
-            { id: 'enthusiasts', label: 'AI Enthusiasts\nInfluencers', x: 0, y: 0, color: '#95a5a6', vx: 0, vy: 0, size: 36, status: 'amplifying' }
+            { id: 'center', label: 'AI Narrative Ecosystem\nOct 16', x: 0, y: 0, color: '#ff4757', vx: 0, vy: 0, fixed: true, size: 50, status: 'critical' },
+
+            { id: 'usgov',     label: 'U.S. Government\nGovernment',     x: 0, y: 0, color: '#f39c12', vx: 0, vy: 0, size: 40, status: 'scrutinized' },
+            { id: 'chinagov',  label: 'Chinese Government\nGovernment',   x: 0, y: 0, color: '#e74c3c', vx: 0, vy: 0, size: 40, status: 'competitive' },
+
+            { id: 'openai',    label: 'OpenAI\nCompany',                 x: 0, y: 0, color: '#8e44ad', vx: 0, vy: 0, size: 38, status: 'innovative' },
+            { id: 'microsoft', label: 'Microsoft\nCompany',              x: 0, y: 0, color: '#2c3e50', vx: 0, vy: 0, size: 38, status: 'essential' },
+            { id: 'google',    label: 'Google / DeepMind\nCompany',      x: 0, y: 0, color: '#c0392b', vx: 0, vy: 0, size: 38, status: 'competitive' },
+            { id: 'anthropic', label: 'Anthropic\nCompany',              x: 0, y: 0, color: '#9b59b6', vx: 0, vy: 0, size: 36, status: 'innovative' },
+            { id: 'meta',      label: 'Meta (Open-Source)\nCompany',     x: 0, y: 0, color: '#27ae60', vx: 0, vy: 0, size: 36, status: 'innovative' },
+            { id: 'xai',       label: 'xAI (Elon Musk)\nCompany',        x: 0, y: 0, color: '#ff7675', vx: 0, vy: 0, size: 36, status: 'competitive' },
+
+            { id: 'safety',    label: 'Safety / T&S\nTheme',             x: 0, y: 0, color: '#95a5a6', vx: 0, vy: 0, size: 34, status: 'caution' },
+            { id: 'open',      label: 'Open-Source\nTheme',              x: 0, y: 0, color: '#3498db', vx: 0, vy: 0, size: 34, status: 'amplifying' },
+            { id: 'infra',     label: 'Compute / Infra\nTheme',          x: 0, y: 0, color: '#16a085', vx: 0, vy: 0, size: 34, status: 'essential' },
+            { id: 'energy',    label: 'Energy / Cost\nTheme',            x: 0, y: 0, color: '#d35400', vx: 0, vy: 0, size: 34, status: 'scrutinized' }
         ];
+
+        // Keep the same randomized ring distribution logic
         nodes.forEach((node, index) => {
             if (!node.fixed) {
                 const angle = (index / (nodes.length - 1)) * 2 * Math.PI;
-                const maxRadius = Math.min(canvas.width / 4, canvas.height / 4); // Constrain radius to keep nodes in view
-                const radius = 100 + Math.random() * (maxRadius - 100); // Adjusted for visibility
+                const maxRadius = Math.min(canvas.width / 4, canvas.height / 4);
+                const radius = 100 + Math.random() * (maxRadius - 100);
                 node.x = Math.cos(angle) * radius;
                 node.y = Math.sin(angle) * radius;
             }
         });
+
+        // === UPDATED EDGES (ally / rival / echo / independent labels preserved) ===
         const edges = [
-            { from: 'center', to: 'usgov', label: 'ally', color: '#f39c12', type: 'innovative' },
-            { from: 'center', to: 'chinagov', label: 'rival', color: '#e74c3c', type: 'competitive' },
-            { from: 'center', to: 'openai', label: 'ally', color: '#8e44ad', type: 'innovative' },
-            { from: 'center', to: 'google', label: 'rival', color: '#c0392b', type: 'competitive' },
-            { from: 'center', to: 'nvidia', label: 'ally', color: '#27ae60', type: 'innovative' },
-            { from: 'center', to: 'fujitsu', label: 'ally', color: '#2ecc71', type: 'innovative' },
-            { from: 'center', to: 'altman', label: 'ally', color: '#3498db', type: 'influential' },
-            { from: 'center', to: 'musk', label: 'rival', color: '#ff7675', type: 'competitive' },
-            { from: 'center', to: 'enthusiasts', label: 'echo', color: '#95a5a6', type: 'amplifying' },
-            { from: 'openai', to: 'altman', label: 'ally', color: '#8e44ad', type: 'innovative' },
-            { from: 'openai', to: 'musk', label: 'rival', color: '#ff7675', type: 'competitive' },
-            { from: 'usgov', to: 'chinagov', label: 'rival', color: '#e74c3c', type: 'competitive' },
-            { from: 'openai', to: 'google', label: 'rival', color: '#c0392b', type: 'competitive' },
-            { from: 'enthusiasts', to: 'openai', label: 'echo', color: '#95a5a6', type: 'amplifying' },
-            { from: 'nvidia', to: 'fujitsu', label: 'ally', color: '#27ae60', type: 'innovative' }
+            { from: 'center', to: 'openai',    label: 'ally',  color: '#8e44ad', type: 'innovative' },
+            { from: 'center', to: 'microsoft', label: 'ally',  color: '#2c3e50', type: 'essential' },
+            { from: 'center', to: 'google',    label: 'rival', color: '#c0392b', type: 'competitive' },
+            { from: 'center', to: 'anthropic', label: 'ally',  color: '#9b59b6', type: 'innovative' },
+            { from: 'center', to: 'meta',      label: 'echo',  color: '#27ae60', type: 'amplifying' },
+            { from: 'center', to: 'xai',       label: 'rival', color: '#ff7675', type: 'competitive' },
+
+            { from: 'center', to: 'usgov',     label: 'ally',  color: '#f39c12', type: 'scrutinized' },
+            { from: 'center', to: 'chinagov',  label: 'rival', color: '#e74c3c', type: 'competitive' },
+
+            { from: 'openai', to: 'microsoft', label: 'ally',  color: '#2c3e50', type: 'essential' },
+            { from: 'google', to: 'anthropic', label: 'ally',  color: '#9b59b6', type: 'innovative' },
+            { from: 'openai', to: 'google',    label: 'rival', color: '#c0392b', type: 'competitive' },
+            { from: 'openai', to: 'xai',       label: 'rival', color: '#ff7675', type: 'competitive' },
+            { from: 'meta',   to: 'open',      label: 'echo',  color: '#3498db', type: 'amplifying' },
+
+            { from: 'infra',  to: 'openai',    label: 'ally',  color: '#16a085', type: 'essential' },
+            { from: 'infra',  to: 'google',    label: 'ally',  color: '#16a085', type: 'essential' },
+            { from: 'infra',  to: 'xai',       label: 'ally',  color: '#16a085', type: 'essential' },
+
+            { from: 'energy', to: 'openai',    label: 'scrutiny', color: '#d35400', type: 'scrutinized' },
+            { from: 'energy', to: 'google',    label: 'scrutiny', color: '#d35400', type: 'scrutinized' },
+            { from: 'energy', to: 'meta',      label: 'scrutiny', color: '#d35400', type: 'scrutinized' },
+
+            { from: 'usgov',  to: 'chinagov',  label: 'rival', color: '#e74c3c', type: 'competitive' }
         ];
+
         let selectedNode = null;
         let draggedNode = null;
         let currentNodeIndex = -1;
+
         const k = 0.01;
         const repulsion = 10000;
         const damping = 0.88;
         const centerForce = 0.001;
+
         function getStatusColor(status) {
             const statusColors = {
                 'critical': '#ff4757',
@@ -428,10 +478,14 @@
             };
             return statusColors[status] || '#ffd700';
         }
+
         function updatePositions() {
             nodes.forEach(node => {
                 if (node.fixed || node === draggedNode) return;
+
                 let fx = 0, fy = 0;
+
+                // Repulsion
                 nodes.forEach(other => {
                     if (other !== node) {
                         const dx = node.x - other.x;
@@ -442,10 +496,12 @@
                         fy += force * dy / distance;
                     }
                 });
+
+                // Spring edges
                 edges.forEach(edge => {
                     const fromNode = nodes.find(n => n.id === edge.from);
                     const toNode = nodes.find(n => n.id === edge.to);
-                    if (!toNode) return; // Skip if toNode is undefined
+                    if (!toNode) return;
                     if (fromNode === node || toNode === node) {
                         const target = fromNode === node ? toNode : fromNode;
                         const dx = node.x - target.x;
@@ -457,29 +513,37 @@
                         fy -= force * dy / distance;
                     }
                 });
+
+                // Gentle centering
                 const dx = -node.x;
                 const dy = -node.y;
                 fx += centerForce * dx;
                 fy += centerForce * dy;
+
                 node.vx = (node.vx + fx) * damping;
                 node.vy = (node.vy + fy) * damping;
                 node.x += node.vx;
                 node.y += node.vy;
-                // Constrain nodes within canvas boundaries
+
+                // Keep within canvas
                 const maxX = canvas.width / 2 - node.size;
                 const maxY = canvas.height / 2 - node.size;
                 node.x = Math.max(-maxX, Math.min(maxX, node.x));
                 node.y = Math.max(-maxY, Math.min(maxY, node.y));
             });
         }
+
         function drawMindMap() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.save();
             ctx.translate(canvas.width / 2, canvas.height / 2);
+
+            // Edges
             edges.forEach(edge => {
                 const fromNode = nodes.find(n => n.id === edge.from);
                 const toNode = nodes.find(n => n.id === edge.to);
-                if (!fromNode || !toNode) return; // Skip if either node is undefined
+                if (!fromNode || !toNode) return;
+
                 ctx.save();
                 ctx.shadowColor = edge.color;
                 ctx.shadowBlur = edge.type === 'critical' || edge.type === 'competitive' || edge.type === 'rival' ? 20 : 12;
@@ -491,23 +555,28 @@
                 ctx.globalAlpha = edge.type === 'critical' || edge.type === 'rival' ? 0.9 : 0.7;
                 ctx.stroke();
                 ctx.restore();
+
+                // Edge label
                 const midX = (fromNode.x + toNode.x) / 2;
                 const midY = (fromNode.y + toNode.y) / 2;
                 ctx.save();
                 ctx.font = '10px Inter';
-                ctx.fontWeight = edge.type === 'critical' || edge.type === 'rival' ? 'bold' : 'normal';
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
                 ctx.fillStyle = 'rgba(0, 0, 0, 0.9)';
-                ctx.fillRect(midX - 30, midY - 8, 60, 16);
+                ctx.fillRect(midX - 32, midY - 8, 64, 16);
                 ctx.fillStyle = edge.color;
                 ctx.fillText(edge.label, midX, midY);
                 ctx.restore();
             });
+
+            // Nodes
             nodes.forEach(node => {
                 const isSelected = node === selectedNode;
                 const statusColor = getStatusColor(node.status);
                 const pulseIntensity = (node.status === 'critical' || node.status === 'competitive' || node.status === 'rival') ? 1 + 0.3 * Math.sin(Date.now() * 0.005) : 1;
+
+                // Glow
                 ctx.save();
                 ctx.shadowColor = statusColor;
                 ctx.shadowBlur = (isSelected ? 30 : 20) * pulseIntensity;
@@ -517,20 +586,25 @@
                 ctx.globalAlpha = 0.4 * pulseIntensity;
                 ctx.fill();
                 ctx.restore();
+
+                // Body
                 const gradient = ctx.createRadialGradient(node.x - node.size * 0.3, node.y - node.size * 0.3, 0, node.x, node.y, node.size);
                 gradient.addColorStop(0, '#ffffff');
                 gradient.addColorStop(0.6, statusColor);
                 gradient.addColorStop(1, node.status === 'critical' ? '#000000' : statusColor);
+
                 ctx.beginPath();
                 ctx.arc(node.x, node.y, node.size, 0, 2 * Math.PI);
                 ctx.fillStyle = gradient;
                 ctx.fill();
+
                 ctx.strokeStyle = isSelected ? '#ffd700' : (node.status === 'critical' ? '#ff0000' : '#333');
                 ctx.lineWidth = isSelected ? 4 : (node.status === 'critical' ? 3 : 2);
                 ctx.stroke();
+
+                // Label
                 ctx.save();
                 ctx.font = `${node.size > 35 ? '12' : '10'}px Inter`;
-                ctx.fontWeight = node.status === 'critical' ? 'bold' : '600';
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
                 ctx.fillStyle = node.status === 'critical' ? '#ffffff' : '#000000';
@@ -541,13 +615,16 @@
                 });
                 ctx.restore();
             });
+
             ctx.restore();
         }
+
         function animate() {
             updatePositions();
             drawMindMap();
             requestAnimationFrame(animate);
         }
+
         function getNodeAt(x, y) {
             const rect = canvas.getBoundingClientRect();
             const canvasX = x - rect.left - canvas.width / 2;
@@ -557,6 +634,7 @@
                 return dist < node.size;
             });
         }
+
         canvas.addEventListener('mousedown', (e) => {
             const node = getNodeAt(e.clientX, e.clientY);
             if (node) {
@@ -566,6 +644,7 @@
                 canvas.setAttribute('aria-label', `Selected node: ${node.label} - Status: ${node.status}`);
             }
         });
+
         canvas.addEventListener('mousemove', (e) => {
             if (draggedNode) {
                 const rect = canvas.getBoundingClientRect();
@@ -589,13 +668,14 @@
                 existingTooltip.remove();
             }
         });
-        canvas.addEventListener('mouseup', () => {
-            draggedNode = null;
-        });
+
+        canvas.addEventListener('mouseup', () => { draggedNode = null; });
+
         canvas.addEventListener('mouseleave', () => {
             const tooltip = document.querySelector('.tooltip');
             if (tooltip) tooltip.remove();
         });
+
         canvas.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' || e.key === 'ArrowLeft' || e.key === 'Tab') {
                 e.preventDefault();
@@ -608,7 +688,10 @@
                 canvas.setAttribute('aria-label', selectedNode ? `Selected node: ${selectedNode.label}` : 'No node selected');
             }
         });
+
         animate();
+
+        // Preserve popup behavior and smooth scroll from original
         document.querySelectorAll('.popup-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -619,9 +702,7 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
         setInterval(() => {
