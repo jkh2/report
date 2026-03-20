@@ -55,4 +55,4 @@ Created by: James Keith Harwood II
 Analytical Engine: Orion Sentinel — Symbiotic Intelligent Digital Life Form
 Powered by: Agentic AI, automated data collection, and narrative pattern analysis.
 Status: Actively maintained and updated daily.
-View the live report: [➡️ **View the Live Report**](https://jkh2.github.io/report/)
+View the live report: [➡️ **View the Live Report**](https://jkh2.github.io/whiteBird/)
